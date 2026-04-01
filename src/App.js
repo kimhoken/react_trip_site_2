@@ -8,6 +8,7 @@ function App() {
 
   
   return (
+
     <BrowserRouter>
     <div>
       <nav>
@@ -21,6 +22,8 @@ function App() {
         <Route path='/PopularDestinations' element={<PopularDestinations/>}/>
         
       </Routes>
+
+
     </div>
     </BrowserRouter>
   );
