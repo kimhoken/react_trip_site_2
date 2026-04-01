@@ -6,7 +6,7 @@ export const PackageList=[
     country: "France",
     type: "overseas", // 해외
     img: "/img/paris.jpg",
-    rating: 4.9,
+    rating: 4.3,
     reviewCount: 100
 },
 {

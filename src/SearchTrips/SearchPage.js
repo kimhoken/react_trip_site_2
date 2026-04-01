@@ -32,6 +32,7 @@ const SearchPage = () => {
                             <div>가격: {item.price}</div>
                             <div>나라: {item.country}</div>
                             <div>유형: {item.type}</div>
+                            <div>3</div>
                         </div>
                     </li>
                     </Link>
