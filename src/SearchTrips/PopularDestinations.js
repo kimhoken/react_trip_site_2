@@ -31,7 +31,7 @@ const PopularDestinations = () => {
                         <p >{item.title}</p>
                         <p>{item.rating}</p>
                         <p>{item.reviewCount}</p>
-                        <p>1</p>
+                        <p>12</p>
                     </li>
                 )
             }
