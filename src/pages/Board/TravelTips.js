@@ -23,7 +23,7 @@ export default function TravelTips(){
             </ul>
 
             <h2>💡 꿀팁</h2>
-            <p>✔ eSIM 미리 준비</p>
+            <p>✔ eSIM 미리 준비1</p>
             <p>✔ 공항 2시간 전 도착</p>
         </div>
     )
