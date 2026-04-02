@@ -7,7 +7,7 @@ const Packageinfo = () => {
     const showlist = () => {
         let result = PackageList;
         if (id.trim()) {
-            result = result.find((items) => item.id == id)
+            result = result.find((item) => item.id == id)
         }
         return result;
     }
