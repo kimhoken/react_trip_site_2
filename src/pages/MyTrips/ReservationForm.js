@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ReservationContext } from "../../context/ReservationProvider";
 
-export default function ReservationForm({addReservation}){
+export default function ReservationForm(){
+
+    const {addReservation}=useContext(ReservationContext)
 
     const [city, setCity] = useState("")
     const [startDate, setStartDate] = useState("")
