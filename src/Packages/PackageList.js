@@ -379,6 +379,6 @@ export const PackageList=[
     rating: 4.6,
     reviewCount: 158,
     link: "/buenosaires"
->>>>>>> 5d93c45a124b8525b727a22531d747b3d0ed9e1e
+
   }
 ] 
