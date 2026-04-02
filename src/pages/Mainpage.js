@@ -1,6 +1,7 @@
 import React from "react";
 import "./Mainpage.css";
 import AdSlider from "./AdSlider";
+import PackagesMain from "./PackagesMain";
 
 const Mainpage = () =>{
 
@@ -18,8 +19,12 @@ const Mainpage = () =>{
             </div>
 
             <div>
+                <PackagesMain/>
                 <AdSlider/>
+                
             </div>
+
+            
    </div>
   
 
