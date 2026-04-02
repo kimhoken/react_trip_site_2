@@ -19,6 +19,7 @@ import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
 
 
+import {ReservationProvider} from './context/ReservationProvider';
 
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
 
 
   return (
-    <BrowserRouter>     
+    <ReservationProvider>
+    <BrowserRouter>
+
 
       <div>
         <header>
@@ -120,11 +123,16 @@ function App() {
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
 
-        {/* 여기 마이페이지.. 세팅 해야함 */}
-        
-
+        <Route path="/MyTrips" element={<ReservationList />} /> 
+        <Route path="/MyTrips/favorites" element={<Favorites />} />
+        <Route path="/tips" element={<TravelTips />} />
+        <Route path="MyTrips/reserve" element={<ReservationForm />} />
+        <Route path='MyTrips/reservations' element={<ReservationList/>}/>
+        <Route path='/MyTrips/mypage' element={<MyPage/>} />
       </Routes>
     </BrowserRouter>
+    </ReservationProvider>
+
   );
 }
 
