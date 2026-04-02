@@ -1,21 +1,21 @@
 import react, { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PackageList } from "../Packages/PackageList";
 
 
 const SearchPage = () => {
     const [search, setSearch] = useState('');
-    const [foreign, setFordign] = useState('');   
+    const [foreign, setFordign] = useState('');
 
-    const triplist = ()=>{
+    const triplist = () => {
         let showlist = PackageList;
-        if(search.trim()){
-            showlist = showlist.filter((item)=> item.title.includes(search.trim()))
+        if (search.trim()) {
+            showlist = showlist.filter((item) => item.title.includes(search.trim()))
         }
         console.log(triplist);
 
-        if(foreign.trim())
-            showlist =[...showlist].filter((res)=>res.type===foreign);
+        if (foreign.trim())
+            showlist = [...showlist].filter((res) => res.type === foreign);
 
 
         return showlist;
@@ -24,17 +24,17 @@ const SearchPage = () => {
         {
             return triplist().map((item) => {
                 return (
-                    <Link to={'/SearchTrips/PackageInfo/'+item.id}>
-                    <li>
-                        <div>
-                            <img src={item.img} width={'90px'} height={'90px'} />
-                            <div>{item.title}</div>
-                            <div>가격: {item.price}</div>
-                            <div>나라: {item.country}</div>
-                            <div>유형: {item.type}</div>
-                            <div>3</div>
-                        </div>
-                    </li>
+                    <Link to={'/SearchTrips/PackageInfo/' + item.id}>
+                        <li>
+                            <div>
+                                <img src={item.img} width={'90px'} height={'90px'} />
+                                <div>{item.title}</div>
+                                <div>가격: {item.price}</div>
+                                <div>나라: {item.country}</div>
+                                <div>유형: {item.type}</div>
+
+                            </div>
+                        </li>
                     </Link>
                 )
             })
@@ -67,8 +67,8 @@ const SearchPage = () => {
                 </div>
             </div>
             <div>
-                
-                    
+
+
             </div>
 
         </div>

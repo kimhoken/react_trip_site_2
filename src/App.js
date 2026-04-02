@@ -15,22 +15,41 @@ import ResetPw from './Login/ResetPw';
 import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
+import DomesticPage from './SearchTrips/DomesticPage';
+import Package from './Packages/Package';
+
 
 import {ReservationProvider} from './context/ReservationProvider';
 
 
+function App() {
 
-function App() { 
-  const [users, setUsers] = useState([
+  const defaultUsers = [  
     {
       name: '관리자',
       id: 'admin',
       pw: '1234',
-      birth: '2000-01-01',
+      birth: '20000101',
       email: 'admin@test.com',
       phone: '01000000000'
     }
-  ]);
+  ];
+
+
+  const [users, setUsers] = useState(() => {
+    const savedUsers = localStorage.getItem('users');
+
+    if (savedUsers) {
+      return JSON.parse(savedUsers);
+    }
+
+    return defaultUsers;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(users));
+  }, [users]);
+
 
   return (
     <ReservationProvider>
@@ -78,8 +97,8 @@ function App() {
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
 
-            
-            {/* <--<Link to={'/PopularDestinations'}>추천 여행지</Link>--> */}
+
+            {/* <Link to={'/PopularDestinations'}>추천 여행지</Link> */}
 
 
           </nav>
@@ -87,16 +106,22 @@ function App() {
 
       </div>
 
-
       <Routes>
         <Route path='/' element={<Mainpage />} />
-        <Route path="/LoginPage" element={<LoginPage users={users} />} />
+        <Route path="/LoginPage" element={<LoginPage users={users} />} />        
         <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
+
+        {/* 검색및 패키지 페이지  */}
         <Route path='/SearchTrips' element={<SearchPage />} />
         <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
-        <Route path='/PopularDestinations' element={<PopularDestinations />} />
+
+
+        <Route path='/Packages' element={<Package />} >
+          <Route path='DomesticPage' element={<DomesticPage />} />
+          <Route path='OverseasPage' element={<PopularDestinations />} />
+        </Route>
 
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
