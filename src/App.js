@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+
 import Mainpage from './pages/Mainpage';
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
@@ -70,7 +70,7 @@ function App() {
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
 
-            {/* <-- <Link to='/ForgotPassword'>아이디/비밀번호 찾기</Link>--> */}
+            
             {/* <--<Link to={'/PopularDestinations'}>추천 여행지</Link>--> */}
 
 
@@ -82,7 +82,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Mainpage />} />
-        <Route path="/login" element={<LoginPage users={users} />} />
+        <Route path="/LoginPage" element={<LoginPage users={users} />} />
         <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
