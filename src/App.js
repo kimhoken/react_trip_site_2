@@ -16,13 +16,11 @@ import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 
-<<<<<<< HEAD
-function App() { 
-=======
+
 
 
 function App() {
->>>>>>> f79e87ccc80ed52eafb49b334563c4fbe44ab3a3
+
 
  
   const [users, setUsers] = useState([
