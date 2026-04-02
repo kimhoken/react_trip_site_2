@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PackageList } from "../Packages/PackageList";
+import { DomesticPackageList } from "../Packages/DomesticPackageList";
 
 
 const SearchPage = () => {
@@ -8,7 +9,7 @@ const SearchPage = () => {
     const [foreign, setFordign] = useState('');
 
     const triplist = () => {
-        let showlist = PackageList;
+        let showlist = [...PackageList,...DomesticPackageList];
         if (search.trim()) {
             showlist = showlist.filter((item) => item.title.includes(search.trim()))
         }
@@ -27,12 +28,11 @@ const SearchPage = () => {
                     <Link to={'/SearchTrips/PackageInfo/' + item.id}>
                         <li>
                             <div>
-                                <img src={item.img} width={'90px'} height={'90px'} />
+                                <img src={item.image} width={'90px'} height={'90px'} />
                                 <div>{item.title}</div>
                                 <div>가격: {item.price}</div>
                                 <div>나라: {item.country}</div>
                                 <div>유형: {item.type}</div>
-
                             </div>
                         </li>
                     </Link>
