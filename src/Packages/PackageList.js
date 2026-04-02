@@ -4,20 +4,22 @@ export const PackageList=[
     title: "파리 로마 Getaway",
     price: 1200,
     country: "France",
-    type: "overseas", // 해외
+    type: "overseas_eu", // 해외
     img: "/img/paris.jpg",
     rating: 4.3,
-    reviewCount: 100
+    reviewCount: 100,
+    link:'/SearchTrips/PackageInfo/1'
 },
 {
     id: 2,
     title: "도쿄 도시 모험",
     price: 900,
     country: "Japan",
-    type: "overseas", // 해외
+    type: "overseas_asia", // 해외
     img: "/img/tokyo.jpg",
     rating: 4.3,
-    reviewCount: 203
+    reviewCount: 203,
+    link:'/SearchTrips/PackageInfo/2'
     
 },
 {
@@ -28,6 +30,7 @@ export const PackageList=[
     type: "domestic", // 국내
     img: "/img/jeju.jpg",
     rating: 2.0,
-    reviewCount: 2
+    reviewCount: 2,
+    link:'/SearchTrips/PackageInfo/3'
   }
 ]

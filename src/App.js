@@ -15,6 +15,8 @@ import ResetPw from './Login/ResetPw';
 import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
+import DomesticPage from './SearchTrips/DomesticPage';
+import PackageMain from './Packages/PackageMain';
 
 
 
@@ -47,7 +49,7 @@ function App() {
       name: '관리자',
       id: 'admin',
       pw: '1234',
-      birth: '2000-01-01',
+      birth: '20000101',
       email: 'admin@test.com',
       phone: '01000000000'
     }
@@ -99,7 +101,7 @@ function App() {
             </div>
 
             
-            {/* <--<Link to={'/PopularDestinations'}>추천 여행지</Link>--> */}
+            {/* <Link to={'/PopularDestinations'}>추천 여행지</Link> */}
 
 
           </nav>
@@ -116,7 +118,9 @@ function App() {
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
         <Route path='/SearchTrips' element={<SearchPage />} />
         <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
-        <Route path='/PopularDestinations' element={<PopularDestinations />} />
+        <Route path='/Packages' element={<PackageMain />} />
+        <Route path='DomesticPage' element={<DomesticPage/>}/>
+        <Route path='OverseasPage' element={<PopularDestinations/>}/>
 
         {/* 여기 마이페이지.. 세팅 해야함 */}
         <Route path="/MyTrips" element={<ReservationList data={reservations} onDelete={deleteReservation}/>} /> 
