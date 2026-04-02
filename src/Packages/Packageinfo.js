@@ -17,6 +17,7 @@ const Packageinfo = () => {
     const item = showlist();
     const priceNumber =Number(String(item.price).replaceAll(',','').replaceAll('₩','').replaceAll('~',''));
 
+    
     return (
         <div className="packageinfo-main">
 
@@ -33,7 +34,7 @@ const Packageinfo = () => {
             <div className="reservation-box">
                 <h3>인원수</h3>
                 <p className="people-button">성인
-                    <p onClick={()=>{setCount(count-1)}}>-</p>
+                    <p onClick={()=>{count>0?setCount(count-1):setCount(0)}}>-</p>
                     <p>{count}</p>
                     <p onClick={()=>{setCount(count+1)}}>+</p>
                 </p>
