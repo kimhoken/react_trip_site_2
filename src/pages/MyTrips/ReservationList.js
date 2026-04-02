@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { getFavorites, getReservations } from "../../api/tripApi";
 import ReservationCard from "../../components/ReservationCard";
 
 export default function ReservationList({data,onDelete}){
@@ -15,10 +14,7 @@ export default function ReservationList({data,onDelete}){
                 (
                     data.map((item)=>(
                         <div>
-                            <h3>{item.title}</h3>
-                            <p>여행지: {item.destination}</p>
-                            <p>{item.startDate} ~ {item.endDate}</p>
-                            <p>일정: {item.days}</p>
+                            <ReservationCard item={item} />
                             <button onClick={() => onDelete(item.id)}>삭제</button>
                         </div>
                     ))

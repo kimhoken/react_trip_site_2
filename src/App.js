@@ -6,6 +6,7 @@ import Favorites from './pages/MyTrips/Favorites';
 import TravelTips from './pages/Board/TravelTips';
 import ReservationForm from './pages/MyTrips/ReservationForm';
 import { useEffect, useState } from 'react';
+import MyPage from './pages/MyTrips/MyPage';
 
 function App() {
 
@@ -34,11 +35,9 @@ function App() {
   return (
     <BrowserRouter>
       <nav style={{ padding: "10px", borderBottom: "1px solid #000" }}>
-        {/* <Link to="/">홈</Link> */}
-        <Link to="/reservations" style={{ margin: "10px" }}>내 여행</Link>
-        <Link to="/favorites" style={{ margin: "10px" }}>즐겨찾기</Link>
         <Link to="/tips" style={{ margin: "10px" }}>여행 팁</Link>
         <Link to="/reserve" style={{ marginRight: "10px" }}>예약하기</Link>
+        <Link to='/mypage' style={{ marginRight: "10px" }}>마이페이지</Link>
       </nav>  
 
       <Routes>
@@ -47,6 +46,7 @@ function App() {
         <Route path="/tips" element={<TravelTips />} />
         <Route path="/reserve" element={<ReservationForm addReservation={addReservation}/>} />
         <Route path='/reservations' element={<ReservationList data={reservations} onDelete={deleteReservation}/>}/>
+        <Route path='/mypage' element={<MyPage/>} />
       </Routes>
     </BrowserRouter>
   );
