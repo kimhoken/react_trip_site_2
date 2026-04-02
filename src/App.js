@@ -121,12 +121,7 @@ function App() {
         </Route>
 
         {/* 여기 마이페이지.. 세팅 해야함 */}
-        <Route path="/MyTrips" element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
-        <Route path="/MyTrips/favorites" element={<Favorites />} />
-        <Route path="/Board/tips" element={<TravelTips />} />
-        <Route path="MyTrips/reserve" element={<ReservationForm addReservation={addReservation} />} />
-        <Route path='MyTrips/reservations' element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
-        <Route path='/MyTrips/mypage' element={<MyPage />} />
+        
 
       </Routes>
     </BrowserRouter>
