@@ -1,6 +1,6 @@
 .LogMain{
   position: absolute;
-  margin: 80px 0;
+  margin: 150px 0;
   border:3px solid #1C2F57;
   top: 0;
   bottom: 0;
@@ -14,39 +14,84 @@
   display: flex;
   flex-direction: column;
 }
-.title{
-  margin: 87px auto 30px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #1C2F57;
-  letter-spacing: 3px;
+
+.home{
+  margin: 30px auto 0 ;
+  cursor: pointer;
+  
   /* #D9CBB8, #243B6B, #22345A*/
 }
-.Id{
-  margin-top: 10px;
-  font-size: 20px;
-  color: #1C2F57;
-}
+
 .Pw{
   margin-top: 20px;
   font-size: 20px;
   color: #1C2F57;
 }
 .Idinput{
-  display: flex;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 3px;
-  background-color: white;
-  border: 1px solid gray;
+  position: relative;
+  margin: 15px 0;
+}
+.Idinput input {
+  width: 95%;
+  padding: 12px 10px;
+  border: 1px solid #aaa;
+  outline: none;
+  font-size: 16px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.Idinput label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #1C2F57;
+  font-size: 16px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.Idinput input:focus + label,
+.Idinput input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #1C2F57;
+  background: white;
+  padding: 0 4px;
 }
 .Pwinput{
-  display: flex;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 3px;
-  background-color: white;
-  border: 1px solid gray;
+  position: relative;
+  margin: 15px 0;
+}
+.Pwinput input {
+  width: 95%;
+  padding: 12px 10px;
+  border: 1px solid #aaa;
+  outline: none;
+  font-size: 16px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.Pwinput label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #1C2F57;
+  font-size: 16px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.Pwinput input:focus + label,
+.Pwinput input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #1C2F57;
+  background: white;
+  padding: 0 4px;
 }
 .input{
   width: 100%;
@@ -64,9 +109,10 @@
   color: white;
   padding: 15px 0;
   border-radius: 10px;
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 15px;
   letter-spacing: 3px;
+  cursor: pointer;
 }
 .joinbtn{
   width: 48%;
@@ -79,6 +125,7 @@
   margin-top: 25px;
   font-size: 15px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .findbtn{
   width: 48%;
@@ -92,6 +139,7 @@
   margin-left: 0;
   font-size: 15px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .btn-row {
   display: flex;
