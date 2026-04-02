@@ -15,7 +15,7 @@ export default function ReservationList({data,onDelete}){
                     data.map((item)=>(
                         <div>
                             <ReservationCard item={item} />
-                            <button onClick={() => onDelete(item.id)}>삭제</button>
+                            <button onClick={() => deleteReservation(item.id)}>삭제</button>
                         </div>
                     ))
                 )
