@@ -41,7 +41,7 @@ function App() {
         <Route path='/PopularDestinations' element={<PopularDestinations/>}/>
       </Routes>
 
-    
+    </BrowserRouter>
   );
 }
 
