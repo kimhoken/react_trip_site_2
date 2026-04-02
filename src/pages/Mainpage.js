@@ -2,6 +2,7 @@ import React from "react";
 import "./Mainpage.css";
 import AdSlider from "./AdSlider";
 import PackagesMain from "./PackagesMain";
+import Mainetc from "./Mainetc";
 
 const Mainpage = () =>{
 
@@ -19,9 +20,12 @@ const Mainpage = () =>{
             </div>
 
             <div>
-                <PackagesMain/>
-                <AdSlider/>
+                <PackagesMain/>               
                 
+            </div>
+
+            <div>
+                <Mainetc/>
             </div>
 
             
