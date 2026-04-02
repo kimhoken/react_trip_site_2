@@ -23,30 +23,7 @@ import Package from './Packages/Package';
 
 function App() {
 
-
-  const [reservations, setReservations] = useState([])
-  // 로컬스토리지에서 예약 불러오기
-  useEffect(() => {
-    const saved = localStorage.getItem("reservations")
-    if (saved) {
-      setReservations(JSON.parse(saved))
-    }
-  }, [])
-  //예약 변경 시 로컬스토리지에 저장
-  useEffect(() => {
-    localStorage.setItem("reservations", JSON.stringify(reservations))
-  }, [reservations])
-
-  //새예약 추가
-  const addReservation = (reservation) => {
-    setReservations(prev => [...prev, reservation])
-  }
-  //예약삭제
-  const deleteReservation = (id) => {
-    setReservations(prev => prev.filter(item => item.id !== id))
-  }
-
-  const [users, setUsers] = useState([
+  const defaultUsers = [  
     {
       name: '관리자',
       id: 'admin',
@@ -55,11 +32,26 @@ function App() {
       email: 'admin@test.com',
       phone: '01000000000'
     }
-  ]);
+  ];
+
+
+  const [users, setUsers] = useState(() => {
+    const savedUsers = localStorage.getItem('users');
+
+    if (savedUsers) {
+      return JSON.parse(savedUsers);
+    }
+
+    return defaultUsers;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(users));
+  }, [users]);
+
 
   return (
-    <BrowserRouter>
-
+    <BrowserRouter>     
 
       <div>
         <header>
@@ -111,10 +103,9 @@ function App() {
 
       </div>
 
-
       <Routes>
         <Route path='/' element={<Mainpage />} />
-        <Route path="/LoginPage" element={<LoginPage users={users} />} />
+        <Route path="/LoginPage" element={<LoginPage users={users} />} />        
         <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
@@ -137,12 +128,6 @@ function App() {
         <Route path='/MyTrips/mypage' element={<MyPage />} />
       </Routes>
     </BrowserRouter>
-
-
-
-
-
-
   );
 }
 
