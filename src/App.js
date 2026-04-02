@@ -15,11 +15,13 @@ import ResetPw from './Login/ResetPw';
 import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
+import DomesticPage from './SearchTrips/DomesticPage';
+import Package from './Packages/Package';
+
 
 
 
 function App() {
-
 
   const defaultUsers = [  
     {
@@ -92,8 +94,8 @@ function App() {
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
 
-            
-            {/* <--<Link to={'/PopularDestinations'}>추천 여행지</Link>--> */}
+
+            {/* <Link to={'/PopularDestinations'}>추천 여행지</Link> */}
 
 
           </nav>
@@ -107,12 +109,25 @@ function App() {
         <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
+
+        {/* 검색및 패키지 페이지  */}
         <Route path='/SearchTrips' element={<SearchPage />} />
         <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
-        <Route path='/PopularDestinations' element={<PopularDestinations />} />
-     
-      
-        
+
+
+        <Route path='/Packages' element={<Package />} >
+          <Route path='DomesticPage' element={<DomesticPage />} />
+          <Route path='OverseasPage' element={<PopularDestinations />} />
+        </Route>
+
+        {/* 여기 마이페이지.. 세팅 해야함 */}
+        <Route path="/MyTrips" element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
+        <Route path="/MyTrips/favorites" element={<Favorites />} />
+        <Route path="/Board/tips" element={<TravelTips />} />
+        <Route path="MyTrips/reserve" element={<ReservationForm addReservation={addReservation} />} />
+        <Route path='MyTrips/reservations' element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
+        <Route path='/MyTrips/mypage' element={<MyPage />} />
+
       </Routes>
     </BrowserRouter>
   );
