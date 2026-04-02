@@ -16,25 +16,27 @@ import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
-import PackageMain from './Packages/PackageMain';
+import Package from './Packages/Package';
+
 
 
 
 function App() {
 
 
-  const [reservations,setReservations]=useState([])
-// 로컬스토리지에서 예약 불러오기
+  const [reservations, setReservations] = useState([])
+  // 로컬스토리지에서 예약 불러오기
   useEffect(() => {
     const saved = localStorage.getItem("reservations")
-    if(saved){
+    if (saved) {
       setReservations(JSON.parse(saved))
     }
-  },[])
+  }, [])
   //예약 변경 시 로컬스토리지에 저장
   useEffect(() => {
-    localStorage.setItem("reservations", JSON.stringify(reservations))},[reservations])
- 
+    localStorage.setItem("reservations", JSON.stringify(reservations))
+  }, [reservations])
+
   //새예약 추가
   const addReservation = (reservation) => {
     setReservations(prev => [...prev, reservation])
@@ -42,7 +44,7 @@ function App() {
   //예약삭제
   const deleteReservation = (id) => {
     setReservations(prev => prev.filter(item => item.id !== id))
-  }        
+  }
 
   const [users, setUsers] = useState([
     {
@@ -100,7 +102,7 @@ function App() {
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
 
-            
+
             {/* <Link to={'/PopularDestinations'}>추천 여행지</Link> */}
 
 
@@ -116,19 +118,23 @@ function App() {
         <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
+
+        {/* 검색및 패키지 페이지  */}
         <Route path='/SearchTrips' element={<SearchPage />} />
         <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
-        <Route path='/Packages' element={<PackageMain />} />
-        <Route path='DomesticPage' element={<DomesticPage/>}/>
-        <Route path='OverseasPage' element={<PopularDestinations/>}/>
+
+        <Route path='/Packages' element={<Package />} >
+          <Route path='DomesticPage' element={<DomesticPage />} />
+          <Route path='OverseasPage' element={<PopularDestinations />} />
+        </Route>
 
         {/* 여기 마이페이지.. 세팅 해야함 */}
-        <Route path="/MyTrips" element={<ReservationList data={reservations} onDelete={deleteReservation}/>} /> 
+        <Route path="/MyTrips" element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
         <Route path="/MyTrips/favorites" element={<Favorites />} />
         <Route path="/Board/tips" element={<TravelTips />} />
-        <Route path="MyTrips/reserve" element={<ReservationForm addReservation={addReservation}/>} />
-        <Route path='MyTrips/reservations' element={<ReservationList data={reservations} onDelete={deleteReservation}/>}/>
-        <Route path='/MyTrips/mypage' element={<MyPage/>} />
+        <Route path="MyTrips/reserve" element={<ReservationForm addReservation={addReservation} />} />
+        <Route path='MyTrips/reservations' element={<ReservationList data={reservations} onDelete={deleteReservation} />} />
+        <Route path='/MyTrips/mypage' element={<MyPage />} />
       </Routes>
     </BrowserRouter>
 

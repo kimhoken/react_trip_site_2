@@ -1,7 +1,7 @@
 export const PackageList=[
        {
     id: 1,
-    image: "/img/paris.jpg",
+    image: "/images/country/1.country_asia/1.j1.jpg",
     title: "봄맞이 도쿄 여행 특가",
     price: "₩ 999,000~",
     country: "Japan",
@@ -9,11 +9,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 100,
-    link: "/tokyo"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Japan/1"
   },
   {
     id: 2,
-    image: "/img/osaka.jpg",
+    image: "/images/country/1.country_asia/2.j2.jpg",
     title: "먹거리 가득 오사카 여행",
     price: "₩ 759,000~",
     country: "Japan",
@@ -22,11 +23,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.4,
     reviewCount: 128,
-    link: "/osaka"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Japan/2"
   },
   {
     id: 3,
-    image: "/img/oita.jpg",
+    image: "/images/country/1.country_asia/3.j3.jpg",
     title: "온천으로 떠나는 오이타 여행",
     price: "₩ 939,000~",
     country: "Japan",
@@ -35,11 +37,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.2,
     reviewCount: 73,
-    link: "/oita"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Japan/3"
   },
   {
     id: 4,
-    image: "/img/fukuoka.jpg",
+    image: "/images/country/1.country_asia/4.j4.jpg",
     title: "가볍게 떠나기 좋은 후쿠오카 여행",
     price: "₩ 699,000~",
     country: "Japan",
@@ -48,11 +51,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 154,
-    link: "/fukuoka"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Japan/4"
   },
   {
     id: 5,
-    image: "/img/sapporo.jpg",
+    image: "/images/country/1.country_asia/5.j5.jpg",
     title: "감성 가득 삿포로 여행",
     price: "₩ 1,150,000~",
     country: "Japan",
@@ -61,11 +65,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.7,
     reviewCount: 191,
-    link: "/sapporo"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Japan/5"
   },
-   {
+  {
     id: 6,
-    image: "/img/beijing.jpg",
+    image: "/images/country/1.country_asia/6.c1.jpg",
     title: "역사를 찾아 떠나는 베이징 여행",
     price: "₩ 2,299,000~",
     country: "China",
@@ -74,11 +79,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 203,
-    link: "/beijing"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/China/6"
   },
   {
     id: 7,
-    image: "/img/shanghai.jpg",
+    image: "/images/country/1.country_asia/7.c2.jpg",
     title: "화려한 야경의 상하이 여행",
     price: "₩ 1,899,000~",
     country: "China",
@@ -87,11 +93,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 187,
-    link: "/shanghai"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/China/7"
   },
   {
     id: 8,
-    image: "/img/danang.jpg",
+    image: "/images/country/1.country_asia/8.b1.jpg",
     title: "휴양과 바다를 즐기는 다낭 여행",
     price: "₩ 859,000~",
     country: "Vietnam",
@@ -100,11 +107,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 214,
-    link: "/danang"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Vietnam/8"
   },
   {
     id: 9,
-    image: "/img/hochiminh.jpg",
+    image: "/images/country/1.country_asia/9.b2.jpg",
     title: "활기찬 매력의 호치민 여행",
     price: "₩ 829,000~",
     country: "Vietnam",
@@ -113,11 +121,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 189,
-    link: "/hochiminh"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Vietnam/9"
   },
   {
     id: 10,
-    image: "/img/nhatrang.jpg",
+    image: "/images/country/1.country_asia/10.b3.jpg",
     title: "에메랄드 바다의 나트랑 여행",
     price: "₩ 899,000~",
     country: "Vietnam",
@@ -126,11 +135,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 158,
-    link: "/nhatrang"
+    contient: 'Asia',
+    link: "/Package/overeas/Asia/Vietnam/10"
   },
-   {
+  {
     id: 11,
-    image: "/img/paris.jpg",
+    image: "/images/country/2.country_europe/1.f1.jpg",
     title: "낭만의 도시 파리 여행",
     price: "₩ 1,799,000~",
     country: "France",
@@ -139,11 +149,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 203,
-    link: "/paris"
+    contient: 'Europe',
+    link: "/Package/overeas/Europe/France/11"
   },
   {
     id: 12,
-    image: "/img/nice.jpg",
+    image: "/images/country/2.country_europe/2.f2.jpg",
     title: "지중해 감성 니스 여행",
     price: "₩ 1,659,000~",
     country: "France",
@@ -151,12 +162,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.5,
+    contient: 'Europe',
     reviewCount: 167,
-    link: "/nice"
+    link: "/Package/overeas/Europe/France/12"
   },
   {
     id: 13,
-    image: "/img/switzerland.jpg",
+    image: "/images/country/2.country_europe/3.sw.jpg",
     title: "알프스 감성 가득한 스위스 여행",
     price: "₩ 2,299,000~",
     country: "Switzerland",
@@ -164,95 +176,103 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.8,
     reviewCount: 221,
-    link: "/switzerland"
+    contient: 'Europe',
+    link: "/Package/overeas/Europe/Switzerland/13"
   },
   {
     id: 14,
-    image: "/img/italy.jpg",
+    image: "/images/country/2.country_europe/4.it.jpg",
     title: "예술과 낭만의 이탈리아 여행",
     price: "₩ 2,099,000~",
     country: "Italy",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.7,
+    contient: 'Europe',
     reviewCount: 198,
-    link: "/italy"
+    link: "/Package/overeas/Europe/Italy/14"
   },
   {
     id: 15,
-    image: "/img/spain.jpg",
+    image: "/images/country/2.country_europe/5.spa.jpg",
     title: "열정이 넘치는 스페인 여행",
     price: "₩ 1,989,000~",
     country: "Spain",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.6,
+    contient: 'Europe',
     reviewCount: 176,
-    link: "/spain"
+    link: "/Package/overeas/Europe/Spain/15"
   },
   {
     id: 16,
-    image: "/img/germany.jpg",
+    image: "/images/country/2.country_europe/6.G.jpg",
     title: "감성과 전통이 공존하는 독일 여행",
     price: "₩ 2,159,000~",
     country: "Germany",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.5,
+    contient: 'Europe',
     reviewCount: 164,
-    link: "/germany"
+    link: "/Package/overeas/Europe/Germany/16"
   },
   {
     id: 17,
-    image: "/img/austria.jpg",
+    image: "/images/country/2.country_europe/7.a.jpg",
     title: "음악과 풍경이 아름다운 오스트리아 여행",
     price: "₩ 2,189,000~",
     country: "Austria",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.7,
+    contient: 'Europe',
     reviewCount: 182,
-    link: "/austria"
+    link: "/Package/overeas/Europe/Austria/17"
   },
   {
     id: 18,
-    image: "/img/netherlands.jpg",
+    image: "/images/country/2.country_europe/8.nl.jpg",
     title: "운하의 도시 네덜란드 여행",
     price: "₩ 2,049,000~",
     country: "Netherlands",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.4,
+    contient: 'Europe',
     reviewCount: 151,
-    link: "/netherlands"
+    link: "/Package/overeas/Europe/Netherlands/18"
   },
   {
     id: 19,
-    image: "/img/czech.jpg",
+    image: "/images/country/2.country_europe/9.cz.jpg",
     title: "동화 같은 풍경의 체코 여행",
     price: "₩ 1,939,000~",
     country: "Czech Republic",
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.6,
+    contient: 'Europe',
     reviewCount: 169,
-    link: "/czech"
+    link: "/Package/overeas/Europe/Czech Republic/19"
   },
   {
     id: 20,
-    image: "/img/greece.jpg",
+    image: "/images/country/2.country_europe/10.gr.jpg",
     title: "눈부신 지중해의 그리스 여행",
     price: "₩ 2,129,000~",
     country: "Greece",
     type: "overseas",
     buttonText: "바로가기 〉",
+    contient: 'Europe',
     rating: 4.5,
     reviewCount: 158,
-    link: "/greece"
+    link: "/Package/overeas/Europe/Greece/20"
   },
   {
     id: 21,
-    image: "/img/newyork.jpg",
+    image: "/images/country/3.country_americas/1.usa1.jpg",
     title: "화려한 도시의 매력 뉴욕 여행",
     price: "₩ 2,399,000~",
     country: "USA",
@@ -260,12 +280,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.7,
+    contient: 'America',
     reviewCount: 245,
     link: "/newyork"
   },
   {
     id: 22,
-    image: "/img/losangeles.jpg",
+    image: "/images/country/3.country_americas/2.usa2.jpg",
     title: "자유로운 감성의 로스앤젤레스 여행",
     price: "₩ 2,289,000~",
     country: "USA",
@@ -274,11 +295,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 214,
+    contient: 'America',
     link: "/losangeles"
   },
   {
     id: 23,
-    image: "/img/vancouver.jpg",
+    image: "/images/country/3.country_americas/3.ca1.jpg",
     title: "자연과 도시가 어우러진 밴쿠버 여행",
     price: "₩ 2,159,000~",
     country: "Canada",
@@ -287,11 +309,12 @@ export const PackageList=[
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 182,
+    contient: 'America',
     link: "/vancouver"
   },
   {
     id: 24,
-    image: "/img/toronto.jpg",
+    image: "/images/country/3.country_americas/4.ca2.jpg",
     title: "세련된 도심 속 토론토 여행",
     price: "₩ 2,199,000~",
     country: "Canada",
@@ -299,12 +322,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.4,
+    contient: 'America',
     reviewCount: 169,
     link: "/toronto"
   },
   {
     id: 25,
-    image: "/img/mexicocity.jpg",
+    image: "/images/country/3.country_americas/5.mex.jpg",
     title: "전통과 열정이 살아있는 멕시코시티 여행",
     price: "₩ 1,989,000~",
     country: "Mexico",
@@ -312,12 +336,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.3,
+    contient: 'America',
     reviewCount: 151,
     link: "/mexicocity"
   },
   {
     id: 26,
-    image: "/img/rio.jpg",
+    image: "/images/country/3.country_americas/6.br.jpg",
     title: "열정의 해변 도시 리우 여행",
     price: "₩ 2,499,000~",
     country: "Brazil",
@@ -325,12 +350,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.7,
+    contient: 'America',
     reviewCount: 203,
     link: "/rio"
   },
   {
     id: 27,
-    image: "/img/saopaulo.jpg",
+    image: "/images/country/3.country_americas/7.br.jpg",
     title: "브라질의 활기를 느끼는 상파울루 여행",
     price: "₩ 2,359,000~",
     country: "Brazil",
@@ -338,12 +364,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.2,
+    contient: 'America',
     reviewCount: 144,
     link: "/saopaulo"
   },
   {
     id: 28,
-    image: "/img/lima.jpg",
+    image: "/images/country/3.country_americas/8.p.jpg",
     title: "역사와 미식이 공존하는 리마 여행",
     price: "₩ 2,189,000~",
     country: "Peru",
@@ -351,12 +378,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.4,
+    contient: 'America',
     reviewCount: 137,
     link: "/lima"
   },
   {
     id: 29,
-    image: "/img/santiago.jpg",
+    image: "/images/country/3.country_americas/9.chi.jpg",
     title: "안데스의 풍경을 담은 산티아고 여행",
     price: "₩ 2,279,000~",
     country: "Chile",
@@ -364,12 +392,13 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.3,
+    contient: 'America',
     reviewCount: 129,
     link: "/santiago"
   },
   {
     id: 30,
-    image: "/img/buenosaires.jpg",
+    image: "/images/country/3.country_americas/10.arg.jpg",
     title: "낭만과 정열의 부에노스아이레스 여행",
     price: "₩ 2,469,000~",
     country: "Argentina",
@@ -377,8 +406,10 @@ export const PackageList=[
     type: "overseas",
     buttonText: "바로가기 〉",
     rating: 4.6,
+    contient: 'America',
     reviewCount: 158,
     link: "/buenosaires"
 
+    
   }
 ] 
