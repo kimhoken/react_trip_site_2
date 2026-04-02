@@ -1,0 +1,148 @@
+.LogMain{
+  position: absolute;
+  margin: 150px 0;
+  border:3px solid #1C2F57;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+  background-color: #FAF6F0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home{
+  margin: 30px auto 0 ;
+  cursor: pointer;
+  
+  /* #D9CBB8, #243B6B, #22345A*/
+}
+
+.Pw{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #1C2F57;
+}
+.Idinput{
+  position: relative;
+  margin: 15px 0;
+}
+.Idinput input {
+  width: 95%;
+  padding: 12px 10px;
+  border: 1px solid #aaa;
+  outline: none;
+  font-size: 16px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.Idinput label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #1C2F57;
+  font-size: 16px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.Idinput input:focus + label,
+.Idinput input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #1C2F57;
+  background: white;
+  padding: 0 4px;
+}
+.Pwinput{
+  position: relative;
+  margin: 15px 0;
+}
+.Pwinput input {
+  width: 95%;
+  padding: 12px 10px;
+  border: 1px solid #aaa;
+  outline: none;
+  font-size: 16px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.Pwinput label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #1C2F57;
+  font-size: 16px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.Pwinput input:focus + label,
+.Pwinput input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #1C2F57;
+  background: white;
+  padding: 0 4px;
+}
+.input{
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 17px;
+  font-size: 14px;
+}
+.Loginbtn{
+  width: 100%;
+  height: 60px;
+  border: none;
+  font-weight: bold;
+  background-color: #1C2F57;
+  color: white;
+  padding: 15px 0;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.joinbtn{
+  width: 48%;
+  height: 48px;
+  border: none;
+  font-weight: bold;
+  background-color: #1C2F57;
+  color: white;
+  border-radius: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.findbtn{
+  width: 48%;
+  height: 48px;
+  border: none;
+  font-weight: bold;
+  background-color: #1C2F57;
+  color: white;
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-left: 0;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+}
