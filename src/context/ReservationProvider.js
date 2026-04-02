@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 
+<<<<<<< HEAD
 export const ReservationContext=createContext()
 
 export function ReservationProvider({children}){
@@ -48,6 +49,7 @@ export function ReservationProvider({children}){
 
     return(
         <ReservationContext.Provider value={{reservations,canceledReservations,addReservation,deleteReservation}} >
+
             {children}
         </ReservationContext.Provider>
     )

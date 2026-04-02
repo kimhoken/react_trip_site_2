@@ -91,7 +91,7 @@ export default function ReservationForm(){
                     {
                         startDate && endDate &&(
                             <>
-                            {startDate} ~ {endDate}<br />
+                            {startDate} ~ {endDate}<br/>
                             일정: {getDays()}
                             </>
                         )
