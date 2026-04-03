@@ -17,9 +17,6 @@ import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
-
-
-import {ReservationProvider} from './context/ReservationProvider';
 import NavbarMain from './pages/NavbarMain';
 import Payment from './pages/MyTrips/Payment';
 
@@ -27,7 +24,6 @@ import Payment from './pages/MyTrips/Payment';
 function App() { 
 
   return (
-    <ReservationProvider>
     <BrowserRouter>
 
 
@@ -61,7 +57,7 @@ function App() {
         <Route path='/MyTrips/Payment' element={<Payment/>} />
       </Routes>
     </BrowserRouter>
-    </ReservationProvider>
+    
 
   );
 }

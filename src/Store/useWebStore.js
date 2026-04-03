@@ -64,6 +64,35 @@ const useWebStore = create((set,get)=>({
     logout:()=>{
         set({loginUser: null});
         localStorage.removeItem('loginUser');
+    },
+
+    reservations: JSON.parse(localStorage.getItem("reservations")) || [],
+    cancelReservations: JSON.parse(localStorage.getItem("cancelReservations")) || [],
+
+    addReservation: (newReservation) => {
+        const updated = [...get().reservations, newReservation];
+        set({ reservations: updated });
+        localStorage.setItem("reservations", JSON.stringify(updated));
+    },
+
+    cancelReservation: (id) => {
+        const target = get().reservations.find((item) => item.id === id);
+
+        if (!target) return;
+
+        const updateReservations = get().reservations.filter(
+        (item) => item.id !== id
+        );
+
+        const updateCancel = [...get().cancelReservations, target];
+
+        set({
+        reservations: updateReservations,
+        cancelReservations: updateCancel
+        });
+
+        localStorage.setItem("reservations", JSON.stringify(updateReservations));
+        localStorage.setItem("cancelReservations", JSON.stringify(updateCancel));
     }
 }))
 
