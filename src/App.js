@@ -55,8 +55,8 @@ function App() {
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
         <Route path="/tips" element={<TravelTips />} />
-        <Route path="MyTrips/reserve" element={<ReservationForm />} />
-        <Route path='MyTrips/reservations' element={<ReservationList/>}/>
+        <Route path="/MyTrips/reserve" element={<ReservationForm />} />
+        <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
         
       </Routes>
