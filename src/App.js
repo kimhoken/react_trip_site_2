@@ -19,7 +19,7 @@ import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
 
 import NavbarMain from './pages/NavbarMain';
-
+import Board from './Board/Board';
 
 
 function App() { 
