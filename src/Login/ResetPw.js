@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useWebStore from "../Store/useWebStore";
 
-export default function ResetPw({ users, setUsers }) {
+export default function ResetPw() {
+
+    const { updateUser } = useWebStore();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -31,15 +34,16 @@ export default function ResetPw({ users, setUsers }) {
             return;
         }
 
-        const updatedUsers = users.map((u) =>
-            u.id === user.id ? { ...u, pw: pw } : u
-        );
+        const updatedUser = {
+        ...user,
+        pw: pw
+        };
 
-        setUsers(updatedUsers);
+        updateUser(updatedUser);
 
         alert('비밀번호가 변경되었습니다.');
-        navigate('/Login')
-        
+        navigate('/LoginPage')
+
     }
 
     return (

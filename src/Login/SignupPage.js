@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SignupForm from "./SignupForm";
+import useWebStore from "../Store/useWebStore";
 
-export default function SignupPage({ users, setUsers }) {
+export default function SignupPage() {
 
     const navigate = useNavigate();
+    const {users, addUser} = useWebStore();
 
     const [user, setUser] = useState({
         name: '',
@@ -77,7 +79,7 @@ export default function SignupPage({ users, setUsers }) {
 
         if (!check()) {
             valid = false;
-            newErrors.id = errors.id || '- 아이디를 입력해주세요.'
+            newErrors.id = errors.id || '- 중복된 아이디입니다.'
         }
 
         if (!user.name) {
@@ -129,9 +131,9 @@ export default function SignupPage({ users, setUsers }) {
             email: user.email
         }
 
-        setUsers([...users, newUser]);
+        addUser(newUser);
         alert(newUser.id + '님 환영합니다.');
-        navigate('/Login')
+        navigate('/LoginPage')
     }
 
     return (

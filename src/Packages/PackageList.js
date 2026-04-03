@@ -11,7 +11,9 @@ export const PackageList=[
     rating: 4.3,
     reviewCount: 100,
     contient: 'Asia',
-    link: "/Packages/overeas/Asia/Japan/1"
+    link: "/Packages/overeas/Asia/Japan/1",
+    
+
   },
   {
     id: 2,
