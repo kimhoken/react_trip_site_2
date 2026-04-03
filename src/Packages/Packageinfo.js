@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { PackageList } from "./PackageList";
 import { DomesticPackageList } from "./DomesticPackageList";
@@ -6,7 +5,7 @@ import { PackageDetail } from "./PackageDetail";
 import { PackageSchedule } from "./PackageSchedule";
 
 const Packageinfo = () => {
-    const [count, setCount] = useState(1);
+    
     const { id } = useParams();
     const showlist = () => {
         let list = id < 100 ? PackageList : DomesticPackageList;
@@ -42,16 +41,18 @@ const Packageinfo = () => {
             <div className="text-line">
                 <div><h2>{item.list.title}</h2></div>
                 <div>가격: {item.list.price}</div>
-                <div>나라: {item.list.country}</div>
-                <div>[국내/해외]: {item.list.type}</div>
+                <div>나라: {item.list.country}</div>                
                 <div>평점: {item.list.rating}</div>
                 <div>리뷰수: {item.list.reviewCount}</div>
 
             </div>
             <div className="text-detail">
-                <div>여행 정보 상세 정보</div>
-                <div>출발일: {item.detail.departureDate}</div>
-                <div>도착일: {item.detail.arrivalDate}</div>
+                <div>여행 상세 정보</div>
+                {
+                    item.detail.dates.map((i)=>(
+                        <div>출발일:{i.departureDate} 도착일:{i.arrivalDate}</div>
+                    ))
+                }
                 <div>일수 : {item.detail.duration}</div>
             </div>
             <div className="text-schedule">
@@ -64,8 +65,14 @@ const Packageinfo = () => {
                     {show()}
                 </table>
             </div>
+
             <div className="reservation-box">                
                 <Link to="/MyTrips/reserve" state={{selTrip:item.list}}><p>예약하기</p></Link>
+                  {item.list.type ==='domestic'? 
+                <Link to={'/Packages/DomesticPage'}><p>뒤로가기</p></Link>:
+                <Link to={'/Packages/OverseasPage'}><p>뒤로가기</p></Link>}
+
+
             </div>
 
 

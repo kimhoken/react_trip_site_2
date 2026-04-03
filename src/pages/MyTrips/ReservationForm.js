@@ -1,10 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+
+import Payment from "./Payment";
+
 import { useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
 import { PackageDetail } from "../../Packages/PackageDetail";
 import useWebStore from "../../Store/useWebStore";
 
+
 export default function ReservationForm(){
+    const [open,setOpen]=useState(false);
 
     const location=useLocation()
     const selTrip=location.state?.selTrip
@@ -119,6 +124,9 @@ export default function ReservationForm(){
                 </div>
                 <button type="submit">예약하기</button>
             </form>
+            {
+                open &&<Payment />
+            }
         </div>
     )
 }
