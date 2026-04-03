@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './ForgotPassword.css'
+import './FindIdPw.css'
 
 export default function FindPw({users}){
 
@@ -25,21 +26,21 @@ export default function FindPw({users}){
 
     return(
         <div>
-            <div>
-                아이디
-                <input  placeholder="아이디를 입력하세요."
+            <div className="idinput">
+                <input  
                         value={id}
                         onChange={(e)=>setId(e.target.value)}
-                        />
+                        required />
+                <label>아이디</label>
             </div>
-            <div>
-                전화번호
-                <input  placeholder="전화번호를 입력하세요."
+            <div className="phoneinput">
+                <input  
                         value={phone}
                         onChange={(e)=>setPhone(e.target.value)}
-                        />
+                        required />
+                <label>전화번호</label>
             </div>
-            <button onClick={findPw}>찾기</button>
+            <button className="findbtn" onClick={findPw}>찾기</button>
         </div>
     )
 }

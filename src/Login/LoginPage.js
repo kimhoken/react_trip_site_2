@@ -9,6 +9,7 @@ export default function LoginPage({users}){
 
     const[id,setId] = useState('')
     const[pw,setPw] = useState('')
+    const[error,setError] = useState('')
 
 
     const join=()=>{
@@ -24,14 +25,20 @@ export default function LoginPage({users}){
 
         if(user){
             if(user.pw== pw){
-                alert('로그인 성공')
+                alert(id+'님 환영합니다.')
                 navigate('/')
+            }else if(pw===''){
+                setError('비밀번호를 입력해주세요.')
+                return;
             }else{
-                alert('비밀번호가 일치하지 않습니다.')
+                setError('비밀번호가 일치하지 않습니다.')
                 return;
             }
+        }else if(id===''){
+            setError('아이디를 입력해주세요.')
+            return;
         }else{
-            alert('아이디/비밀번호가 일치하지 않습니다.')
+            setError('아이디/비밀번호가 일치하지 않습니다.')
             return;
         }
     }
@@ -55,6 +62,9 @@ export default function LoginPage({users}){
                         onChange={(e)=>(setPw(e.target.value))}
                         required />
                 <label>비밀번호</label>
+            </div>
+            <div className="error">
+                {error}
             </div>
             <div>
                 <button className="Loginbtn" onClick={login}>로그인</button>
