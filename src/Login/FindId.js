@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import './ForgotPassword.css'
 import './FindIdPw.css'
+import useWebStore from "../Store/useWebStore";
 
-export default function FindId({users}){
+export default function FindId(){
 
+    const {users} = useWebStore();
     const[name,setName] = useState('')
     const[phone,setPhone] = useState('')
-
+    
     const findId=()=>{
+
         const user= users.find((u)=>(u.phone===phone))
 
         if (user){

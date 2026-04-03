@@ -2,14 +2,28 @@ import react, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../Images/logo.png';
 import "./Loginpage.css"
+import useWebStore from "../Store/useWebStore";
 
-export default function LoginPage({users}){
+export default function LoginPage(){
 
     const navigate = useNavigate();
+    const {login} = useWebStore();
 
     const[id,setId] = useState('')
     const[pw,setPw] = useState('')
     const[error,setError] = useState('')
+
+    const dologin = () => {
+        const result = login(id, pw);
+
+        if (!result.ok) {
+            setError(result.msg);
+            return;
+        }
+        alert(id+"님 환영합니다.")
+        navigate('/');
+    };
+    
 
 
     const join=()=>{
@@ -19,29 +33,6 @@ export default function LoginPage({users}){
         navigate('/ForgotPassword')
     }
 
-    const login=()=>{
-
-        const user = users.find((u)=>(u.id===id))
-
-        if(user){
-            if(user.pw== pw){
-                alert(id+'님 환영합니다.')
-                navigate('/')
-            }else if(pw===''){
-                setError('비밀번호를 입력해주세요.')
-                return;
-            }else{
-                setError('비밀번호가 일치하지 않습니다.')
-                return;
-            }
-        }else if(id===''){
-            setError('아이디를 입력해주세요.')
-            return;
-        }else{
-            setError('아이디/비밀번호가 일치하지 않습니다.')
-            return;
-        }
-    }
 
     return(
         <div className="LogMain">
@@ -67,7 +58,7 @@ export default function LoginPage({users}){
                 {error}
             </div>
             <div>
-                <button className="Loginbtn" onClick={login}>로그인</button>
+                <button className="Loginbtn" onClick={dologin}>로그인</button>
             </div>
             <br/>
             <div className="btn-row">

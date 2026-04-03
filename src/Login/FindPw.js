@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './ForgotPassword.css'
 import './FindIdPw.css'
+import useWebStore from "../Store/useWebStore";
 
-export default function FindPw({users}){
+export default function FindPw(){
+
+    const {users} = useWebStore();
 
     const navigate = useNavigate();
 
