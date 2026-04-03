@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Payment from "./Payment";
 
@@ -76,6 +76,8 @@ export default function ReservationForm(){
         }
 
         addReservation(newReservation)
+
+        setOpen(true)
 
         alert(
             "예약완료\n"+
