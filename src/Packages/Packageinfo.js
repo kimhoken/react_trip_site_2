@@ -72,7 +72,7 @@ const Packageinfo = () => {
                     <p onClick={() => { setCount(count + 1) }}>+</p>
                 </p>
                 <p>총가격: {priceNumber * count} 원</p>
-                <Link to={'/MyTrips/ReservationForm/' + item.list.id + '/' + count}><p>예약하기</p></Link>
+                <Link to={'/MyTrips/reserve'  }><p>예약하기</p></Link>
             </div>
 
 
