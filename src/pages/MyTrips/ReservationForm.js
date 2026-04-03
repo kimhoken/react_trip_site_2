@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import { ReservationContext } from "../../context/ReservationProvider";
+import Payment from "./Payment";
 
 export default function ReservationForm(){
+    const [open,setOpen]=useState(false);
 
     const {addReservation}=useContext(ReservationContext)
 
@@ -99,6 +101,9 @@ export default function ReservationForm(){
                 </div>
                 <button type="submit">예약하기</button>
             </form>
+            {
+                open &&<Payment />
+            }
         </div>
     )
 }

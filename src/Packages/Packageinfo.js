@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { PackageList } from "./PackageList";
 import { DomesticPackageList } from "./DomesticPackageList";
@@ -72,9 +71,9 @@ const Packageinfo = () => {
                     <p onClick={() => { count > 0 ? setCount(count - 1) : setCount(0) }}>-</p>
                     <p>{count}</p>
                     <p onClick={() => { setCount(count + 1) }}>+</p>
-                </p>
+                </p>    onClick={()=>window.open('/MyTrips/Payment','_blank')}
                 <p>총가격: {priceNumber * count} 원</p> */}
-                <Link to={'/MyTrips/ReservationForm/' + item.list.id}><p onClick={()=>window.open('/MyTrips/Payment','_blank')}>예약하기</p></Link>
+                <Link to='/MyTrips/reserve' state={{selTrip:item}}><p >예약하기</p></Link>
                 {item.list.type ==='domestic'? 
                 <Link to={'/Packages/DomesticPage'}><p>뒤로가기</p></Link>:
                 <Link to={'/Packages/OverseasPage'}><p>뒤로가기</p></Link>}
