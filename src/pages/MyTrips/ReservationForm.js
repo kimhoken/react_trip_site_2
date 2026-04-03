@@ -10,6 +10,8 @@ import useWebStore from "../../Store/useWebStore";
 
 export default function ReservationForm(){
     const [open,setOpen]=useState(false);
+    const [selectreservation,setSelectRervation] =useState(null);
+    
 
     const location=useLocation()
     const selTrip=location.state?.selTrip
@@ -61,9 +63,9 @@ export default function ReservationForm(){
             alert("잘못된 접근입니다");
             return;
         }
-
+        
         const newReservation={
-            id: Date.now(),
+            id: Date.now,
             packid: selTrip.id,
             userid: loginUser.id,
             userName: loginUser.name,
@@ -75,6 +77,7 @@ export default function ReservationForm(){
             price: selTrip.price|| ''
         }
 
+        setSelectRervation(newReservation)
         addReservation(newReservation)
 
         setOpen(true)
@@ -127,7 +130,7 @@ export default function ReservationForm(){
                 <button type="submit">예약하기</button>
             </form>
             {
-                open &&<Payment />
+                open &&<Payment reservation={selectreservation}/>
             }
         </div>
     )

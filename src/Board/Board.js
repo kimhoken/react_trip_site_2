@@ -28,13 +28,16 @@ export default function Board(){
                     </thead>
                     <tbody>
                         {
-                            board == 'review' && < Review/>
+                            board === 'review' && < Review/>
                         }
                         {
-                            board == 'Qna' && < Qna/>
+                            board ===    'Qna' && < Qna/>
                         }
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <button onClick={()=>navigate('/Write')}>글쓰기</button>
             </div>
         </div>
     )

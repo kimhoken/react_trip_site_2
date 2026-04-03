@@ -20,6 +20,7 @@ import Package from './Packages/Package';
 
 import NavbarMain from './pages/NavbarMain';
 import Board from './Board/Board';
+import Write from './Board/Write';
 
 
 function App() { 
@@ -50,6 +51,7 @@ function App() {
         </Route>
 
         <Route path='/Board' element={<Board/>} />
+        <Route path='/Write' element={<Write/>}/>
 
 
         <Route path="/MyTrips" element={<ReservationList />} /> 
