@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 export default function FavoriteItem({item,onDelete}){
 
     const navigate = useNavigate()
-    
+
     return(
         <div style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}
-             onClick={() => navigate('/destination/'+item.id)}>
+             onClick={() => navigate('/MyTrips/reserve',{state:{selTrip:item}})}>
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             {item.place}

@@ -14,7 +14,7 @@ const DomesticPage = () => {
 
             return list.map((item) => {
                 return (
-                    <Link to={'/SearchTrips/PackageInfo/' + item.id}>
+                    <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                         <li>
                             <img src={item.image} width={'100px'} height={'100px'} />
                             <h3>{item.title}</h3>
@@ -35,7 +35,7 @@ const DomesticPage = () => {
         <div>
             <h2>국내 여행 패키지</h2>
             <ul>
-            {showlist()}
+                {showlist()}
             </ul>
 
         </div>
