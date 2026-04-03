@@ -5,12 +5,15 @@ export const PackageList=[
     title: "봄맞이 도쿄 여행 특가",
     price: "₩ 999,000~",
     country: "Japan",
+    city: "Tokyo",
     type: "overseas", // 해외
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 100,
     contient: 'Asia',
-    link: "/Packages/overeas/Asia/Japan/1"
+    link: "/Packages/overeas/Asia/Japan/1",
+    
+
   },
   {
     id: 2,
