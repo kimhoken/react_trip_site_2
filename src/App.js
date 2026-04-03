@@ -4,21 +4,26 @@ import ReservationList from './pages/MyTrips/ReservationList';
 import Favorites from './pages/MyTrips/Favorites';
 import TravelTips from './pages/Board/TravelTips';
 import ReservationForm from './pages/MyTrips/ReservationForm';
-
 import MyPage from './pages/MyTrips/MyPage';
 import Mainpage from './pages/Mainpage';
+
 import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
+
 import LoginPage from './Login/LoginPage';
 import SignupPage from './Login/SignupPage';
 import ForgotPassword from './Login/ForgotPassword';
 import ResetPw from './Login/ResetPw';
+
 import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
+
 import {ReservationProvider} from './context/ReservationProvider';
 import NavbarMain from './pages/NavbarMain';
+import Mainsevieces from './customerservice/Mainseviecs';
+
 
 
 function App() { 
@@ -26,7 +31,6 @@ function App() {
   return (
     <ReservationProvider>
     <BrowserRouter>
-
 
       <div>
         <NavbarMain/>
@@ -55,6 +59,10 @@ function App() {
         <Route path="MyTrips/reserve" element={<ReservationForm />} />
         <Route path='MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
+
+        <Route path="/CustomerService" element={<Mainsevieces />} />
+        <Route path="/CustomerService/qna" element={<div>Q&A 페이지</div>} />
+        <Route path="/CustomerService/notice" element={<div>공지사항 페이지</div>} />
       </Routes>
     </BrowserRouter>
     </ReservationProvider>
