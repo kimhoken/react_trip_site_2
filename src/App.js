@@ -17,8 +17,6 @@ import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
-
-
 import {ReservationProvider} from './context/ReservationProvider';
 import NavbarMain from './pages/NavbarMain';
 
