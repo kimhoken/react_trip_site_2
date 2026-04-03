@@ -79,9 +79,9 @@ export default function ReservationForm(){
 
         setSelectRervation(newReservation)
         addReservation(newReservation)
-        setOpen(true);
-        
-        
+
+        setOpen(true)
+
         alert(
             "예약완료\n"+
             "상품명 : "+(selTrip?.title || "")+"\n" +

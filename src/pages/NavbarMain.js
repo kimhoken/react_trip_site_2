@@ -47,9 +47,9 @@ const NavbarMain =()=>{
                   <Link className='nav-link' to="/MyTrips">My Trips</Link>
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
-                            <li><Link className='dropdown-link' to="/sub1">마이페이지</Link></li>
-                            <li><Link className='dropdown-link' to="/sub2">내 예약</Link></li>
-                            <li><Link className='dropdown-link' to="/sub3">즐겨찾기</Link></li>
+                            <li><Link className='dropdown-link' to="/MyTrips/mypage">마이페이지</Link></li>
+                            <li><Link className='dropdown-link' to="/MyTrips/reservations">내 예약</Link></li>
+                            <li><Link className='dropdown-link' to="/MyTrips/favorites">즐겨찾기</Link></li>
                         </ul>
                     </div>
                 </li>
