@@ -15,7 +15,7 @@ export default function SignupForm({
         <div >
             <form className="main">
 
-                <img src={logo} style={{ width: 150 }} onClick={() => navigate('/')} />
+                <img src={logo} className="img" style={{ width: 300, margin: '0 auto' }} onClick={() => navigate('/')} />
 
                 <div className="first-box">
                     <div className="name">

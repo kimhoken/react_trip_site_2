@@ -14,11 +14,12 @@ const defaultUsers = [
 const useWebStore = create((set,get)=>({    
     users: JSON.parse(localStorage.getItem('users'))||defaultUsers,
     loginUser: JSON.parse(localStorage.getItem('loginUser'))||[],
+    //새로고침
     setUsers:(newUser)=>{
         set({users:newUser});
         localStorage.setItem('users',JSON.stringify(newUser));
     },
-    //회원 추가
+    //회원가입
     addUser:(newUsers)=>{
         const updated = [...get().users,newUsers];
         set({users: updated});
@@ -33,13 +34,27 @@ const useWebStore = create((set,get)=>({
     },
     //로그인시 id.pw 파라미터로 보내고, return값으로 ok, 메세지 json으로 보냄
     login : (id, pw)=>{
-        const user = get().users.find((u)=>u.id===id);
+        
+        if(id === ''){
+            return{ok: false, msg: '아이디를 입력해주세요.'}
+        }
+        if(pw === ''){
+            return{ok: false, msg: '비밀번호를 입력해주세요.'}
+        }
+
+        const user = get().users.find((u)=>u.id===id);  
+
         if(!user){
-            return {ok:false,msg:'아이디가 없습니다'}
-        }
-        if(user.pw !==pw){
-            return {ok:false,msg:'비밀번호가 일치 하지 않습니다.'}
-        }
+
+            return{ok: false, msg: '아이디/비밀번호가 일치하지 않습니다.'}
+            
+        }else{
+            if(user.pw !==pw){
+                return{ok: false, msg: '비밀번호가 일치 하지 않습니다.'}
+            }
+        } 
+        
+        
         set({loginUser:user});
         localStorage.setItem('loginUser',JSON.stringify(user));
 
