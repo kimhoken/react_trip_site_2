@@ -4,7 +4,7 @@ import ReservationList from './pages/MyTrips/ReservationList';
 import Favorites from './pages/MyTrips/Favorites';
 import TravelTips from './pages/Board/TravelTips';
 import ReservationForm from './pages/MyTrips/ReservationForm';
-import { useEffect, useState } from 'react';
+
 import MyPage from './pages/MyTrips/MyPage';
 import Mainpage from './pages/Mainpage';
 import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
@@ -22,34 +22,7 @@ import Package from './Packages/Package';
 import {ReservationProvider} from './context/ReservationProvider';
 
 
-function App() {
-
-  const defaultUsers = [  
-    {
-      name: '관리자',
-      id: 'admin',
-      pw: '1234',
-      birth: '20000101',
-      email: 'admin@test.com',
-      phone: '01000000000'
-    }
-  ];
-
-
-  const [users, setUsers] = useState(() => {
-    const savedUsers = localStorage.getItem('users');
-
-    if (savedUsers) {
-      return JSON.parse(savedUsers);
-    }
-
-    return defaultUsers;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('users', JSON.stringify(users));
-  }, [users]);
-
+function App() { 
 
   return (
     <ReservationProvider>
@@ -96,11 +69,6 @@ function App() {
               <Link className='user-link signup' to="/SignupPage">회원가입</Link>
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
-
-
-            {/* <Link to={'/PopularDestinations'}>추천 여행지</Link> */}
-
-
           </nav>
         </header>
 
@@ -108,15 +76,14 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Mainpage />} />
-        <Route path="/LoginPage" element={<LoginPage users={users} />} />        
-        <Route path="/SignupPage" element={<SignupPage users={users} setUsers={setUsers} />} />
-        <Route path="/ForgotPassword" element={<ForgotPassword users={users} />} />
-        <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
+        <Route path="/LoginPage" element={<LoginPage />} />        
+        <Route path="/SignupPage" element={<SignupPage />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/ResetPw" element={<ResetPw />} />
 
         {/* 검색및 패키지 페이지  */}
         <Route path='/SearchTrips' element={<SearchPage />} />        
         <Route path='/Packages/:type/:contient/:country/:id' element={<Packageinfo/>}/>
-
 
         <Route path='/Packages' element={<Package />} >
         <Route index element={<Navigate to={'DomesticPage'} replace/>}/>
