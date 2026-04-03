@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
 import { PackageDetail } from "../../Packages/PackageDetail";
@@ -14,9 +14,19 @@ export default function ReservationForm(){
     const cityData = KoreaList.find((item)=>item.id===selTrip?.id)
     const detailData=PackageDetail.find((item)=>item.id==selTrip?.id)
 
-    const [city,setCity]=useState(cityData?.city || '')
-    const [startDate,setStartDate]=useState(detailData?.startDate || '')
-    const [endDate,setEndDate]=useState(detailData?.endDate || '')
+    const [city, setCity] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+
+    useEffect(() => {
+        if (cityData) {
+            setCity(cityData.city || "");
+        }
+        if (detailData) {
+            setStartDate(detailData.departureDate || "");
+            setEndDate(detailData.arrivalDate || "");
+        }
+    }, [cityData, detailData])
 
     const getDays=()=>{
         if(!startDate || !endDate){
@@ -52,7 +62,7 @@ export default function ReservationForm(){
             packid: selTrip.id,
             userid: loginUser.id,
             userName: loginUser.name,
-            title: selTrip?.title || city+" 여행",
+            title: selTrip?.title || city+'여행',
             destination: city,
             startDate: startDate,
             endDate: endDate,
@@ -81,17 +91,6 @@ export default function ReservationForm(){
         <div>
             <h2>여행 예약</h2>
 
-            {
-                selTrip&&(
-                    <div>
-                        <h3>선택한 상품</h3>
-                        <p>상품명 : {selTrip.title}</p>
-                        <p>도시 : {city}</p>
-                        <p>가격 : {selTrip.price}</p>
-                        <img src={selTrip.image} alt={selTrip.title}/>
-                    </div>
-                )
-            }
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>도시 : </label>

@@ -64,15 +64,8 @@ const Packageinfo = () => {
                     {show()}
                 </table>
             </div>
-            <div className="reservation-box">
-                <h3>인원수</h3>
-                <p className="people-button">성인
-                    <p onClick={() => { count > 0 ? setCount(count - 1) : setCount(0) }}>-</p>
-                    <p>{count}</p>
-                    <p onClick={() => { setCount(count + 1) }}>+</p>
-                </p>
-                <p>총가격: {priceNumber * count} 원</p>
-                <Link to={'/MyTrips/ReservationForm/' + item.list.id + '/' + count}><p>예약하기</p></Link>
+            <div className="reservation-box">                
+                <Link to="/MyTrips/reserve" state={{selTrip:item.list}}><p>예약하기</p></Link>
             </div>
 
 
