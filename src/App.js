@@ -17,8 +17,9 @@ import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
+
 import NavbarMain from './pages/NavbarMain';
-import Payment from './pages/MyTrips/Payment';
+import Board from './Board/Board';
 
 
 function App() { 
@@ -48,13 +49,16 @@ function App() {
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
 
+        <Route path='/Board' element={<Board/>} />
+
+
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
         <Route path="/tips" element={<TravelTips />} />
         <Route path="MyTrips/reserve" element={<ReservationForm />} />
         <Route path='MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
-        <Route path='/MyTrips/Payment' element={<Payment/>} />
+        
       </Routes>
     </BrowserRouter>
     

@@ -65,12 +65,13 @@ const Packageinfo = () => {
                     {show()}
                 </table>
             </div>
-            <div className="reservation-box">
-                
-                <Link to='/MyTrips/reserve' state={{selTrip:item}}><p >예약하기</p></Link>
-                {item.list.type ==='domestic'? 
+
+            <div className="reservation-box">                
+                <Link to="/MyTrips/reserve" state={{selTrip:item.list}}><p>예약하기</p></Link>
+                  {item.list.type ==='domestic'? 
                 <Link to={'/Packages/DomesticPage'}><p>뒤로가기</p></Link>:
                 <Link to={'/Packages/OverseasPage'}><p>뒤로가기</p></Link>}
+
 
             </div>
 
