@@ -7,7 +7,7 @@ import ReservationForm from './pages/MyTrips/ReservationForm';
 import { useEffect, useState } from 'react';
 import MyPage from './pages/MyTrips/MyPage';
 import Mainpage from './pages/Mainpage';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import SignupPage from './Login/SignupPage';
 import ForgotPassword from './Login/ForgotPassword';
@@ -17,8 +17,6 @@ import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
-
-
 import {ReservationProvider} from './context/ReservationProvider';
 
 
@@ -81,9 +79,23 @@ function App() {
                   <Link className='nav-link' to="/Board">Community</Link>
                 </li>
 
-                <li className='nav-item mytrips'>
+                {/* <li className='nav-item mytrips'>
                   <Link className='nav-link' to="/MyTrips">My Trips</Link>
+                </li> */}
+
+                <li className='nav-item mytrips'>
+                  <span className='nav-link'>My Trips</span>
+                  <ul >
+                    <li><Link className='nav-link' to="/MyTrips/reserve">예약하기</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/reservations">예약/취소내역</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/favorites">찜목록</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/mypage">마이페이지</Link></li>
+                  </ul>
                 </li>
+
+
+
+
 
                 <li className='nav-item login'>
                   <Link className='nav-link' to="/LoginPage">Login</Link>
@@ -114,11 +126,12 @@ function App() {
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
 
         {/* 검색및 패키지 페이지  */}
-        <Route path='/SearchTrips' element={<SearchPage />} />
-        <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
+        <Route path='/SearchTrips' element={<SearchPage />} />        
+        <Route path='/Packages/:type/:contient/:country/:id' element={<Packageinfo/>}/>
 
 
         <Route path='/Packages' element={<Package />} >
+        <Route index element={<Navigate to={'DomesticPage'} replace/>}/>
           <Route path='DomesticPage' element={<DomesticPage />} />
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>

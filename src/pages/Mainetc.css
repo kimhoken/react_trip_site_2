@@ -1,0 +1,10 @@
+.creat-name{  
+  text-align: right;
+  margin: 5px 15px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.creat-name:hover {
+  color: black;
+}

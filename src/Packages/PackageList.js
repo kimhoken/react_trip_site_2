@@ -5,12 +5,13 @@ export const PackageList=[
     title: "봄맞이 도쿄 여행 특가",
     price: "₩ 999,000~",
     country: "Japan",
+    city: "Tokyo",
     type: "overseas", // 해외
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 100,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Japan/1"
+    link: "/Packages/overeas/Asia/Japan/1"
   },
   {
     id: 2,
@@ -24,7 +25,7 @@ export const PackageList=[
     rating: 4.4,
     reviewCount: 128,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Japan/2"
+    link: "/Packages/overeas/Asia/Japan/2"
   },
   {
     id: 3,
@@ -38,7 +39,7 @@ export const PackageList=[
     rating: 4.2,
     reviewCount: 73,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Japan/3"
+    link: "/Packages/overeas/Asia/Japan/3"
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ export const PackageList=[
     rating: 4.6,
     reviewCount: 154,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Japan/4"
+    link: "/Packages/overeas/Asia/Japan/4"
   },
   {
     id: 5,
@@ -66,7 +67,7 @@ export const PackageList=[
     rating: 4.7,
     reviewCount: 191,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Japan/5"
+    link: "/Packages/overeas/Asia/Japan/5"
   },
   {
     id: 6,
@@ -80,7 +81,7 @@ export const PackageList=[
     rating: 4.3,
     reviewCount: 203,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/China/6"
+    link: "/Packages/overeas/Asia/China/6"
   },
   {
     id: 7,
@@ -94,7 +95,7 @@ export const PackageList=[
     rating: 4.5,
     reviewCount: 187,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/China/7"
+    link: "/Packages/overeas/Asia/China/7"
   },
   {
     id: 8,
@@ -108,7 +109,7 @@ export const PackageList=[
     rating: 4.6,
     reviewCount: 214,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Vietnam/8"
+    link: "/Packages/overeas/Asia/Vietnam/8"
   },
   {
     id: 9,
@@ -122,7 +123,7 @@ export const PackageList=[
     rating: 4.3,
     reviewCount: 189,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Vietnam/9"
+    link: "/Packages/overeas/Asia/Vietnam/9"
   },
   {
     id: 10,
@@ -136,7 +137,7 @@ export const PackageList=[
     rating: 4.5,
     reviewCount: 158,
     contient: 'Asia',
-    link: "/Package/overeas/Asia/Vietnam/10"
+    link: "/Packages/overeas/Asia/Vietnam/10"
   },
   {
     id: 11,
@@ -150,7 +151,7 @@ export const PackageList=[
     rating: 4.3,
     reviewCount: 203,
     contient: 'Europe',
-    link: "/Package/overeas/Europe/France/11"
+    link: "/Packages/overeas/Europe/France/11"
   },
   {
     id: 12,
@@ -164,7 +165,7 @@ export const PackageList=[
     rating: 4.5,
     contient: 'Europe',
     reviewCount: 167,
-    link: "/Package/overeas/Europe/France/12"
+    link: "/Packages/overeas/Europe/France/12"
   },
   {
     id: 13,
@@ -177,7 +178,7 @@ export const PackageList=[
     rating: 4.8,
     reviewCount: 221,
     contient: 'Europe',
-    link: "/Package/overeas/Europe/Switzerland/13"
+    link: "/Packages/overeas/Europe/Switzerland/13"
   },
   {
     id: 14,
@@ -190,7 +191,7 @@ export const PackageList=[
     rating: 4.7,
     contient: 'Europe',
     reviewCount: 198,
-    link: "/Package/overeas/Europe/Italy/14"
+    link: "/Packages/overeas/Europe/Italy/14"
   },
   {
     id: 15,
@@ -203,7 +204,7 @@ export const PackageList=[
     rating: 4.6,
     contient: 'Europe',
     reviewCount: 176,
-    link: "/Package/overeas/Europe/Spain/15"
+    link: "/Packages/overeas/Europe/Spain/15"
   },
   {
     id: 16,
@@ -216,7 +217,7 @@ export const PackageList=[
     rating: 4.5,
     contient: 'Europe',
     reviewCount: 164,
-    link: "/Package/overeas/Europe/Germany/16"
+    link: "/Packages/overeas/Europe/Germany/16"
   },
   {
     id: 17,
@@ -229,7 +230,7 @@ export const PackageList=[
     rating: 4.7,
     contient: 'Europe',
     reviewCount: 182,
-    link: "/Package/overeas/Europe/Austria/17"
+    link: "/Packages/overeas/Europe/Austria/17"
   },
   {
     id: 18,
@@ -242,7 +243,7 @@ export const PackageList=[
     rating: 4.4,
     contient: 'Europe',
     reviewCount: 151,
-    link: "/Package/overeas/Europe/Netherlands/18"
+    link: "/Packages/overeas/Europe/Netherlands/18"
   },
   {
     id: 19,
@@ -255,7 +256,7 @@ export const PackageList=[
     rating: 4.6,
     contient: 'Europe',
     reviewCount: 169,
-    link: "/Package/overeas/Europe/Czech Republic/19"
+    link: "/Packages/overeas/Europe/Czech Republic/19"
   },
   {
     id: 20,
@@ -268,7 +269,7 @@ export const PackageList=[
     contient: 'Europe',
     rating: 4.5,
     reviewCount: 158,
-    link: "/Package/overeas/Europe/Greece/20"
+    link: "/Packages/overeas/Europe/Greece/20"
   },
   {
     id: 21,
@@ -282,7 +283,7 @@ export const PackageList=[
     rating: 4.7,
     contient: 'America',
     reviewCount: 245,
-    link: "/newyork"
+    link: "/Packages/overeas/America/USA/21"
   },
   {
     id: 22,
@@ -296,7 +297,7 @@ export const PackageList=[
     rating: 4.6,
     reviewCount: 214,
     contient: 'America',
-    link: "/losangeles"
+    link: "/Packages/overeas/America/USA/22"
   },
   {
     id: 23,
@@ -310,7 +311,7 @@ export const PackageList=[
     rating: 4.5,
     reviewCount: 182,
     contient: 'America',
-    link: "/vancouver"
+    link: "/Packages/overeas/America/Canada/23"
   },
   {
     id: 24,
@@ -324,7 +325,7 @@ export const PackageList=[
     rating: 4.4,
     contient: 'America',
     reviewCount: 169,
-    link: "/toronto"
+    link: "/Packages/overeas/America/Canada/24"
   },
   {
     id: 25,
@@ -338,7 +339,7 @@ export const PackageList=[
     rating: 4.3,
     contient: 'America',
     reviewCount: 151,
-    link: "/mexicocity"
+    link: "/Packages/overeas/America/Mexico/25"
   },
   {
     id: 26,
@@ -352,7 +353,7 @@ export const PackageList=[
     rating: 4.7,
     contient: 'America',
     reviewCount: 203,
-    link: "/rio"
+    link: "/Packages/overeas/America/Brazil/26"
   },
   {
     id: 27,
@@ -366,7 +367,7 @@ export const PackageList=[
     rating: 4.2,
     contient: 'America',
     reviewCount: 144,
-    link: "/saopaulo"
+    link: "/Packages/overeas/America/Brail/27"
   },
   {
     id: 28,
@@ -380,7 +381,7 @@ export const PackageList=[
     rating: 4.4,
     contient: 'America',
     reviewCount: 137,
-    link: "/lima"
+    link: "/Packages/overeas/America/Peru/28"
   },
   {
     id: 29,
@@ -394,7 +395,7 @@ export const PackageList=[
     rating: 4.3,
     contient: 'America',
     reviewCount: 129,
-    link: "/santiago"
+    link: "/Packages/overeas/America/Chile/29"
   },
   {
     id: 30,
@@ -408,7 +409,7 @@ export const PackageList=[
     rating: 4.6,
     contient: 'America',
     reviewCount: 158,
-    link: "/buenosaires"
+    link: "/Packages/overeas/America/Argentina/30"
 
     
   }
