@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react";
-import { ReservationContext } from "../../context/ReservationProvider";
 import { useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
+import { PackageDetail } from "../../Packages/PackageDetail";
+import useWebStore from "../../Store/useWebStore";
 
 export default function ReservationForm(){
 
-    const {addReservation}=useContext(ReservationContext)
     const location=useLocation()
     const selTrip=location.state?.selTrip
 
+    const { loginUser, addReservation } = useWebStore()
+
     const cityData = KoreaList.find((item)=>item.id===selTrip?.id)
+    const detailData=PackageDetail.find((item)=>item.id==selTrip?.id)
 
     const [city,setCity]=useState(cityData?.city || '')
-    const [startDate,setStartDate]=useState(selTrip?.startDate || '')
-    const [endDate,setEndDate]=useState(selTrip?.endDate || '')
+    const [startDate,setStartDate]=useState(detailData?.startDate || '')
+    const [endDate,setEndDate]=useState(detailData?.endDate || '')
 
     const getDays=()=>{
         if(!startDate || !endDate){
@@ -46,7 +49,9 @@ export default function ReservationForm(){
 
         const newReservation={
             id: Date.now(),
-            packid: selTrip.id ||null,
+            packid: selTrip.id,
+            userid: loginUser.id,
+            userName: loginUser.name,
             title: selTrip?.title || city+" 여행",
             destination: city,
             startDate: startDate,
@@ -90,7 +95,7 @@ export default function ReservationForm(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>도시 : </label>
-                    <input type="text" value={city} onChange={(e) => setCity(e.target.value)}/>
+                    <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
                 </div>
 
                 <div>
@@ -100,7 +105,7 @@ export default function ReservationForm(){
 
                 <div>
                     <label>도착 날짜: </label>
-                    <input type="date" value={endDate} onChange={(e) =>setEndDate(e.target.value)}/>
+                    <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)}/>
                 </div>
 
                 <div>

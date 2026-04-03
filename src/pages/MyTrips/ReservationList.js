@@ -1,15 +1,23 @@
 import React, { useContext,  useState } from "react";
 import ReservationCard from "../../components/ReservationCard";
-import { ReservationContext } from "../../context/ReservationProvider";
 import './ReservationList.css';
+import useWebStore from "../../Store/useWebStore";
 
 export default function ReservationList(){
 
-    const {reservations,canceledReservations,deleteReservation}=useContext(ReservationContext)
+    const {loginUser,reservations,cancelReservations,cancelReservation}=useWebStore()
 
     const [activeTab,setActiveTab]=useState('reservation')
 
-    if (!reservations || !canceledReservations) return <p>로딩중...</p>;
+    const myReservation = reservations.filter(
+        (item) => item.userId === loginUser?.id
+    );
+
+    const myCancel = cancelReservations.filter(
+        (item) => item.userId === loginUser?.id
+    );
+
+    if (!reservations || !cancelReservations) return <p>로딩중...</p>;
 
     return(
         <div className="reForm">
@@ -22,12 +30,12 @@ export default function ReservationList(){
 
             {activeTab === "reservation" && (
                 <>
-                {reservations.length===0 ? (<p>예약이 존재하지 않습니다.</p>) : 
+                {myReservation.length===0 ? (<p>예약이 존재하지 않습니다.</p>) : 
                 (
-                    reservations.map((item)=>(
+                    myReservation.map((item)=>(
                         <div className="reB">
                             <ReservationCard item={item} />
-                            <button onClick={() => deleteReservation(item.id)}>삭제</button>
+                            <button onClick={() => cancelReservation(item.id)}>취소</button>
                         </div>
                     ))
                 )}
@@ -37,8 +45,8 @@ export default function ReservationList(){
             {
                 activeTab==='cancel' &&(
                     <>
-                    {canceledReservations.length===0 ? (<p>취소된 예약이 없습니다.</p>) : 
-                    (canceledReservations.map((item)=>(
+                    {myCancel.length===0 ? (<p>취소된 예약이 없습니다.</p>) : 
+                    (myCancel.map((item)=>(
                         <div className="reB">
                             <ReservationCard item={item}/>
                         </div>
