@@ -53,7 +53,7 @@ const SearchPage = () => {
         {
             return triplist().map((item) => {
                 return (
-                    <Link to={'/SearchTrips/PackageInfo/' + item.id}>
+                    <Link to={'/Packages/'+item.type+'/'+item.contient+'/'+item.country+'/' + item.id}>
                         <li>
                             <div>
                                 <img src={item.image} width={'90px'} height={'90px'} />
