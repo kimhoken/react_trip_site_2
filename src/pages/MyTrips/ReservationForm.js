@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Payment from "./Payment";
 
@@ -28,8 +28,8 @@ export default function ReservationForm(){
             setCity(cityData.city || "");
         }
         if (detailData) {
-            setStartDate(detailData.departureDate || "");
-            setEndDate(detailData.arrivalDate || "");
+            setStartDate(detailData.dates[0].departureDate || "");
+            setEndDate(detailData.dates[0].arrivalDate || "");
         }
     }, [cityData, detailData])
 
