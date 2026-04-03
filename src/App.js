@@ -21,6 +21,7 @@ import Package from './Packages/Package';
 
 import {ReservationProvider} from './context/ReservationProvider';
 import NavbarMain from './pages/NavbarMain';
+import Payment from './pages/MyTrips/Payment';
 
 
 function App() { 
@@ -57,6 +58,7 @@ function App() {
         <Route path="MyTrips/reserve" element={<ReservationForm />} />
         <Route path='MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
+        <Route path='/MyTrips/Payment' element={<Payment/>} />
       </Routes>
     </BrowserRouter>
     </ReservationProvider>
