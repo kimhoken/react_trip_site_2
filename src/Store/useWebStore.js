@@ -22,13 +22,13 @@ const useWebStore = create((set,get)=>({
     addUser:(newUsers)=>{
         const updated = [...get().users,newUsers];
         set({users: updated});
-        localStorage.setItem('users',JSON.stringify(newUsers))
+        localStorage.setItem('users',JSON.stringify(updated))
     },
     //회원 정보 수정
     updateUser:(updateUser)=>{
         const updated = get().users.map((user)=>
         user.id === updateUser.id ? updateUser: user);
-        set({user: updated});
+        set({users: updated});
         localStorage.setItem('users',JSON.stringify(updated));
     },
     //로그인시 id.pw 파라미터로 보내고, return값으로 ok, 메세지 json으로 보냄
