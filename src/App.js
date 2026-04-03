@@ -20,6 +20,7 @@ import Package from './Packages/Package';
 
 
 import {ReservationProvider} from './context/ReservationProvider';
+import Board from './Board/Board';
 
 
 function App() { 
@@ -90,6 +91,9 @@ function App() {
           <Route path='DomesticPage' element={<DomesticPage />} />
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
+
+        <Route path='/Board' element={<Board/>} />
+
 
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
