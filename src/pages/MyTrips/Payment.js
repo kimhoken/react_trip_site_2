@@ -1,9 +1,13 @@
 import react from "react";
+import useWebStore from "../../Store/useWebStore";
 
-const Payment =()=>{
-    return(
+const Payment = ({ reservation }) => {
+   
+    
+    return (
         <div>
-            결제창 입니다...
+            <p>찾은 예약 {reservation.id}</p>
+
         </div>
     )
 }
