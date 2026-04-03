@@ -60,7 +60,7 @@ const NavbarMain =()=>{
               </ul>
             </div>
 
-            <div className='navbar-user'>
+            <div className='navbar-user'>              
               <Link className='user-link' to="/LoginPage">로그인</Link>
               <Link className='user-link signup' to="/SignupPage">회원가입</Link>
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
