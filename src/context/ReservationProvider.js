@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 
-<<<<<<< HEAD
+
 export const ReservationContext=createContext()
 
 export function ReservationProvider({children}){

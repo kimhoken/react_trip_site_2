@@ -7,7 +7,7 @@ import ReservationForm from './pages/MyTrips/ReservationForm';
 import { useEffect, useState } from 'react';
 import MyPage from './pages/MyTrips/MyPage';
 import Mainpage from './pages/Mainpage';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import SignupPage from './Login/SignupPage';
 import ForgotPassword from './Login/ForgotPassword';
@@ -112,11 +112,12 @@ function App() {
         <Route path="/ResetPw" element={<ResetPw users={users} setUsers={setUsers} />} />
 
         {/* 검색및 패키지 페이지  */}
-        <Route path='/SearchTrips' element={<SearchPage />} />
-        <Route path="/SearchTrips/PackageInfo/:id" element={<Packageinfo />} />
+        <Route path='/SearchTrips' element={<SearchPage />} />        
+        <Route path='/Packages/:type/:contient/:country/:id' element={<Packageinfo/>}/>
 
 
         <Route path='/Packages' element={<Package />} >
+        <Route index element={<Navigate to={'DomesticPage'} replace/>}/>
           <Route path='DomesticPage' element={<DomesticPage />} />
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
