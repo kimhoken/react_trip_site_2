@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavbarMain.css"
 
+
 const NavbarMain =()=>{
     return(
 
@@ -44,11 +45,11 @@ const NavbarMain =()=>{
                 </li>
 
                 <li className='nav-item mytrips'>
-                  <Link className='nav-link' to="/MyTrips">My Trips</Link>
+                  <Link className='nav-link' to="/">My Trips</Link>
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
                             <li><Link className='dropdown-link' to="/sub1">마이페이지</Link></li>
-                            <li><Link className='dropdown-link' to="/sub2">내 예약</Link></li>
+                            <li><Link className='dropdown-link' to="/MyTrips">내 예약</Link></li>
                             <li><Link className='dropdown-link' to="/sub3">즐겨찾기</Link></li>
                         </ul>
                     </div>
