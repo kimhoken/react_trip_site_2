@@ -1,0 +1,119 @@
+.nameinput {
+    position: relative;
+    margin: 25px 30px 10px 50px;
+}
+
+.nameinput input {
+    width: 90%;
+    padding: 12px 10px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 16px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.nameinput label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #1C2F57;
+    font-size: 16px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.nameinput input:focus+label,
+.nameinput input:valid+label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #1C2F57;
+    background: white;
+    padding: 0 4px;
+}
+.idinput {
+    position: relative;
+    margin: 25px 30px 10px 50px;
+}
+
+.idinput input {
+    width: 90%;
+    padding: 12px 10px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 16px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.idinput label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #1C2F57;
+    font-size: 16px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.idinput input:focus+label,
+.idinput input:valid+label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #1C2F57;
+    background: white;
+    padding: 0 4px;
+}
+.phoneinput {
+    position: relative;
+    margin: 15px 30px 10px 50px;
+}
+
+.phoneinput input {
+    width: 90%;
+    padding: 12px 10px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 16px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.phoneinput label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #1C2F57;
+    font-size: 16px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.phoneinput input:focus+label,
+.phoneinput input:valid+label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #1C2F57;
+    background: white;
+    padding: 0 4px;
+}
+
+.fmain .findbtn {
+    width: 80%;
+    height: 50px;
+    border: none;
+    font-weight: bold;
+    background-color: #1C2F57;
+    color: white;
+    border-radius: 10px;
+    margin: 40px auto;
+    font-size: 15px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

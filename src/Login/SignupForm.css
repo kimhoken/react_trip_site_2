@@ -1,17 +1,17 @@
 .main {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: relative;
+    margin: 50px 0;
+    border:1px solid #1C2F57;
     width: 100%;
     max-width: 500px;
     background-color: #FAF6F0;
     left: 50%;
     transform: translate(-50%, 0);
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
 }
+
 .first-box{
     position: relative;
     width: 98%;
@@ -27,6 +27,7 @@
     height: 25px;
     font-size: 16px;
     margin-left: 10px;
+    background-color: #FAF6F0;
 }
 .name{
     border-bottom: 1px solid #D9CBB8;
@@ -36,7 +37,8 @@
     padding-top: 5px;
 }
 .error{
-    font-size: 13px;
+    font-size: 12px;
+    margin-left: 10px;
 }
 .second-box{
     position: relative;
@@ -53,6 +55,7 @@
     height: 25px;
     font-size: 16px;
     margin-left: 10px;
+    background-color: #FAF6F0;
 }
 .pw{
     border-bottom: 1px solid #D9CBB8;
@@ -76,6 +79,7 @@
     height: 25px;
     font-size: 16px;
     margin-left: 10px;
+    background-color: #FAF6F0;
 }
 .phone{
     border-bottom: 1px solid #D9CBB8;
@@ -89,15 +93,19 @@
     padding-top: 5px;
 }
 .btn{
-  width: 100%;
+  width: 95%;
   height: 50px;
   border: none;
   font-weight: bold;
   background-color: #1C2F57;
   color: white;
   border-radius: 10px;
-  margin-top: 40px;
+  margin: 40px auto;
   font-size: 15px;
   letter-spacing: 3px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
