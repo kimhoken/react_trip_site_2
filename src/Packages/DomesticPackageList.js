@@ -10,7 +10,7 @@ export const DomesticPackageList =[
     rating: 4.7,
     reviewCount: 210,
     contient: "Korea",
-    link: "/jeju"
+    link: "/Packages/overeas/Korea/Korea/101"
   },
   {
     id: 102,
@@ -23,7 +23,7 @@ export const DomesticPackageList =[
     rating: 4.5,
     reviewCount: 150,
     contient: "Korea",
-    link: "/busan"
+    link: "/Packages/overeas/Korea/Korea/102"
   },
   {
     id: 103,
@@ -36,7 +36,7 @@ export const DomesticPackageList =[
     rating: 4.4,
     reviewCount: 98,
     contient: "Korea",
-    link: "/gangneung"
+    link: "/Packages/overeas/Korea/Korea/103"
   },
   {
     id: 104,
@@ -49,7 +49,7 @@ export const DomesticPackageList =[
     rating: 4.6,
     reviewCount: 132,
     contient: "Korea",
-    link: "/gyeongju"
+    link: "/Packages/overeas/Korea/Korea/104"
   },
   {
     id: 105,
@@ -62,6 +62,6 @@ export const DomesticPackageList =[
     rating: 4.3,
     reviewCount: 85,
     contient: "Korea",
-    link: "/seoul"
+    link: "/Packages/overeas/Korea/Korea/105"
   }
 ]
