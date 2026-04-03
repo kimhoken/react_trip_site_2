@@ -79,9 +79,23 @@ function App() {
                   <Link className='nav-link' to="/Board">Community</Link>
                 </li>
 
-                <li className='nav-item mytrips'>
+                {/* <li className='nav-item mytrips'>
                   <Link className='nav-link' to="/MyTrips">My Trips</Link>
+                </li> */}
+
+                <li className='nav-item mytrips'>
+                  <span className='nav-link'>My Trips</span>
+                  <ul >
+                    <li><Link className='nav-link' to="/MyTrips/reserve">예약하기</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/reservations">예약/취소내역</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/favorites">찜목록</Link></li>
+                    <li><Link className='nav-link' to="/MyTrips/mypage">마이페이지</Link></li>
+                  </ul>
                 </li>
+
+
+
+
 
                 <li className='nav-item login'>
                   <Link className='nav-link' to="/LoginPage">Login</Link>
