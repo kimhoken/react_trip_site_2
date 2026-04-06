@@ -23,6 +23,8 @@ import Package from './Packages/Package';
 import {ReservationProvider} from './context/ReservationProvider';
 import NavbarMain from './pages/NavbarMain';
 import Mainsevieces from './customerservice/Mainseviecs';
+import MainseviecesQnaList from './customerservice/MainseviecesQnaList';
+import Mainservices_list from './customerservice/Mainseviecs_list';
 
 
 
@@ -61,8 +63,8 @@ function App() {
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
 
         <Route path="/CustomerService" element={<Mainsevieces />} />
-        <Route path="/CustomerService/qna" element={<div>Q&A 페이지</div>} />
-        <Route path="/CustomerService/notice" element={<div>공지사항 페이지</div>} />
+        <Route path="/CustomerService/qna" element={<MainseviecesQnaList />} />
+        <Route path="/CustomerService/notice" element={<Mainservices_list />} />
       </Routes>
     </BrowserRouter>
     </ReservationProvider>
