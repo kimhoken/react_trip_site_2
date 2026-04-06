@@ -7,25 +7,28 @@ const Payment = ({ reservation, setOpen }) => {
 
     const { loginUser, addPayment } = useWebStore();
     const [paymentmethod, setPaymentMethod] = useState('');
-    const [card, setCard] = useState({});
+    const [card, setCard] = useState({
+        company:'',period:{year:'',month:''},cardnum:{cardnum1:'', cardnum2:'', cardnum3:'', cardnum4:''}
+    });
     const [bank, setBank] = useState({});
 
-
+    const regex=/^\d{4}$/;
 
     const checkcard = () => {
         if (!card.company) {
             alert('카드 선택하세요');
             return false;
         }
-        if (!card.period) {
+        if (!card.period.year && !card.period.month) {
             alert('유효기한 기입하세요')
             return false;
         }
-        // if (!card.cardnum.cardnum1 == '' || !card.cardnum.cardnum2 == '' ||
-        //     !card.cardnum.cardnum3 == '' || !card.cardnum.cardnum4 == '') {
-        //     alert('카드번호 입력하세요')
-        //     return false;
-        // }
+        for(let i=0;i<card.cardnum.length;i++){
+            if(regex.test(card.cardnum[i])){
+                alert('카드번호는 네자리여야 합니다.')
+                return false;
+            }
+        }  
         return true;
     }
 

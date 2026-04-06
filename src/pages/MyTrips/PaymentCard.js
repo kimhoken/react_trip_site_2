@@ -67,8 +67,8 @@ export default function PaymentCard({ setCard }) {
                 </label><br />
                 <label>
                     <h5>유효 기간</h5>
-                    <input size={1} onChange={(e) => { setMonth(e.target.value) }} />
-                    <input size={1} onChange={(e) => { setYear(e.target.value) }} />
+                    <input size={1} onChange={(e) => { setMonth(e.target.value) }} placeholder="월" />
+                    <input size={1} onChange={(e) => { setYear(e.target.value) }} placeholder="년"/>
                 </label>
             </form>
         </div>
