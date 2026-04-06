@@ -9,60 +9,64 @@ const Payment = ({ reservation, setOpen }) => {
     const [paymentmethod, setPaymentMethod] = useState('');
     const [card, setCard] = useState({});
     const [bank, setBank] = useState({});
-    
-    
 
-    const checkeffective =()=>{
-        if(card.company=='' || card.period.year=='' || card.period.month=='' ){
+
+
+    const checkcard = () => {
+        if (!card.company) {
+            alert('카드 선택하세요');
             return false;
         }
-        if(bank.brand ==''||bank.user == ''){
+        if (!card.period) {
+            alert('유효기한 기입하세요')
             return false;
         }
-        
+        // if (!card.cardnum.cardnum1 == '' || !card.cardnum.cardnum2 == '' ||
+        //     !card.cardnum.cardnum3 == '' || !card.cardnum.cardnum4 == '') {
+        //     alert('카드번호 입력하세요')
+        //     return false;
+        // }
         return true;
-        
     }
 
     const onSubmit = (e) => {
-        
+
         e.preventDefault();
-        
+
         const payments = {
             id: Date.now(),
             paymentmethod: paymentmethod,
             reservationId: reservation.id,
             PaymentDate: new Date().toISOString()
         }
-        
-        if(checkeffective()===true){
-            if (paymentmethod) {
-                if (paymentmethod == 'card') {                
-                    payments.card = card.company;
-                    payments.period = card.period;
-                } else if (paymentmethod == 'bank') {                
-                    payments.bank = bank.brand;
-                    payments.holder = bank.user;
-                }
-                addPayment(payments);
-                
-                alert('결제가 완료 되었습니다.');
-                setOpen(false);
-            } else {
-                alert('결제 수단을 선택하세요!!');
-                return;
-            }
-        }else{
-            alert("필수 항목을 선택하세요");
+
+
+        if (!paymentmethod) {
+            alert('결제 수단을 선택하세요!!');
             return;
         }
-        
+        if (paymentmethod == 'card') {
+            if (!checkcard()) return;
+            payments.card = card.company;
+            payments.period = card.period;
+        } else if (paymentmethod == 'bank') {
+            
+            payments.bank = bank.brand;
+            payments.user = bank.user;
+        }
+        addPayment(payments);
+
+        alert('결제가 완료 되었습니다.');
+        setOpen(false);
+
+
+
     }
 
     const PaymentselectForm = () => {
         if (paymentmethod == 'card') {
             return (
-                <PaymentCard setCard={setCard} />                
+                <PaymentCard setCard={setCard} />
             )
         } else if (paymentmethod == 'bank') {
             return (

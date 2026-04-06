@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function PaymentCard({ setCard, setCheck }) {
+export default function PaymentCard({ setCard }) {
     const [cardcompany, setCardCompany] = useState('');
     const [year, setYear] = useState('');
     const [cardnum1, setCardnum1] = useState('');
@@ -11,8 +11,12 @@ export default function PaymentCard({ setCard, setCheck }) {
     const [cardnum4, setCardnum4] = useState('');
     const [month, setMonth] = useState('');
 
+    //여기 카드 고치고 계좌까지 해결해야함... 알겠지? 그리고 디자인 들어가셈
     useEffect(() => {
-        if (cardcompany && year && month) {
+        if (cardcompany ) {
+            setCard(cardinfo)
+        }
+        if(year&&month){
             setCard(cardinfo)
         }
     }
@@ -56,10 +60,10 @@ export default function PaymentCard({ setCard, setCheck }) {
                     </select>
                 </label>
                 <label><h4>카드번호</h4>
-                    <input placeholder="1111" size={'4'} />
-                    -<input type="password" placeholder="****" size={'4'} />
-                    -<input placeholder="3333" size={'4'} />
-                    -<input type="password" placeholder="****" size={'4'} />
+                    <input placeholder="1111" size={'4'} onChange={(e)=>{setCardnum1(e.target.value)}}/>
+                    -<input type="password" placeholder="****" size={'4'} onChange={(e)=>{setCardnum2(e.target.value)}} />
+                    -<input placeholder="3333" size={'4'} onChange={(e)=>{setCardnum3(e.target.value)}}/>
+                    -<input type="password" placeholder="****" size={'4'} onChange={(e)=>{setCardnum4(e.target.value)}}/>
                 </label><br />
                 <label>
                     <h5>유효 기간</h5>

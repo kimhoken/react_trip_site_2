@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-export default function PaymentBank({ setBank, setCheck }) {
+export default function PaymentBank({ setBank}) {
     const [brand, setBrand] = useState('');
     const [user, setUser] = useState('');
     const [banknum1, setBankNum1] = useState('');
