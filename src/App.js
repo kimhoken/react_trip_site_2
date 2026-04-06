@@ -26,8 +26,6 @@ import Mainsevieces from './customerservice/Mainseviecs';
 import MainseviecesQnaList from './customerservice/MainseviecesQnaList';
 import Mainservices_list from './customerservice/Mainseviecs_list';
 
-
-import NavbarMain from './pages/NavbarMain';
 import Board from './Board/Board';
 import Write from './Board/Write';
 

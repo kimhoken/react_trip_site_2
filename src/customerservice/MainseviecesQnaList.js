@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { QnAServicelist } from "./QnAServieslist";
+import "./QnAServies.css";
 
 const MainseviecesQnaList = () => {
+    const [touchTitle, setTouchTitle] = useState(null);
+
   return (
     <div className="qna-wrap">
       <div className="qna-header">
@@ -11,13 +14,13 @@ const MainseviecesQnaList = () => {
 
       <div className="qna-list">
         {QnAServicelist.map((item) => (
-          <div className="qna-card" key={item.id}>
+          <div className={`qna-card ${touchTitle === item.id ? "active" : ""}`}
+            key={item.id}
+            onClick={() => setTouchTitle(touchTitle === item.id ? null : item.id)}
+          >
            
             <h3 className="qna-title">{item.title}</h3>
-
-            <p className="qna-content">
-              {item.content}
-            </p>
+            <p className="qna-content">{item.content}</p>
 
           </div>
         ))}

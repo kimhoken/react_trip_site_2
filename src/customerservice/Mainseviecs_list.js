@@ -1,6 +1,6 @@
 import React from "react";
 import { Announcementlist } from "./Announcementlist";
-
+import "./Announcement.css";
 
 const Mainservices_list = () => {
   return (
@@ -19,7 +19,7 @@ const Mainservices_list = () => {
             </p>
 
             <div className="announcement-bottom">
-              <span className="announcement-date">{item.date}</span> 
+              <span className="announcement-date">작성일: {item.date}</span> 
               <br/>
               <span>조회수: {item.view}</span>
 

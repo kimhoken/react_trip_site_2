@@ -1,9 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./NavbarMain.css"
-
+import useWebStore from "../Store/useWebStore";
 
 const NavbarMain =()=>{
+
+  const loginUser = useWebStore((state) => state.loginUser);
+  const logout = useWebStore((state) => state.logout);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
     return(
 
     <div>
@@ -64,8 +73,26 @@ const NavbarMain =()=>{
             </div>
 
             <div className='navbar-user'>              
-              <Link className='user-link' to="/LoginPage">로그인</Link>
-              <Link className='user-link signup' to="/SignupPage">회원가입</Link>
+              {loginUser ? (
+              <>
+                <Link className="user-link" to="/MyTrips/mypage">
+                  {loginUser.id}님
+                </Link>
+
+                <button
+                  type="button"
+                  className="user-link signup logout"
+                  onClick={handleLogout}
+                >
+                  로그아웃
+                </button>
+              </>
+            ) : (
+              <>
+                <Link className="user-link" to="/LoginPage">로그인</Link>
+                <Link className="user-link signup" to="/SignupPage">회원가입</Link>
+              </>
+            )}
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
           </nav>
