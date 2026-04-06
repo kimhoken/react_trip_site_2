@@ -20,18 +20,22 @@ import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
 
-import {ReservationProvider} from './context/ReservationProvider';
+
 import NavbarMain from './pages/NavbarMain';
 import Mainsevieces from './customerservice/Mainseviecs';
 import MainseviecesQnaList from './customerservice/MainseviecesQnaList';
 import Mainservices_list from './customerservice/Mainseviecs_list';
 
 
+import NavbarMain from './pages/NavbarMain';
+import Board from './Board/Board';
+import Write from './Board/Write';
+
+
 
 function App() { 
 
   return (
-    <ReservationProvider>
     <BrowserRouter>
 
       <div>
@@ -55,19 +59,24 @@ function App() {
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
 
+        <Route path='/Board' element={<Board/>} />
+        <Route path='/Write' element={<Write/>}/>
+
+
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
         <Route path="/tips" element={<TravelTips />} />
-        <Route path="MyTrips/reserve" element={<ReservationForm />} />
-        <Route path='MyTrips/reservations' element={<ReservationList/>}/>
+        <Route path="/MyTrips/reserve" element={<ReservationForm />} />
+        <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
 
         <Route path="/CustomerService" element={<Mainsevieces />} />
         <Route path="/CustomerService/qna" element={<MainseviecesQnaList />} />
         <Route path="/CustomerService/notice" element={<Mainservices_list />} />
+
       </Routes>
     </BrowserRouter>
-    </ReservationProvider>
+    
 
   );
 }

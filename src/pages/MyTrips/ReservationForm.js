@@ -1,19 +1,39 @@
-import React, { useContext, useState } from "react";
-import { ReservationContext } from "../../context/ReservationProvider";
+import React, { useContext, useEffect, useState } from "react";
+
+import Payment from "./Payment";
+
 import { useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
+import { PackageDetail } from "../../Packages/PackageDetail";
+import useWebStore from "../../Store/useWebStore";
+
 
 export default function ReservationForm(){
+    const [open,setOpen]=useState(false);
+    const [selectreservation,setSelectRervation] =useState(null);
+    
 
-    const {addReservation}=useContext(ReservationContext)
     const location=useLocation()
     const selTrip=location.state?.selTrip
 
-    const cityData = KoreaList.find((item)=>item.id===selTrip?.id)
+    const { loginUser, addReservation } = useWebStore()
 
-    const [city,setCity]=useState(cityData?.city || '')
-    const [startDate,setStartDate]=useState(selTrip?.startDate || '')
-    const [endDate,setEndDate]=useState(selTrip?.endDate || '')
+    const cityData = KoreaList.find((item)=>item.id===selTrip?.id)
+    const detailData=PackageDetail.find((item)=>item.id==selTrip?.id)
+
+    const [city, setCity] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+
+    useEffect(() => {
+        if (cityData) {
+            setCity(cityData.city || "");
+        }
+        if (detailData) {
+            setStartDate(detailData.dates[0].departureDate || "");
+            setEndDate(detailData.dates[0].arrivalDate || "");
+        }
+    }, [cityData, detailData])
 
     const getDays=()=>{
         if(!startDate || !endDate){
@@ -43,11 +63,13 @@ export default function ReservationForm(){
             alert("잘못된 접근입니다");
             return;
         }
-
+        
         const newReservation={
-            id: Date.now(),
-            packid: selTrip.id ||null,
-            title: selTrip?.title || city+" 여행",
+            id: Date.now,
+            packid: selTrip.id,
+            userid: loginUser.id,
+            userName: loginUser.name,
+            title: selTrip?.title || city+'여행',
             destination: city,
             startDate: startDate,
             endDate: endDate,
@@ -55,7 +77,10 @@ export default function ReservationForm(){
             price: selTrip.price|| ''
         }
 
+        setSelectRervation(newReservation)
         addReservation(newReservation)
+
+        setOpen(true)
 
         alert(
             "예약완료\n"+
@@ -76,21 +101,10 @@ export default function ReservationForm(){
         <div>
             <h2>여행 예약</h2>
 
-            {
-                selTrip&&(
-                    <div>
-                        <h3>선택한 상품</h3>
-                        <p>상품명 : {selTrip.title}</p>
-                        <p>도시 : {city}</p>
-                        <p>가격 : {selTrip.price}</p>
-                        <img src={selTrip.image} alt={selTrip.title}/>
-                    </div>
-                )
-            }
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>도시 : </label>
-                    <input type="text" value={city} onChange={(e) => setCity(e.target.value)}/>
+                    <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
                 </div>
 
                 <div>
@@ -100,7 +114,7 @@ export default function ReservationForm(){
 
                 <div>
                     <label>도착 날짜: </label>
-                    <input type="date" value={endDate} onChange={(e) =>setEndDate(e.target.value)}/>
+                    <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)}/>
                 </div>
 
                 <div>
@@ -115,6 +129,9 @@ export default function ReservationForm(){
                 </div>
                 <button type="submit">예약하기</button>
             </form>
+            {
+                open &&<Payment reservation={selectreservation}/>
+            }
         </div>
     )
 }
