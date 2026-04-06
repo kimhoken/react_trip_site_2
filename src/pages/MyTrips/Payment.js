@@ -1,12 +1,74 @@
 import react, { useState } from "react";
 import useWebStore from "../../Store/useWebStore";
+import PaymentCard from "./PaymentCard";
+import PaymentBank from "./PaymentBank";
 
-const Payment = ({ reservation }) => {
-    const [cardname, setCardname] = useState('');
-    const { loginUser } = useWebStore();
+const Payment = ({ reservation, setOpen }) => {
 
-    const onSubmit=(e)=>{
+    const { loginUser, addPayment } = useWebStore();
+    const [paymentmethod, setPaymentMethod] = useState('');
+    const [card, setCard] = useState({});
+    const [bank, setBank] = useState({});
+    
+    
+
+    const checkeffective =()=>{
+        if(card.company=='' || card.period.year=='' || card.period.month=='' ){
+            return false;
+        }
+        if(bank.brand ==''||bank.user == ''){
+            return false;
+        }
+        
+        return true;
+        
+    }
+
+    const onSubmit = (e) => {
+        
         e.preventDefault();
+        
+        const payments = {
+            id: Date.now(),
+            paymentmethod: paymentmethod,
+            reservationId: reservation.id,
+            PaymentDate: new Date().toISOString()
+        }
+        
+        if(checkeffective()===true){
+            if (paymentmethod) {
+                if (paymentmethod == 'card') {                
+                    payments.card = card.company;
+                    payments.period = card.period;
+                } else if (paymentmethod == 'bank') {                
+                    payments.bank = bank.brand;
+                    payments.holder = bank.user;
+                }
+                addPayment(payments);
+                
+                alert('결제가 완료 되었습니다.');
+                setOpen(false);
+            } else {
+                alert('결제 수단을 선택하세요!!');
+                return;
+            }
+        }else{
+            alert("필수 항목을 선택하세요");
+            return;
+        }
+        
+    }
+
+    const PaymentselectForm = () => {
+        if (paymentmethod == 'card') {
+            return (
+                <PaymentCard setCard={setCard} />                
+            )
+        } else if (paymentmethod == 'bank') {
+            return (
+                <PaymentBank setBank={setBank} />
+            )
+        }
     }
 
     return (
@@ -22,29 +84,23 @@ const Payment = ({ reservation }) => {
                 <p>예약자명:{loginUser.name}</p>
                 <p>전화번호:{loginUser.phone}</p>
                 <p>이메일:{loginUser.email}</p>
-
             </div>
+
             <div className="payment-footer">
-                <form onSubmit={()=>{onSubmit()}}>
+                <form onSubmit={onSubmit}>
                     <h3>::결제::</h3>
-                    
                     <div>
-                    <h4>결제수단</h4>
-                    <div><input type="radio" value={'direct'} name="pay"/> 무통장 입금 </div>                    
-                    <div><input type="radio" value={'card'} name="pay"/> 카드결제 </div>
-                    <div><input type="radio" value={'hevenpay'} name="pay"/> HEAVEN PAY</div>
-                    <div><input type="radio" value={'npay'} name="pay"/> npay </div>
-                    <div><input type="radio" value={'kakaopay'} name="pay"/> kakao pay </div>
+                        <h4>결제수단</h4>
+                        <div><input type="radio" value={'bank'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 무통장 입금 </div>
+                        <div><input type="radio" value={'card'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 카드결제 </div>
+                        <div><input type="radio" value={'hevenpay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> HEAVEN PAY</div>
+                        <div><input type="radio" value={'npay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Npay </div>
+                        <div><input type="radio" value={'kakaopay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Kakao pay </div>
                     </div>
-                    {/* <label><h4>카드번호</h4>
-                        <input value={cardname} placeholder="1111" onChange={(e) => { setCardname(e.target.value) }} size={'4'} />
-                        -<input type="password" placeholder="****" size={'4'} />
-                        -<input placeholder="3333" size={'4'} />
-                        -<input type="password" placeholder="****" size={'4'} />
-                    </label><br /> */}
-                                        
+                    {PaymentselectForm()}
+
                     <button type="submit">결제하기</button>
-                    
+
                 </form>
             </div>
 

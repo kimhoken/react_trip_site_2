@@ -93,7 +93,18 @@ const useWebStore = create((set,get)=>({
 
         localStorage.setItem("reservations", JSON.stringify(updateReservations));
         localStorage.setItem("cancelReservations", JSON.stringify(updateCancel));
-    }
+    },
+
+    payment: JSON.parse(localStorage.getItem('payment'))|| [],
+
+    addPayment: (newpayment)=>{
+        const updated =[...get().payment,newpayment];
+        set({ payment: updated});
+        localStorage.setItem("payment", JSON.stringify(updated));
+    },
+
+
+
 }))
 
 export default useWebStore;
