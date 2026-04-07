@@ -28,6 +28,7 @@ import Mainservices_list from './customerservice/Mainseviecs_list';
 
 import Board from './Board/Board';
 import Write from './Board/Write';
+import MyInfo from './pages/MyTrips/MyInfo';
 import BoardDetail from './Board/BoardDetail';
 
 
@@ -73,6 +74,8 @@ function App() {
         <Route path="/CustomerService" element={<Mainsevieces />} />
         <Route path="/CustomerService/qna" element={<MainseviecesQnaList />} />
         <Route path="/CustomerService/notice" element={<Mainservices_list />} />
+        
+        <Route path="/MyInfo" element={<MyInfo />} />
 
       </Routes>
     </BrowserRouter>
