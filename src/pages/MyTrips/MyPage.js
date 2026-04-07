@@ -5,7 +5,7 @@ import "./MyPage.css";
 export default function MyPage(){
 
     return(
-        <div>
+        <div className="mypage-body">
 
             <div className="mybox">
 

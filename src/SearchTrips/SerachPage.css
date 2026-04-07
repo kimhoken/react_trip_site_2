@@ -1,0 +1,74 @@
+.serachpage * {
+    margin: 0 auto;
+    padding: 0;
+}
+.serachpage  {    
+    width: 1300px;
+    background-color: #F5EBDD;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.serachpage header {
+    color: #243B6B;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.serach-header{
+    margin: 0 250px;
+    background-color: lightgray;
+    font-size: 18px;
+    border-radius: 10px;
+    padding:  0 20px;
+}
+
+.result-box{
+    background-color: #FAF6F0;
+    color: #2B2B2B;    
+}
+.result-title{
+    margin-left: 30px;
+    color: #2B2B2B;
+}
+
+.list-main li{
+    border-top: 1px solid #000;   
+    margin: 10px 0;
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: start;
+    
+}
+.list-main a{
+    text-decoration: none;
+}
+.list-main li img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+.list-main li div{
+    padding-left: 10px;
+    font-size: 20px;
+    color: #2B2B2B;    
+}
+.package-summary{
+    flex:1;    
+}
+.price-layer{
+    width: 150px;
+    border-left: 1px solid #000;
+    padding: 0 25px ;
+}   
+.price-layer button{
+    font-size: 20px;
+    margin-top: 150px;
+    margin-left: 10px;
+    width: 150px;
+    align-items: center;
+}
+
+    
