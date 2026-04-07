@@ -30,6 +30,7 @@ import Board from './Board/Board';
 import Write from './Board/Write';
 import MyInfo from './pages/MyTrips/MyInfo';
 import BoardDetail from './Board/BoardDetail';
+import Inquirypage from './customerservice/Inquirypage';
 
 
 
@@ -74,6 +75,7 @@ function App() {
         <Route path="/CustomerService" element={<Mainservieces />} />
         <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />
         <Route path="/CustomerService/notice" element={<Mainservices_list />} />
+        <Route path="/CustomerService/inquirymail" element={<Inquirypage />} />
         
         <Route path="/MyInfo" element={<MyInfo />} />
 

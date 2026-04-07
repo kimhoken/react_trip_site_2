@@ -31,7 +31,7 @@ const Mainservieces = () => {
         <div className="subservieces_an">
           <h3 className="subservieces_title_an">공지사항</h3>
           <p className="subservieces_content_an">
-            여행 및 고객센터 관련 주요 공지사항을 확인하세요.
+            여행 및 고객센터 관련 주요 공지사항을 <br/>확인하세요.
           </p>
           <Link to="/CustomerService/notice">공지사항 더보기</Link>
         </div>
@@ -39,7 +39,7 @@ const Mainservieces = () => {
         <div className="subservieces_qna">
           <h3 className="subservieces_title_qna">Q&A</h3>
           <p className="subservieces_content_qna">
-            자주 묻는 질문을 확인하고 궁금증을 해결해 보세요
+            자주 묻는 질문을 확인하고 궁금증을 <br/> 해결해 보세요
           </p>
           <Link to="/CustomerService/qna">자주 묻는 질문 더보기</Link>
         </div>
@@ -47,7 +47,7 @@ const Mainservieces = () => {
         <div className="subservieces_ask">
           <h3 className="subservieces_title_ask">문의하기</h3>
           <p className="subservieces_content_ask">
-            궁금한 점을 문의하시면 원활하게 답변해 드리겠습니다
+            궁금한 점을 문의하시면 원활하게 <br/> 답변해 드리겠습니다
           </p>
           <Link to="/CustomerService/inquirymail">문의하기</Link>
         </div>
