@@ -1,8 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./NavbarMain.css"
+import useWebStore from "../Store/useWebStore";
 
 const NavbarMain =()=>{
+
+  const loginUser = useWebStore((state) => state.loginUser);
+  const logout = useWebStore((state) => state.logout);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
     return(
 
     <div>
@@ -44,12 +54,14 @@ const NavbarMain =()=>{
                 </li>
 
                 <li className='nav-item mytrips'>
-                  <Link className='nav-link' to="/MyTrips">My Trips</Link>
+                  <Link className='nav-link' to="/">My Trips</Link>
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
+
                             <li><Link className='dropdown-link' to="/MyTrips/mypage">마이페이지</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/reservations">내 예약</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/favorites">즐겨찾기</Link></li>
+
                         </ul>
                     </div>
                 </li>
@@ -61,8 +73,26 @@ const NavbarMain =()=>{
             </div>
 
             <div className='navbar-user'>              
-              <Link className='user-link' to="/LoginPage">로그인</Link>
-              <Link className='user-link signup' to="/SignupPage">회원가입</Link>
+              {loginUser ? (
+              <div>
+                <Link className="user-link" to="/MyTrips/mypage">
+                  {loginUser.id}님
+                </Link>
+
+                <div
+                  type="button"
+                  className="user-link signup logout"
+                  onClick={handleLogout}
+                >
+                  로그아웃
+                </div>
+              </div>
+            ) : (
+              <div>
+                <Link className="user-link" to="/LoginPage">로그인</Link>
+                <Link className="user-link signup" to="/SignupPage">회원가입</Link>
+              </div>
+            )}
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>
           </nav>
