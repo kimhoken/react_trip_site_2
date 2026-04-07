@@ -1,4 +1,5 @@
 body {
+  /* body에 전체 적용됨.. 따로 지정해야할듯? 토의 해봐야할듯 */
   margin: 0;
   padding: 0;
   background-color: #f8f8f8;
