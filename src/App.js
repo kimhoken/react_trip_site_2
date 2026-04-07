@@ -4,30 +4,37 @@ import ReservationList from './pages/MyTrips/ReservationList';
 import Favorites from './pages/MyTrips/Favorites';
 import TravelTips from './pages/Board/TravelTips';
 import ReservationForm from './pages/MyTrips/ReservationForm';
-
 import MyPage from './pages/MyTrips/MyPage';
 import Mainpage from './pages/Mainpage';
+
 import { BrowserRouter, Link, Route, Routes, Navigate } from 'react-router-dom';
+
 import LoginPage from './Login/LoginPage';
 import SignupPage from './Login/SignupPage';
 import ForgotPassword from './Login/ForgotPassword';
 import ResetPw from './Login/ResetPw';
+
 import SearchPage from './SearchTrips/SearchPage';
 import Packageinfo from './Packages/Packageinfo';
 import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
 
+
 import NavbarMain from './pages/NavbarMain';
+import Mainsevieces from './customerservice/Mainseviecs';
+import MainseviecesQnaList from './customerservice/MainseviecesQnaList';
+import Mainservices_list from './customerservice/Mainseviecs_list';
+
 import Board from './Board/Board';
 import Write from './Board/Write';
+
 
 
 function App() { 
 
   return (
     <BrowserRouter>
-
 
       <div>
         <NavbarMain/>
@@ -60,7 +67,11 @@ function App() {
         <Route path="/MyTrips/reserve" element={<ReservationForm />} />
         <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
-        
+
+        <Route path="/CustomerService" element={<Mainsevieces />} />
+        <Route path="/CustomerService/qna" element={<MainseviecesQnaList />} />
+        <Route path="/CustomerService/notice" element={<Mainservices_list />} />
+
       </Routes>
     </BrowserRouter>
     
