@@ -17,6 +17,7 @@
 
 .navbar-list {
   display: flex;
+  align-items: center;
   gap: 60px;
   list-style: none;
   margin: 0;
@@ -45,15 +46,30 @@
 
 .navbar-user {
   display: flex;
-  gap: 17px;
-  margin: -38px 50px 0 0;
-  padding: 0;
+  align-items: center;
+  gap: 16px;
+  margin-top: -40px;
+  white-space: nowrap;
 }
+
+.navbar-user div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-link-upbtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 
 .user-link {
   text-decoration: none;
   color: #666666;
   font-size: 12px;
+  cursor: pointer;
 }
 
 
