@@ -88,7 +88,7 @@ const NavbarMain =()=>{
                 </div>
               </div>
             ) : (
-              <div>
+              <div className="user-link-upbtn">
                 <Link className="user-link" to="/LoginPage">로그인</Link>
                 <Link className="user-link signup" to="/SignupPage">회원가입</Link>
               </div>
