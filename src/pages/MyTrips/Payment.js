@@ -16,7 +16,7 @@ const Payment = ({ reservation, setOpen }) => {
     const [cardmsg,setCardmsg] = useState('');
     const [cardexdmsg,setCardexdmsg]=useState('');
     const [cardnummsg,setCardnummsg]=useState('');
-    const [bmsg,setBankmsg] = useState('');
+    const [bmsg,setBmsg] = useState('');
     const [busermsg,setBusermsg] = useState('');
     const [bnummsg,setBnummsg] = useState('');
     
@@ -54,6 +54,12 @@ const Payment = ({ reservation, setOpen }) => {
     const checkbank = ()=>{
         const regex=/^\d{10,14}$/;
         let vaild =false;
+        if(!bank.brand){
+            setBmsg('은행을 선택하세요')
+            vaild=true;
+        }else{
+            setBmsg('');
+        }
         if(!bank.user){
             setBusermsg('예금주 입력하세요')    
             vaild=true;        
