@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { QnAServicelist } from "./QnAServieslist";
 import "./QnAServies.css";
 
-const MainseviecesQnaList = () => {
+const MainserviecesQnaList = () => {
     const [touchTitle, setTouchTitle] = useState(null);
 
   return (
@@ -29,4 +29,4 @@ const MainseviecesQnaList = () => {
   );
 };
 
-export default MainseviecesQnaList;
+export default MainserviecesQnaList;

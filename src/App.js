@@ -22,9 +22,9 @@ import Package from './Packages/Package';
 
 
 import NavbarMain from './pages/NavbarMain';
-import Mainsevieces from './customerservice/Mainseviecs';
-import MainseviecesQnaList from './customerservice/MainseviecesQnaList';
-import Mainservices_list from './customerservice/Mainseviecs_list';
+import Mainservieces from './customerservice/Mainserviecs';
+import MainserviecesQnaList from './customerservice/MainserviecesQnaList';
+import Mainservices_list from './customerservice/Mainserviecs_list';
 
 import Board from './Board/Board';
 import Write from './Board/Write';
@@ -71,8 +71,8 @@ function App() {
         <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
 
-        <Route path="/CustomerService" element={<Mainsevieces />} />
-        <Route path="/CustomerService/qna" element={<MainseviecesQnaList />} />
+        <Route path="/CustomerService" element={<Mainservieces />} />
+        <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />
         <Route path="/CustomerService/notice" element={<Mainservices_list />} />
         
         <Route path="/MyInfo" element={<MyInfo />} />
