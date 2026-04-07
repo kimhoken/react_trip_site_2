@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import ReviewList from "../Board/List/ReviewList";
 
 const defaultUsers = [  
     {
@@ -11,9 +12,15 @@ const defaultUsers = [
     }
   ];
 
+  const defaultPosts = [
+    ...ReviewList
+  ]
+
+
 const useWebStore = create((set,get)=>({    
     users: JSON.parse(localStorage.getItem('users'))||defaultUsers,
     loginUser: JSON.parse(localStorage.getItem('loginUser'))||null,
+    posts: JSON.parse(localStorage.getItem('posts'))||defaultPosts,
     //새로고침
     setUsers:(newUser)=>{
         set({users:newUser});
@@ -93,7 +100,21 @@ const useWebStore = create((set,get)=>({
 
         localStorage.setItem("reservations", JSON.stringify(updateReservations));
         localStorage.setItem("cancelReservations", JSON.stringify(updateCancel));
-    }
+    },
+    //게시판 게시글 추가
+    addPost: (newPost) => {
+        const updated = [...get().posts,newPost];
+        set({posts: updated});
+        localStorage.setItem('posts',JSON.stringify(updated));
+    },
+
+    //게시글 삭제
+    deletePost: (id) => {
+    const updated = get().posts.filter((item) => item.id !== id);
+    set({ posts: updated });
+    localStorage.setItem('posts', JSON.stringify(updated));
+    },
+
 }))
 
 export default useWebStore;

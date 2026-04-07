@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../Images/logo.png';
 import "./Loginpage.css"
@@ -6,12 +6,22 @@ import useWebStore from "../Store/useWebStore";
 
 export default function LoginPage(){
 
+    const hasAlerted = useRef(false);
     const navigate = useNavigate();
-    const {login} = useWebStore();
+    const {login, loginUser} = useWebStore();
 
     const[id,setId] = useState('')
     const[pw,setPw] = useState('')
     const[error,setError] = useState('')
+
+    useEffect(()=>{
+        if(loginUser && !hasAlerted.current){
+            hasAlerted.current=true
+            alert('이미 로그인 상태입니다.')
+            navigate(-1, { replace: true });
+        }
+    },  [])
+
 
     const dologin = () => {
         const result = login(id, pw);
