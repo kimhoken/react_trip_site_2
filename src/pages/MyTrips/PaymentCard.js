@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function PaymentCard({ setCard }) {
+export default function PaymentCard({ setCard, cardexdmsg, cardmsg, cardnummsg }) {
     const [cardcompany, setCardCompany] = useState('');
     const [year, setYear] = useState('');
     const [cardnum1, setCardnum1] = useState('');
@@ -11,16 +11,16 @@ export default function PaymentCard({ setCard }) {
     const [cardnum4, setCardnum4] = useState('');
     const [month, setMonth] = useState('');
 
-    //여기 카드 고치고 계좌까지 해결해야함... 알겠지? 그리고 디자인 들어가셈
+    
     useEffect(() => {
-        if (cardcompany ) {
+        let ischeck=
+        year|| month|| cardcompany|| cardnum1|| cardnum2|| cardnum3|| cardnum4;
+        if(ischeck){
             setCard(cardinfo)
         }
-        if(year&&month){
-            setCard(cardinfo)
-        }
+        
     }
-        , [year, month, cardcompany,]
+        , [year, month, cardcompany, cardnum1, cardnum2, cardnum3, cardnum4 ]
     )
     const cardcompanylist = [
         { value: '', name: '::카드사 선택::' },
@@ -58,6 +58,7 @@ export default function PaymentCard({ setCard }) {
                     <select value={cardcompany} onChange={(e) => { setCardCompany(e.target.value) }}>
                         {showcompany()}
                     </select>
+                    <p>{cardmsg}</p>
                 </label>
                 <label><h4>카드번호</h4>
                     <input placeholder="1111" size={'4'} onChange={(e)=>{setCardnum1(e.target.value)}}/>
@@ -65,10 +66,12 @@ export default function PaymentCard({ setCard }) {
                     -<input placeholder="3333" size={'4'} onChange={(e)=>{setCardnum3(e.target.value)}}/>
                     -<input type="password" placeholder="****" size={'4'} onChange={(e)=>{setCardnum4(e.target.value)}}/>
                 </label><br />
+                <p>{cardnummsg}</p>
                 <label>
                     <h5>유효 기간</h5>
                     <input size={1} onChange={(e) => { setMonth(e.target.value) }} placeholder="월" />
                     <input size={1} onChange={(e) => { setYear(e.target.value) }} placeholder="년"/>
+                    <p>{cardexdmsg}</p>
                 </label>
             </form>
         </div>

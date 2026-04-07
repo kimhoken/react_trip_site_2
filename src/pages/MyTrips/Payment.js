@@ -10,26 +10,73 @@ const Payment = ({ reservation, setOpen }) => {
     const [card, setCard] = useState({
         company:'',period:{year:'',month:''},cardnum:['', '', '', '']
     });
-    const [bank, setBank] = useState({});
-
-    const regex=/^\d{4}$/;
-
+    const [bank, setBank] = useState({
+        brand:'',user:'',banknum:['','']
+    });
+    const [cardmsg,setCardmsg] = useState('');
+    const [cardexdmsg,setCardexdmsg]=useState('');
+    const [cardnummsg,setCardnummsg]=useState('');
+    const [bmsg,setBankmsg] = useState('');
+    const [busermsg,setBusermsg] = useState('');
+    const [bnummsg,setBnummsg] = useState('');
+    
     const checkcard = () => {
+        let vailed=false;
+        const regex=/^\d{4}$/;
         if (!card.company) {
-            alert('카드 선택하세요');
-            return false;
+            setCardmsg('카드 선택하세요');
+            vailed = true;
+            
+        }else{
+            setCardmsg('');
         }
         if (!card.period.year || !card.period.month) {
-            alert('유효기한 기입하세요')
-            return false;
+            setCardexdmsg('유효기한 기입하세요')
+            vailed = true;
+        }else{
+            setCardexdmsg('');
         }
-        for(let i=0;i<card.cardnum.length;i++){
+        
+        for(let i=0;i<card.cardnum.length;i++){            
             if(!regex.test(card.cardnum[i])){
-                alert('카드번호는 네자리여야 합니다.')
-                return false;
+                setCardnummsg('카드번호는 네자리여야 합니다.')            
+                vailed = true;
+            }else{
+                setCardnummsg('');
             }
         }  
-        return true;
+        if(vailed){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    const checkbank = ()=>{
+        const regex=/^\d{10,14}$/;
+        let vaild =false;
+        if(!bank.user){
+            setBusermsg('예금주 입력하세요')    
+            vaild=true;        
+        }else{
+            setBusermsg('');
+        }
+        if(!bank.banknum){
+            setBnummsg('계좌번호를 입력하세요.')     
+            vaild=true;          
+        }else{
+            setBnummsg('');
+        }
+        if(!regex.test(bank.banknum.replace(/-/g,''))){
+            setBnummsg('계좌번호 10~14자리입니다.')      
+            vaild=true;         
+        }else{
+            setBnummsg('');
+        }
+        if(vaild){
+            return false
+        }else{
+            return true;
+        }
     }
 
     const onSubmit = (e) => {
@@ -53,7 +100,7 @@ const Payment = ({ reservation, setOpen }) => {
             payments.card = card.company;
             payments.period = card.period;
         } else if (paymentmethod == 'bank') {
-            
+            if(!checkbank()) return;
             payments.bank = bank.brand;
             payments.user = bank.user;
         }
@@ -62,18 +109,16 @@ const Payment = ({ reservation, setOpen }) => {
         alert('결제가 완료 되었습니다.');
         setOpen(false);
 
-
-
     }
 
     const PaymentselectForm = () => {
         if (paymentmethod == 'card') {
             return (
-                <PaymentCard setCard={setCard} />
+                <PaymentCard setCard={setCard} cardexdmsg={cardexdmsg} cardmsg={cardmsg} cardnummsg={cardnummsg} />
             )
         } else if (paymentmethod == 'bank') {
             return (
-                <PaymentBank setBank={setBank} />
+                <PaymentBank setBank={setBank} bmsg={bmsg} busermsg={busermsg} bnummsg={bnummsg}/>
             )
         }
     }
