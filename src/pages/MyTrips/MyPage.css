@@ -1,0 +1,53 @@
+body {
+  background: #f5f5f5;
+}
+
+.mybox {
+  width: 270px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: white;
+  border: 1px solid #1c2f5f;
+}
+
+.mytitle {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1c2f5f;
+  margin: 0;
+}
+
+.mytitle::after {
+  content: "";
+  display: block;
+  width: 270px;
+  height: 3px;
+  background: #1c2f5f;
+  margin-top: 15px;
+}
+
+.mymenu {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.myitem {
+  text-decoration: none; 
+  color: black;
+  font-size: 16px;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myitem::after {
+  content: "⌄";
+  color: #1c2f5f;
+  font-size: 16px;
+}
+
+.myitem:hover {
+  color: #1f2b44;
+}
