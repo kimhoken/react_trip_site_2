@@ -17,6 +17,7 @@ export default function MyPage(){
                     <Link to="/tips" className="myitem">내 체크리스트</Link>
                     <Link to="/MyTrips/favorites" className="myitem">즐겨찾기</Link>
                     <Link to="/MyTrips" className="myitem">내 예약/취소 내역</Link>
+                    <Link to="/ForgotPassword">비밀번호 변경</Link>
 
                 </nav>     
             </div>     
