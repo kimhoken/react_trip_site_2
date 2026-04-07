@@ -63,9 +63,13 @@ export default function ReservationForm(){
             alert("잘못된 접근입니다");
             return;
         }
-        
+        // 인원수 cnt로 설정함 누나 편하신 대로 인원수 만들어주시면 되요.. 그리고
+        // price는 문자열 제거해서 숫자만 출력되게 만들어놓았습니다. 
+        const cnt=1;
+        const totalprice=selTrip.price.replace(/~/,"").replace(/,/,"").replace(/₩/,"")*cnt;
+
         const newReservation={
-            id: Date.now,
+            id: Date.now(),
             packid: selTrip.id,
             userid: loginUser.id,
             userName: loginUser.name,
@@ -74,7 +78,7 @@ export default function ReservationForm(){
             startDate: startDate,
             endDate: endDate,
             days: getDays(),
-            price: selTrip.price|| ''
+            price: totalprice|| ''
         }
 
         setSelectRervation(newReservation)
@@ -130,7 +134,7 @@ export default function ReservationForm(){
                 <button type="submit">예약하기</button>
             </form>
             {
-                open &&<Payment reservation={selectreservation}/>
+                open &&<Payment reservation={selectreservation} setOpen={setOpen}/>
             }
         </div>
     )
