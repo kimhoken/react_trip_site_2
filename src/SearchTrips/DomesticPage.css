@@ -1,0 +1,26 @@
+.Domestic-main * {
+    margin: 0;
+    padding: 0;
+}
+.Domestic-main{
+    width: 1100px;
+    margin: 0 auto ;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+.Domestic-main a{
+    background-color: transparent;
+}
+.Domestic-main a:hover{
+    background-color: transparent;
+}
+.Domestic-main li{
+    list-style: none ;
+    display: flex;
+}
+
+.Domestic-main img{
+    width: 250px;
+    height: 250px;
+    
+}

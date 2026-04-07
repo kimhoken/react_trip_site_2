@@ -105,7 +105,7 @@ const SearchPage = () => {
             <div className="result-box">
                 <div className="result-title">
                     <h3>검색결과</h3>
-                    <hr />
+                    
                 </div>
                 <div className="prodlist">
                     <ul className="list-main">

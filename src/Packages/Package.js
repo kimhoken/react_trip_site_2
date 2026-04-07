@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import DomesticPage from "../SearchTrips/DomesticPage";
+import './Package.css';
 
 const Package =()=>{
     return(
-        <div>
-            <Link to={'/Packages/DomesticPage'}>DomesticPage</Link>
-            <Link to={'/Packages/OverseasPage'}>OverseasPage</Link>            
+        <div className="package-main">
+            <Link to={'/Packages/DomesticPage'}>국내 패키지</Link>
+            <Link to={'/Packages/OverseasPage'}>해외 패키지</Link>            
             <Outlet/>
             
         </div>
