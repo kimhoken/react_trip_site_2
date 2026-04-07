@@ -1,0 +1,53 @@
+.qna-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.qna-header {
+  margin-bottom: 24px;
+}
+
+.qna-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;;
+}
+
+.qna-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.qna-card {
+  border-bottom: 2px solid #B89B84;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.qna-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3A3A3A;
+}
+
+.qna-content {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+  line-height: 1.0;
+  color: #3A3A3A;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+.qna-card.active .qna-content {
+  margin-top: 12px;
+  max-height: 1000px;
+  opacity: 1;
+}
