@@ -35,6 +35,8 @@
     list-style: none;
     display: flex;
     padding: 10px;
+    justify-content: space-between;
+    align-items: start;
 }
 .list-main a{
     text-decoration: none;
@@ -42,11 +44,24 @@
 .list-main li img{
     width: 250px;
     height: 250px;
+    object-fit: cover;
 }
 .list-main li div{
     margin-right: 10px;
     font-size: 20px;
-    color: #2B2B2B;
-    
-    }
+    color: #2B2B2B;    
+}
+.package-summary{
+    flex:1;
+    border-right: 1px solid #000;
+}
+.price-layer{
+    width: 200px;
+}   
+.price-layer button{
+    font-size: 20px;
+    margin-top: 150px;
+    padding: 20px 40px;
+}
+
     

@@ -73,13 +73,14 @@ const SearchPage = () => {
                             <div className='package-summary'>
                                 <div>{item.title}</div>
                                 <div>나라: {item.country}</div>
-                                <div>한줄평: {item.summary}</div>
+                                <div>한줄평: {item.detail.summary}</div>
+                                <div>일수: {item.detail.duration}</div>
                                 <div>평점: {item.rating}</div>
                                 <div>리뷰수: {item.reviewCount}</div>
                             </div>
                             <div className='price-layer'>
                                 <div >가격: {item.price}</div>
-
+                                <button type='button'>예약하기</button>
                             </div>
                         </li>
                     </Link>
