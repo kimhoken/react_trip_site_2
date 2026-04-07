@@ -15,8 +15,8 @@ const DomesticPage = () => {
 
             return list.map((item) => {
                 return (
-                    <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
-                        <li>
+                    <li>
+                        <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                             <div>
                                 <img src={item.image} />
                             </div>
@@ -28,8 +28,8 @@ const DomesticPage = () => {
                             <div>
                                 <div>가격: {item.price}</div>
                             </div>
-                        </li>
-                    </Link>
+                        </Link>
+                    </li>
 
                 )
             })

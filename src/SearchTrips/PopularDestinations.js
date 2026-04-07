@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { PackageList } from "../Packages/PackageList";
 import { Link } from "react-router-dom";
+import './OverseasPage.css';
 
 const PopularDestinations = () => {
     const [category, setCategory] = useState('');
     const regin = [
-        {locate:'유럽', contient:'Europe'}, {locate:'북중미',contient:'America'},
+        {locate:'전체',contient:''},{locate:'유럽', contient:'Europe'}, {locate:'북중미',contient:'America'},
         {locate:'아시아',contient:'Asia'}
     ];
-    const showcategory = () => {
+    const showcategory = () => { 
         {
             return regin.map((i) => {
                 return (
@@ -22,13 +23,13 @@ const PopularDestinations = () => {
         let list = PackageList;
 
         list = list.filter((item) => item.rating >= 4.0 && item.reviewCount > 10 
-        && item.contient == category)
+        && (!category||item.contient == category))
         {
             return list.map((item) => {
                 return (
                     <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                     <li>
-                        <img src={item.image} width={'100px'} height={'100px'} />
+                        <img src={item.image}  />
                         <h3>{item.title}</h3>
                         <p>가격: {item.price}</p>
                         <p>평점: {item.rating}</p>
@@ -43,7 +44,7 @@ const PopularDestinations = () => {
     }
 
     return (
-        <div PopularDestination-main>
+        <div  className="overseas-main">
             <div>
                 <header>
                     <h2>해외 패키지</h2>
