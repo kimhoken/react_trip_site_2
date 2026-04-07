@@ -1,0 +1,52 @@
+.serachpage {
+    margin: 0 auto;
+    padding: 0;
+    width: 1300px;
+    background-color: #F5EBDD;
+    border-radius: 10px;
+}
+
+.serachpage header {
+    color: #243B6B;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.serach-header{
+    margin: 0 250px;
+    background-color: lightgray;
+    font-size: 18px;
+    border-radius: 10px;
+    padding:  0 20px;
+}
+
+.result-box{
+    background-color: #fff;
+    color: #2B2B2B;    
+}
+.result-title{
+    margin-left: 30px;
+    color: #2B2B2B;
+}
+
+.list-main li{
+    border-bottom: 1px solid #000;
+    margin: 10px 0;
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}
+.list-main a{
+    text-decoration: none;
+}
+.list-main li img{
+    width: 250px;
+    height: 250px;
+}
+.list-main li div{
+    margin-right: 10px;
+    font-size: 20px;
+    color: #2B2B2B;
+    
+    }
+    
