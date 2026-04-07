@@ -127,8 +127,6 @@
 
 .inquiry_btn:hover {
   background: #1d3f72;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(47, 110, 219, 0.2);
 }
 
 .inquiry_btn:active {
@@ -170,3 +168,4 @@
     font-size: 16px;
   }
 }
+
