@@ -1,7 +1,11 @@
 import React from "react";
 import './Write.css'
+import useWebStore from "../Store/useWebStore";
 
 export default function Write(){
+
+    const { loginUser } = useWebStore();
+
     return(
         <div className="back">
 
