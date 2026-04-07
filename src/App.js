@@ -29,6 +29,7 @@ import Mainservices_list from './customerservice/Mainseviecs_list';
 import Board from './Board/Board';
 import Write from './Board/Write';
 import MyInfo from './pages/MyTrips/MyInfo';
+import BoardDetail from './Board/BoardDetail';
 
 
 
@@ -60,6 +61,7 @@ function App() {
 
         <Route path='/Board' element={<Board/>} />
         <Route path='/Write' element={<Write/>}/>
+        <Route path='/Board/:id' element={<BoardDetail/>}/>
 
 
         <Route path="/MyTrips" element={<ReservationList />} /> 
