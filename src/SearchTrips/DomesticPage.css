@@ -9,11 +9,12 @@
     border-radius: 10px;
 }
 .Domestic-main a{
-    background-color: transparent;
+    /* background-color: transparent; */
+    background: none;
+    text-decoration: none;
+    color: inherit;
 }
-.Domestic-main a:hover{
-    background-color: transparent;
-}
+
 .Domestic-main li{
     list-style: none ;
     display: flex;
@@ -22,5 +23,5 @@
 .Domestic-main img{
     width: 250px;
     height: 250px;
-    
+    object-fit: cover;    
 }
