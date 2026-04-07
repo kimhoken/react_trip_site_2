@@ -47,7 +47,7 @@ export default function PaymentCard({ setCard }) {
     const cardinfo = {
         company: cardcompany,
         period: { year: year, month: month },
-        cardnum: {cardnum1:cardnum1, cardnum2:cardnum2, cardnum3:cardnum3, cardnum4:cardnum4}
+        cardnum: [cardnum1, cardnum2, cardnum3, cardnum4]
     }
 
     return (
