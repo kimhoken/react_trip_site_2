@@ -74,24 +74,24 @@ const NavbarMain =()=>{
 
             <div className='navbar-user'>              
               {loginUser ? (
-              <>
+              <div>
                 <Link className="user-link" to="/MyTrips/mypage">
                   {loginUser.id}님
                 </Link>
 
-                <button
+                <div
                   type="button"
                   className="user-link signup logout"
                   onClick={handleLogout}
                 >
                   로그아웃
-                </button>
-              </>
+                </div>
+              </div>
             ) : (
-              <>
+              <div>
                 <Link className="user-link" to="/LoginPage">로그인</Link>
                 <Link className="user-link signup" to="/SignupPage">회원가입</Link>
-              </>
+              </div>
             )}
               <Link className='user-link signup' to="/CustomerService">고객센터</Link>
             </div>

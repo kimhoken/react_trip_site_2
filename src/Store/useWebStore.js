@@ -13,7 +13,7 @@ const defaultUsers = [
 
 const useWebStore = create((set,get)=>({    
     users: JSON.parse(localStorage.getItem('users'))||defaultUsers,
-    loginUser: JSON.parse(localStorage.getItem('loginUser'))||[],
+    loginUser: JSON.parse(localStorage.getItem('loginUser'))||null,
     //새로고침
     setUsers:(newUser)=>{
         set({users:newUser});
