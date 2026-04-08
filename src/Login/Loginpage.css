@@ -150,3 +150,6 @@
   color: red;
   font-size: 15px;
 }
+.LogMain button:hover {
+    background-color: #243B6B;
+}

@@ -38,25 +38,28 @@ export default function Write(){
 
     return(
         <div className="back">
-
+            <h2 className="write-title">여행 후기</h2>
             <div className="head">
                 <label> 작성자 </label>
                 <input value={loginUser?.name || ''} readOnly />
                 <label> 작성일 </label>
                 <input value={today} readOnly />
-            </div>
-            <div className="title">
-                <label> 제목 </label>
-                <input  placeholder="제목"
-                        value={title}
-                        onChange={(e)=>setTitle(e.target.value)} />
-
                 <label> 말머리 </label>
                 <select
                         value={category}
                         onChange={(e)=>setCategory(e.target.value)}>
                     <option>여행 후기</option>
                 </select>
+            </div>
+            <div className="title">
+                
+                <label> 제목 </label>
+                <input  placeholder="제목"
+                        value={title}
+                        onChange={(e)=>setTitle(e.target.value)} />
+
+                
+                
                 
             </div>
             <div>
