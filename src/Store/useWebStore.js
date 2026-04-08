@@ -101,6 +101,16 @@ const useWebStore = create((set,get)=>({
         localStorage.setItem("reservations", JSON.stringify(updateReservations));
         localStorage.setItem("cancelReservations", JSON.stringify(updateCancel));
     },
+
+    delCanReservation: (id) => {
+        const updated = get().cancelReservations.filter(
+            (item) => item.id !== id
+        )
+
+        set({ cancelReservations: updated })
+        localStorage.setItem("cancelReservations", JSON.stringify(updated))
+    },
+        
     //게시판 게시글 추가
     addPost: (newPost) => {
         const updated = [...get().posts,newPost];

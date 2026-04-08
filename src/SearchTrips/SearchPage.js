@@ -1,5 +1,5 @@
 import './SerachPage.css';
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PackageList } from "../Packages/PackageList";
 import { DomesticPackageList } from "../Packages/DomesticPackageList";
@@ -18,6 +18,23 @@ const SearchPage = () => {
         { name: '국내', value: 'domestic' },
         { name: '해외', value: 'overseas' },
     ]
+
+    const addFavorite = (item) => {
+        const saved = JSON.parse(localStorage.getItem("favorites")) || []
+
+        const exists = saved.find((f) => f.id === item.id)
+            if (exists) {
+                alert("이미 즐겨찾기에 있습니다.")
+                return
+            }       
+
+            const updated = [...saved,item]
+
+            localStorage.setItem("favorites",JSON.stringify(updated))
+
+            alert("즐겨찾기에 추가되었습니다.")
+    }
+
     const sortview = () => {
         {
             return sortlist.map((item) => {
@@ -81,7 +98,7 @@ const SearchPage = () => {
                         <div className='price-layer'>
                             <div >가격: {item.price}</div>
                             <button type='button'>상세보기</button>
-                            <button type='button' onClick={() => { }}>즐겨찾기</button>
+                            <button type='button' onClick={() => {addFavorite(item)}}>즐겨찾기♡</button>
                         </div>
                     </li>
                         </Link>

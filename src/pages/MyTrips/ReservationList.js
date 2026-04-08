@@ -5,7 +5,7 @@ import useWebStore from "../../Store/useWebStore";
 
 export default function ReservationList(){
 
-    const {loginUser,reservations,cancelReservations,cancelReservation}=useWebStore()
+    const {loginUser,reservations,cancelReservations,cancelReservation,delCanReservation}=useWebStore()
 
     const [activeTab,setActiveTab]=useState('reservation')
 
@@ -49,6 +49,7 @@ export default function ReservationList(){
                     (myCancel.map((item)=>(
                         <div className="reB">
                             <ReservationCard item={item}/>
+                            <button onClick={()=>delCanReservation(item.id)}>삭제</button>
                         </div>
                     ))
                 )
