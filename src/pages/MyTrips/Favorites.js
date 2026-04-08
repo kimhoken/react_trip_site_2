@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FavoriteItem from "../../components/FavoriteItem";
+import './Favorites.css';
 
 export default function Favorites(){
 
@@ -11,7 +12,7 @@ export default function Favorites(){
         if (save) {
             setData(JSON.parse(save))
         }
-    })
+    },[])
 
     const delFavorit=(id)=>{
         const update=data.filter((item)=>item.id !== id)
@@ -20,14 +21,18 @@ export default function Favorites(){
     }
 
     return(
-        <div>
-            <h2>즐겨찾기</h2>
-            {data.length === 0 && <p>즐겨찾기 항목이 없습니다.</p>}
-            {
-                data.map((item)=>(
-                    <FavoriteItem item={item} onDelete={delFavorit}/>
-                ))
-            }
+        <div className="fawrap">
+            <h2 className="fatitle">즐겨찾기</h2>
+            {data.length === 0 ? (<p className="nofa">즐겨찾기 항목이 없습니다.</p>):
+                (
+                <div className="faList">
+                {
+                    data.map((item)=>(
+                        <FavoriteItem item={item} onDelete={delFavorit}/>
+                    ))
+                }
+                </div>
+            )}
         </div>
     )
 }

@@ -12,6 +12,7 @@ export default function ReservationForm(){
     const [open,setOpen]=useState(false);
     const [selectreservation,setSelectRervation] =useState(null);
     
+    const [cnt, setCnt] = useState(1);
 
     const location=useLocation()
     const selTrip=location.state?.selTrip
@@ -63,10 +64,10 @@ export default function ReservationForm(){
             alert("잘못된 접근입니다");
             return;
         }
-        // 인원수 cnt로 설정함 누나 편하신 대로 인원수 만들어주시면 되요.. 그리고
-        // price는 문자열 제거해서 숫자만 출력되게 만들어놓았습니다. 
-        const cnt=2;
-        const totalprice=selTrip.price.replace(/~/,"").replace(/,/,"").replace(/₩/,"")*cnt;
+        
+        const totalprice=Number(selTrip.price.replace(/~/,"").replace(/,/g,"").replace(/₩/,""))*cnt;
+
+        const formattedPrice = totalprice.toLocaleString();
 
         const newReservation={
             id: Date.now(),
@@ -74,11 +75,13 @@ export default function ReservationForm(){
             userId: loginUser.id,
             userName: loginUser.name,
             title: selTrip?.title || city+'여행',
+            image: selTrip.image,
             destination: city,
             startDate: startDate,
             endDate: endDate,
             days: getDays(),
-            price: totalprice|| ''
+            people: cnt,
+            price: formattedPrice
         }
 
         setSelectRervation(newReservation)
@@ -92,7 +95,9 @@ export default function ReservationForm(){
             "도시 : "+city+"\n" +
             "출발날짜 : "+startDate+"\n" +
             "도착날짜 : "+endDate+"\n" +
-            "일정 : "+getDays()
+            "일정 : "+getDays()+"\n"+
+            "인원수 : " + cnt + "명\n" +
+            "가격 : ₩" + formattedPrice
         )
 
         setCity("")
@@ -120,6 +125,17 @@ export default function ReservationForm(){
                     <label>도착 날짜: </label>
                     <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)}/>
                 </div>
+
+                <div>
+                    <label>인원수 : </label>
+                    <div className="count-box">
+                        <button type="button" onClick={() => setCnt((prev) => Math.max(1, prev - 1))}>-</button>
+
+                        <span>{cnt}</span>
+
+                        <button type="button" onClick={() => setCnt((prev) => Math.min(10, prev + 1))}>+</button>
+        </div>
+    </div>
 
                 <div>
                     {
