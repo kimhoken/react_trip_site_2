@@ -71,6 +71,7 @@ function App() {
         <Route path="/MyTrips/reserve" element={<ReservationForm />} />
         <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
+        
 
         <Route path="/CustomerService" element={<Mainservieces />} />
         <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />

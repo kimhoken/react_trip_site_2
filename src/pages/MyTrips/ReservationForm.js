@@ -65,13 +65,13 @@ export default function ReservationForm(){
         }
         // 인원수 cnt로 설정함 누나 편하신 대로 인원수 만들어주시면 되요.. 그리고
         // price는 문자열 제거해서 숫자만 출력되게 만들어놓았습니다. 
-        const cnt=1;
+        const cnt=2;
         const totalprice=selTrip.price.replace(/~/,"").replace(/,/,"").replace(/₩/,"")*cnt;
 
         const newReservation={
             id: Date.now(),
             packid: selTrip.id,
-            userid: loginUser.id,
+            userId: loginUser.id,
             userName: loginUser.name,
             title: selTrip?.title || city+'여행',
             destination: city,
