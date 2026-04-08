@@ -50,7 +50,7 @@ export default function ResetPw() {
 
     return (
         <div className="resetMain">
-            <img className="home" src={logo} style={{width:300}} onClick={()=>navigate('/')}/>
+            <img className="home" src={logo} style={{width:300, marginBottom:'25px'}} onClick={()=>navigate('/')}/>
             <div>
                 비밀번호
                 <input type="password"

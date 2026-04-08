@@ -31,6 +31,9 @@ import Write from './Board/Write';
 import MyInfo from './pages/MyTrips/MyInfo';
 import BoardDetail from './Board/BoardDetail';
 import Inquirypage from './customerservice/Inquirypage';
+import TripTip from './Board/TripTip';
+import TripTipDetail from './Board/TripTipDetail';
+
 
 
 
@@ -64,6 +67,8 @@ function App() {
         <Route path='/Write' element={<Write/>}/>
         <Route path='/Board/:id' element={<BoardDetail/>}/>
 
+        <Route path='/TripTip' element={<TripTip/>}/>
+        <Route path='/TripTip/:id' element={<TripTipDetail/>}/>
 
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />

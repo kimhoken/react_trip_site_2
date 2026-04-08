@@ -48,7 +48,7 @@ const NavbarMain =()=>{
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
                             <li><Link className='dropdown-link' to="/Board">여행 리뷰</Link></li>
-                            <li><Link className='dropdown-link' to="/sub2">여행 Tip</Link></li>
+                            <li><Link className='dropdown-link' to="/TripTip">여행 Tip</Link></li>
                         </ul>
                     </div>
                 </li>
