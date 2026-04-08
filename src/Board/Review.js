@@ -20,7 +20,7 @@ export default function Review(){
                         <td>{item.type}</td>
                         <td className="review-title"
                             onClick={()=>navigate('/Board/'+item.id)}
-                            style={{cursor:'pointer'}}>
+                            style={{cursor:'pointer', fontWeight:'bold'}}>
                             {item.title}</td>
                         <td>{item.writer}</td>
                         <td>{item.date}</td>
