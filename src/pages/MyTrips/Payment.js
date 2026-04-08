@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import useWebStore from "../../Store/useWebStore";
 import PaymentCard from "./PaymentCard";
 import PaymentBank from "./PaymentBank";
+import './Payment.css';
 
 const Payment = ({ reservation, setOpen }) => {
 
@@ -19,7 +20,24 @@ const Payment = ({ reservation, setOpen }) => {
     const [bmsg,setBmsg] = useState('');
     const [busermsg,setBusermsg] = useState('');
     const [bnummsg,setBnummsg] = useState('');
-    
+    const [active,setActive] = useState('');
+    const paymentlist=[
+        {name:'신용 카드',value:'card'},
+        {name:'계좌 이체',value:'bank'},
+        {name:'NPAY',value:'npay'},
+        {name:'KAKAO PAY',value:'kakaopay'},        
+    ]
+    const showmethod=()=>{
+        {
+            return paymentlist.map((item)=>{
+                return(
+                    <p onClick={(e)=>{setPaymentMethod(item.value); setActive(item.value)}} 
+                    className={active==item.value?'active':''}>{item.name}</p>
+                )
+            })
+        }
+    }
+
     const checkcard = () => {
         let vailed=false;
         const regex=/^\d{4}$/;
@@ -130,30 +148,34 @@ const Payment = ({ reservation, setOpen }) => {
     }
 
     return (
-        <div>
-            <div className="payment-header">
+        <div className="modal-window">
+            <div className="payment-title">
+                <h2>결제창</h2>
+                <p>X</p>
+            </div>
+            <div className="payment-package">
                 <p>예약할 패키지: {reservation.title} </p>
                 <p>출발일: {reservation.startDate} </p>
                 <p>도착일: {reservation.endDate} </p>
                 <p>인원수: </p>
                 <p>총가격: {reservation.price} </p>
             </div>
-            <div className="payment-body">
+            <div className="payment-user">
                 <p>예약자명:{loginUser.name}</p>
                 <p>전화번호:{loginUser.phone}</p>
                 <p>이메일:{loginUser.email}</p>
             </div>
 
-            <div className="payment-footer">
+            <div className="payment-section">
                 <form onSubmit={onSubmit}>
                     <h3>::결제::</h3>
-                    <div>
+                    <div className="paymentmethod">
                         <h4>결제수단</h4>
-                        <div><input type="radio" value={'bank'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 무통장 입금 </div>
-                        <div><input type="radio" value={'card'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 카드결제 </div>
-                        <div><input type="radio" value={'hevenpay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> HEAVEN PAY</div>
-                        <div><input type="radio" value={'npay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Npay </div>
-                        <div><input type="radio" value={'kakaopay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Kakao pay </div>
+                        {showmethod()}
+                        {/* <label><input type="radio" value={'bank'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 무통장 입금 </label>
+                        <label><input type="radio" value={'card'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 카드결제 </label>                        
+                        <label><input type="radio" value={'npay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Npay </label>
+                        <label><input type="radio" value={'kakaopay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Kakao pay </label> */}
                     </div>
                     {PaymentselectForm()}
 

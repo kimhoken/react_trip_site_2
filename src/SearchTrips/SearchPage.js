@@ -66,8 +66,8 @@ const SearchPage = () => {
         {
             return triplist().map((item) => {
                 return (
+                    <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                     <li>
-                        <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                             <div>
                                 <img src={item.image} width={'90px'} height={'90px'} /></div>
                             <div className='package-summary'>
@@ -78,13 +78,13 @@ const SearchPage = () => {
                                 <div>평점: {item.rating}</div>
                                 <div>리뷰수: {item.reviewCount}</div>
                             </div>
-                        </Link>
                         <div className='price-layer'>
                             <div >가격: {item.price}</div>
                             <button type='button'>상세보기</button>
                             <button type='button' onClick={() => { }}>즐겨찾기</button>
                         </div>
                     </li>
+                        </Link>
                 )
             })
         }
