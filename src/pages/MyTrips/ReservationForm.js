@@ -71,7 +71,7 @@ export default function ReservationForm(){
         const newReservation={
             id: Date.now(),
             packid: selTrip.id,
-            userid: loginUser.id,
+            userId: loginUser.id,
             userName: loginUser.name,
             title: selTrip?.title || city+'여행',
             destination: city,

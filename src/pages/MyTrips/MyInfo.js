@@ -6,8 +6,12 @@ import './MyInfo.css';
 export default function MyInfo(){
 
     const navigate = useNavigate()
-    const {loginUser}=useWebStore()
+    const {loginUser,logout}=useWebStore()
     const [menu, setMenu] = useState('')
+
+    if (!loginUser) {
+        return null
+    }
 
     return(
         <div className="iwrap">
@@ -21,7 +25,7 @@ export default function MyInfo(){
 
             <div className="ibox">
                 <div>
-                    <p onClick={() => setMenu(menu === "info" ? "" : "info")}>개인정보 확인<span>›</span></p>
+                    <p onClick={() => setMenu(menu==="info" ? "":"info")}>개인정보 확인<span>›</span></p>
                     {menu === "info" && (
                     <div className="inbox">
                     <h4>개인정보</h4>
@@ -33,7 +37,7 @@ export default function MyInfo(){
                 </div>
 
                 <div>
-                <p onClick={() => setMenu(menu === "term" ? "" : "term")}>약관 확인<span>›</span></p>
+                <p onClick={() => setMenu(menu==="term" ? "":"term")}>약관 확인<span>›</span></p>
                 {menu === "term" && (
                     <div className="inbox">
                     <h4>약관 내용</h4>
@@ -44,7 +48,7 @@ export default function MyInfo(){
                 </div>
 
                 <div>
-                <p onClick={() => setMenu(menu === "pw" ? "" : "pw")}>비밀번호 변경<span>›</span></p>
+                <p onClick={() => setMenu(menu==="pw" ? "":"pw")}>비밀번호 변경<span>›</span></p>
                 {menu === "pw" && (
                     <div className="inbox">
                     <h4>비밀번호 변경</h4>
@@ -54,10 +58,10 @@ export default function MyInfo(){
                 </div>
 
                 <div>
-                <p onClick={() => setMenu(menu === "logout" ? "" : "logout")}>로그아웃<span>›</span></p>
+                <p onClick={() => setMenu(menu==="logout" ? "":"logout")}>로그아웃<span>›</span></p>
                 {menu === "logout" && (
                     <div className="inbox">
-                    <button onClick={() => {localStorage.removeItem("loginUser");navigate("/");}}>
+                    <button onClick={() => {logout();navigate("/");}}>
                         로그아웃 하시겠습니까?
                     </button>
                     </div>

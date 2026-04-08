@@ -1,8 +1,15 @@
 import React from "react";
 import { Link} from "react-router-dom";
 import "./MyPage.css";
+import useWebStore from "../../Store/useWebStore";
 
 export default function MyPage(){
+
+    const { loginUser } = useWebStore()
+
+    if (!loginUser) {
+        return <div>로그인 정보가 없습니다.</div>
+    }
 
     return(
         <div className="mypage-body">
