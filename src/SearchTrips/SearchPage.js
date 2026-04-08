@@ -31,18 +31,18 @@ const SearchPage = () => {
     const triplist = () => {
         let showlist = [...PackageList, ...DomesticPackageList];
 
-        
-        showlist = showlist.map((item)=>{
-                const detail= PackageDetail.find((d)=>d.id==item.id);                
-                return{
-                    ...item,detail: detail
-                }                
-            })
-        
+
+        showlist = showlist.map((item) => {
+            const detail = PackageDetail.find((d) => d.id == item.id);
+            return {
+                ...item, detail: detail
+            }
+        })
+
 
 
         if (search.trim()) {
-            showlist = showlist.filter((item) => item.title.includes(search.trim()))            
+            showlist = showlist.filter((item) => item.title.includes(search.trim()))
         }
 
         if (sort.trim() === 'domestic')
@@ -66,8 +66,8 @@ const SearchPage = () => {
         {
             return triplist().map((item) => {
                 return (
-                    <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
-                        <li>
+                    <li>
+                        <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                             <div>
                                 <img src={item.image} width={'90px'} height={'90px'} /></div>
                             <div className='package-summary'>
@@ -78,13 +78,13 @@ const SearchPage = () => {
                                 <div>평점: {item.rating}</div>
                                 <div>리뷰수: {item.reviewCount}</div>
                             </div>
-                            <div className='price-layer'>
-                                <div >가격: {item.price}</div>
-                                <button type='button'>상세보기</button>
-                                <button type='button' onClick={()=>{}}>즐겨찾기</button> 
-                            </div>
-                        </li>
-                    </Link>
+                        </Link>
+                        <div className='price-layer'>
+                            <div >가격: {item.price}</div>
+                            <button type='button'>상세보기</button>
+                            <button type='button' onClick={() => { }}>즐겨찾기</button>
+                        </div>
+                    </li>
                 )
             })
         }
@@ -106,7 +106,7 @@ const SearchPage = () => {
             <div className="result-box">
                 <div className="result-title">
                     <h3>검색결과</h3>
-                    
+
                 </div>
                 <div className="prodlist">
                     <ul className="list-main">
