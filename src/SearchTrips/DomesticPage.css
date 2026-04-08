@@ -1,0 +1,39 @@
+.Domestic-main * {
+    margin: 0;
+    padding: 0;
+}
+.Domestic-main{
+    width: 1200px;
+    margin: 0 auto ;
+    background-color: lightgray;
+    border-radius: 10px;
+    
+}
+.Domestic-main ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.Domestic-main a{    
+    text-decoration: none;
+    color: inherit;
+}
+
+.Domestic-main li{
+    justify-content:flex-start;
+    align-items: center;
+    list-style: none ;
+    margin: 10px 10px 10px 20px;
+    
+}
+
+.Domestic-main img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;    
+}
+.Domestic-main h2{
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0;
+}
