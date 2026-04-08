@@ -117,3 +117,6 @@
     justify-content: center;
     align-items: center;
 }
+.fmain button:hover {
+    background-color: #243B6B;
+}

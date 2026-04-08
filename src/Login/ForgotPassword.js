@@ -15,8 +15,8 @@ export default function ForgotPassword({users}){
         <div className="fmain">
             <img className="home" src={logo} style={{width:300}} onClick={()=>navigate('/')}/>
             <div className="btnbox">
-            <button style={{fontWeight: find==='id'? 'bold' : 'normal'}} onClick={()=>(setFind('id'))}>아이디 찾기</button>
-            <button style={{fontWeight: find==='pw'? 'bold' : 'normal'}} onClick={()=>(setFind('pw'))}>비밀번호 재설정</button>
+            <text style={{fontWeight: find==='id'? 'bold' : 'normal'}} onClick={()=>(setFind('id'))}>아이디 찾기</text>
+            <text style={{fontWeight: find==='pw'? 'bold' : 'normal'}} onClick={()=>(setFind('pw'))}>비밀번호 재설정</text>
             </div>
             {
                 find === 'id' && <FindId users={users}/>
