@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Review from "./Review";
 import useWebStore from "../Store/useWebStore";
+import './Board.css'
 
 export default function Board(){
 
@@ -21,10 +22,12 @@ export default function Board(){
     }
 
     return(
-        <div>
+        <div className="board-container">
 
-            <div>
-                <table border='1'>
+            <h2 className="board-title">Trip Review</h2>
+
+            <div >
+                <table className="board-table">
                     <thead>
                         <tr>
                             <th>말머리</th>
@@ -40,8 +43,8 @@ export default function Board(){
                     </tbody>
                 </table>
             </div>
-            <div>
-                <button onClick={write}>글쓰기</button>
+            <div className="board-btn-box">
+                <button className="write-btn" onClick={write}>글쓰기</button>
             </div>
         </div>
     )
