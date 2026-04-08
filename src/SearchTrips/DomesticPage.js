@@ -4,17 +4,14 @@ import { Link } from "react-router-dom";
 import './DomesticPage.css';
 
 const DomesticPage = () => {
-    const [category,setCategory]=useState('');
-    const [active,setActive]=useState('');
+    const [category, setCategory] = useState('');
+    const [active, setActive] = useState('');
 
     const showlist = () => {
         let list = DomesticPackageList;
-
         list = list.filter((item) => item.rating >= 4.0 && item.reviewCount > 20
             && (!category || item.contient == category))
-
         {
-
             return list.map((item) => {
                 return (
                     <li>
@@ -27,18 +24,16 @@ const DomesticPage = () => {
                                 <div> {item.price}</div>
                                 <div><span>★</span> {item.rating}({item.reviewCount})</div>
                             </div>
-                            
+
                         </Link>
                     </li>
-
                 )
             })
-
         }
     }
     const region = [
         { locate: '전체', contient: '' }, { locate: '수도권', contient: 'suduck' }, { locate: '강원', contient: 'kang' },
-        { locate: '충청', contient: 'chung' },{locate: '전라', contient:'jeon'},{ locate:'경상', contient:'gyeong'},{locate:'제주',contient:'je'}
+        { locate: '충청', contient: 'chung' }, { locate: '전라', contient: 'jeon' }, { locate: '경상', contient: 'gyeong' }, { locate: '제주', contient: 'je' }
     ];
 
     const showcategory = () => {
@@ -57,7 +52,9 @@ const DomesticPage = () => {
     return (
         <div className="Domestic-main">
             <h2>국내 여행 패키지</h2>
+            <div className="Domestic-show">
             {showcategory()}
+            </div>
             <ul>
                 {showlist()}
             </ul>

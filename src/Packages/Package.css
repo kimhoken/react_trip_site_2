@@ -1,17 +1,20 @@
 .package-main{
-    color: #2B2B2B;
+    color: #2b2b2b;
     width: 1200px;
     margin: 0 auto;
+    font-size: 20px;
 }
 .package-headerlink{
+    font-weight: bold;
     text-decoration: none;
     padding: 0 10px;
-    background-color: #F5EBDD;
-    color: #2b2b2b; 
-    margin: 0 5px;
+    background-color: #243B6B;
+    color: #ffff; 
+    margin: 5px 10px;
+    border-radius: 5px;
 }
 .package-headerlink:hover{
     color:#ffff;
-    background-color: #E8D8C3;
+    background-color: #1C2F57;
 }
 
