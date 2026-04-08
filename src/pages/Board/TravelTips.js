@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './TravelTips.css';
 
 export default function TravelTips(){
 
@@ -16,29 +17,50 @@ export default function TravelTips(){
         setChecked((prev)=>prev.includes(key) ? prev.filter((i)=>i !== key):[...prev,key])
     }
 
-    return(
-        <div>
-            <h2>체크리스트</h2>
-            <div>
-                {
-                    Object.entries(tips).map(([a,b])=>(
-                        <div className="top" key={a}>
-                            <h3>{a}</h3>
-                            {b.map((c,i)=>{
-                                const list=a+c
-                                return(
-                                    <label key={list} className="ready">
-                                        <input type="checkbox" checked={checked.includes(list)} onChange={() => toggle(list)}/>
-                                        {c}
-                                    </label>
-                                )
-                            })}
-                        </div>
-                    ))
-                }
-            </div>
+    const totalCount = Object.values(tips).flat().length
+    const checkedCount = checked.length
 
-            
+    return(
+        <div className="check-wrap">
+            <div className="check-card">
+
+                <div className="check-header">
+                    <h2 style={{padding:'0 20px', color:'#1c2f5f', fontSize:'40px'}}> CHECK LIST</h2>
+                </div>
+
+                <div className="check-list">
+                    {
+                        Object.entries(tips).map(([a,b]) => (
+                            <div className="top" key={a}>
+                                <div className="category-title">{a}</div>
+
+                                {b.map((c) => {const list = a + c
+                                    return(
+                                        <label key={list} className="ready">
+
+                                            <div className="ready-left">
+                                                <input type="checkbox" checked={checked.includes(list)} onChange={() => toggle(list)}/>
+                                                <span className={`item-name ${checked.includes(list) ? "done" : ""}`}>{c}</span>
+                                            </div>
+
+                                            <span className={checked.includes(list) ? "state done" : "state wait"}>
+                                                {checked.includes(list) ? "완료" : "대기"}
+                                            </span>
+
+                                        </label>
+                                    )
+                                })}
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <div className="bottom-row">
+                    <span>{totalCount}개 항목 중 {checkedCount}개 완료</span>
+                    <button type="button" className="add-btn" onClick={() => setChecked([])}>초기화</button>
+                </div>
+
+            </div>
         </div>
     )
 }

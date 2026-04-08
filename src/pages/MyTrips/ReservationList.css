@@ -4,71 +4,78 @@
     color: #1c2f5f;
     padding: 30px 40px;
     margin: 60px 350px;
+    border-radius: 16px;
 }
 
+/* 탭 영역 */
 .reTab {
     display: flex;
+    justify-content: flex-start;   /* 왼쪽 정렬 */
+    gap: 0;
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
-.tab {
-    flex: 1;
-    height: 45px;
-    font-size: 16px;
-    border: 2px solid #1c2f5f;
+/* 예약내역 / 취소내역 탭 버튼 */
+.reTab .tab {
+    width: 120px;                  
+    height: 38px;                  
+    font-size: 19px;               
     background-color: #faf6f0;
     color: #1c2f5f;
     font-weight: 500;
     cursor: pointer;
-    transition: 0.2s;
-    border-radius: 0;
+    transition: 0.2s; 
+    flex: none;  
+    border: none;                  
 }
 
-.tab:first-child {
+/* 두 탭 붙이기 */
+.reTab .tab:first-child {
     border-right: none;
 }
 
-.tab:last-child {
-    border-left: 2px solid #1c2f5f;
-}
-
-.tab:hover {
+.reTab .tab:hover {
     color: #888;
     font-weight: bold;
 }
 
-.tab.active {
+.reTab .tab.active {
     background-color: #faf6f0;
     color: #1c2f5f;
     font-weight: bold;
-    border-radius: 0;
     border-bottom: 1px solid #faf6f0;
     position: relative;
     z-index: 1;
 }
 
+/* 예약 카드 */
 .reB {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-end;   /* 버튼 오른쪽 하단 */
     padding: 12px 16px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #fff;
+    gap: 16px;
 }
 
-.reB button {
+.reForm .reB button {
     background-color: #1c2f5f;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 6px 12px;
+    padding: 8px 16px;
+    font-size: 18px;
+    line-height: 1.2;
     cursor: pointer;
     transition: 0.2s;
+    flex-shrink: 0;
 }
 
-.reB button:hover {
-    background-color: #1c2f5f;
+.reForm .reB button:hover {
+    background-color: #142447;
+    transform: scale(1.05);
 }

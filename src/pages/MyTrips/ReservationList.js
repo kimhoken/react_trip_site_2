@@ -21,7 +21,7 @@ export default function ReservationList(){
 
     return(
         <div className="reForm">
-            <h2>내 예약/취소 내역</h2>
+            <h2 style={{fontSize:'40px', padding:'0 20px'}}>내 예약/취소 내역</h2>
 
             <div className="reTab">
                 <button className={activeTab === "reservation" ? "tab active" : "tab"} onClick={() => setActiveTab("reservation")}>예약내역</button>

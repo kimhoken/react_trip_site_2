@@ -3,19 +3,21 @@
     align-items: center;
     gap: 20px;
     flex: 1;
+    min-width: 0;
 }
 
 .rimg {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    border-radius: 0;
+    flex-shrink: 0;
 }
 
 .rinfo {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
 }
 
 .rinfo h3 {

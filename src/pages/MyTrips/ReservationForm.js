@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 
 
 
@@ -11,7 +11,7 @@ import useWebStore from "../../Store/useWebStore";
 export default function ReservationForm(){
     
     const navigate=useNavigate();    
-    const [cnt, setCnt] = useState(1);
+    const [cnt, setCnt] = useState(1)
 
     const location=useLocation()
     const selTrip=location.state?.selTrip
@@ -56,6 +56,10 @@ export default function ReservationForm(){
         }
     }
 
+    const prePrice=selTrip?Number(selTrip.price.replace(/~/,"").replace(/,/g,"").replace(/₩/,""))*cnt:0
+
+    const formattedPrePrice = prePrice.toLocaleString();
+
     const handleSubmit=(e)=>{
         e.preventDefault()
 
@@ -64,9 +68,9 @@ export default function ReservationForm(){
             return;
         }
         
-        const totalprice=Number(selTrip.price.replace(/~/,"").replace(/,/g,"").replace(/₩/,""))*cnt;
+        const totalprice = Number(selTrip.price.replace(/~/, "").replace(/,/g, "").replace(/₩/, "")) * cnt;
 
-        const formattedPrice = totalprice.toLocaleString();
+        const formattedPrice = totalprice.toLocaleString()
 
         const newReservation={
             id: Date.now(),
@@ -131,8 +135,13 @@ export default function ReservationForm(){
                         <span>{cnt}</span>
 
                         <button type="button" onClick={() => setCnt((prev) => Math.min(10, prev + 1))}>+</button>
-        </div>
-    </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label>총 가격 : </label>
+                    <span>₩ {formattedPrePrice}</span>
+                </div>
 
                 <div>
                     {

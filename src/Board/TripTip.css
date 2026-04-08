@@ -1,6 +1,6 @@
 .triptip-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 60px auto;
     font-family: 'Segoe UI', sans-serif;
 }
@@ -9,7 +9,7 @@
 .triptip-title {
     text-align: center;
     color: #2d4a87;
-    font-size: 30px;
+    font-size: 50px;
     margin-bottom: 40px ;
     cursor: default;
 }
@@ -38,7 +38,7 @@
 
 /* 내용 */
 .triptip-table td {
-    padding: 13px;
+    padding: 22px;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
