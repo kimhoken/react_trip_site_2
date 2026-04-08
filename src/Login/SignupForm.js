@@ -13,7 +13,7 @@ export default function SignupForm({
 
     return (
         <div >
-            <form className="main">
+            <form className="formMain">
 
                 <img src={logo} className="img" style={{ width: 300, margin: '0 auto' }} onClick={() => navigate('/')} />
 

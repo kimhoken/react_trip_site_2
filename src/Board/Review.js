@@ -1,7 +1,7 @@
 import React from "react";
-import ReviewList from "./List/ReviewList";
 import useWebStore from "../Store/useWebStore";
 import { useNavigate } from "react-router-dom";
+import './Review.css'
 
 export default function Review(){
 
@@ -18,7 +18,8 @@ export default function Review(){
                 reviewPosts.map((item) => (
                     <tr key={item.id}>
                         <td>{item.type}</td>
-                        <td onClick={()=>navigate('/Board/'+item.id)}
+                        <td className="review-title"
+                            onClick={()=>navigate('/Board/'+item.id)}
                             style={{cursor:'pointer'}}>
                             {item.title}</td>
                         <td>{item.writer}</td>
