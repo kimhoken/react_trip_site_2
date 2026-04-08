@@ -17,16 +17,67 @@
 
 .payment-title {
     text-align: center;
-    margin: 10px 0;
+    margin: 10px;
+    color: #243B6B;
+    
 }
 .pay-title{
     font-weight: bold;
     color: #243B6B;
+    margin: 0 25px;
+    font-size: 20px;
+}
+.pay-main{
+    display: flex;
+    gap: 20px;
 }
 .payment-section,
 .payment-package,
+.payment-pay,
 .payment-user{
     border: 1px solid #000;
     width: 500px;
     border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    border-color: #D0DCEF;
 }
+.payment-user :first-child{
+    font-weight: bold;
+    font-size: 18px;
+    color: #243B6B;
+}
+.payment-package{
+    display: flex;
+    flex-wrap: wrap;
+}
+.payment-package img{
+    width: 150px;
+    height: 150px;
+}
+.payment-package div{
+    margin-left: 10px;
+}
+.payment-package div :first-child{
+    font-weight: bold;
+    color: #243B6B;
+}
+.paymentmethod hr{
+   
+   border: none;
+   border-top: 1px solid #D0DCEF;
+   
+}
+.active{
+    color: #243B6B;
+    font-weight: bold;
+}
+
+.payment-pay button{
+    width: 150px;
+    height: 30px;
+    background-color: #243B6B;
+    color: #ffff;
+}
+
+
