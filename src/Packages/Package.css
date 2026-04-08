@@ -6,8 +6,12 @@
 .package-headerlink{
     text-decoration: none;
     padding: 0 10px;
-    background-color: #E8D8C3;
-    color: #243B6B; 
+    background-color: #F5EBDD;
+    color: #2b2b2b; 
     margin: 0 5px;
+}
+.package-headerlink:hover{
+    color:#ffff;
+    background-color: #E8D8C3;
 }
 

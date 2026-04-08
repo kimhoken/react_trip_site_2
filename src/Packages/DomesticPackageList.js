@@ -2,7 +2,7 @@ export const DomesticPackageList =[
     {
     id: 101,
     image: "/images/domestic/jeju.jpg",
-    title: "제주 힐링 3박4일 여행",
+    title: "제주 힐링 여행 3박4일",
     price: "₩ 399,000~",
     country: "Korea",
     type: "domestic", // 국내
@@ -28,7 +28,7 @@ export const DomesticPackageList =[
   {
     id: 103,
     image: "/images/domestic/kang.jpg",
-    title: "강릉 커피 & 바다 투어",
+    title: "강릉 커피 바다 여행",
     price: "₩ 249,000~",
     country: "Korea",
     type: "domestic",
@@ -54,7 +54,7 @@ export const DomesticPackageList =[
   {
     id: 105,
     image: "/images/domestic/seoul.jpg",
-    title: "서울 도심 & 야경 투어",
+    title: "서울 도심 야경 여행",
     price: "₩ 199,000~",
     country: "Korea",
     type: "domestic",

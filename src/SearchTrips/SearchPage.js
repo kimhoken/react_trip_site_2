@@ -80,7 +80,8 @@ const SearchPage = () => {
                             </div>
                             <div className='price-layer'>
                                 <div >가격: {item.price}</div>
-                                <button type='button'>예약하기</button>
+                                <button type='button'>상세보기</button>
+                                <button type='button' onClick={()=>{}}>즐겨찾기</button> 
                             </div>
                         </li>
                     </Link>
