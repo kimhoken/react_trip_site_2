@@ -3,10 +3,12 @@ import useWebStore from "../../Store/useWebStore";
 import PaymentCard from "./PaymentCard";
 import PaymentBank from "./PaymentBank";
 import './Payment.css';
+import { useParams } from "react-router-dom";
 
-const Payment = ({ reservation, setOpen }) => {
+const Payment = () => {
 
-    const { loginUser, addPayment } = useWebStore();
+    const { loginUser, addPayment, reservations} = useWebStore();
+    const {id}=useParams();
     const [paymentmethod, setPaymentMethod] = useState('');
     const [card, setCard] = useState({
         company:'',period:{year:'',month:''},cardnum:['', '', '', '']
@@ -27,6 +29,9 @@ const Payment = ({ reservation, setOpen }) => {
         {name:'NPAY',value:'npay'},
         {name:'KAKAO PAY',value:'kakaopay'},        
     ]
+
+    const currentreservation=reservations.find(item=>item.id==id);
+
     const showmethod=()=>{
         {
             return paymentlist.map((item)=>{
@@ -110,7 +115,7 @@ const Payment = ({ reservation, setOpen }) => {
         const payments = {
             id: Date.now(),
             paymentmethod: paymentmethod,
-            reservationId: reservation.id,
+            reservationId: currentreservation.id,
             PaymentDate: new Date().toISOString()
         }
 
@@ -131,7 +136,7 @@ const Payment = ({ reservation, setOpen }) => {
         addPayment(payments);
 
         alert('결제가 완료 되었습니다.');
-        setOpen(false);
+        
 
     }
 
@@ -148,34 +153,31 @@ const Payment = ({ reservation, setOpen }) => {
     }
 
     return (
-        <div className="modal-window">
+        <div className="payment-main">
             <div className="payment-title">
-                <h2>결제창</h2>
-                <p>X</p>
+                <h2>결제창</h2>                
             </div>
-            <div className="payment-package">
-                <p>예약할 패키지: {reservation.title} </p>
-                <p>출발일: {reservation.startDate} </p>
-                <p>도착일: {reservation.endDate} </p>
-                <p>인원수: </p>
-                <p>총가격: {reservation.price} </p>
-            </div>
+                <p className="pay-title">예약자</p>
             <div className="payment-user">
                 <p>예약자명:{loginUser.name}</p>
                 <p>전화번호:{loginUser.phone}</p>
                 <p>이메일:{loginUser.email}</p>
             </div>
+                <p className="pay-title">패키지 예약</p>
+            <div className="payment-package">
+                <p>예약할 패키지: {currentreservation.title} </p>
+                <p>출발일: {currentreservation.startDate} </p>
+                <p>도착일: {currentreservation.endDate} </p>
+                <p>인원수: </p>
+                <p>총가격: {currentreservation.price} </p>
+            </div>
 
             <div className="payment-section">
                 <form onSubmit={onSubmit}>
-                    <h3>::결제::</h3>
+                    <p className="pay-title">::결제::</p>
                     <div className="paymentmethod">
-                        <h4>결제수단</h4>
-                        {showmethod()}
-                        {/* <label><input type="radio" value={'bank'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 무통장 입금 </label>
-                        <label><input type="radio" value={'card'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> 카드결제 </label>                        
-                        <label><input type="radio" value={'npay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Npay </label>
-                        <label><input type="radio" value={'kakaopay'} name="pay" onChange={(e) => { setPaymentMethod(e.target.value) }} /> Kakao pay </label> */}
+                        <p className="pay-title">결제수단</p>
+                        {showmethod()}                       
                     </div>
                     {PaymentselectForm()}
 
