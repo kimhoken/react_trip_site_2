@@ -44,7 +44,7 @@ export default function TravelTips(){
                                             </div>
 
                                             <span className={checked.includes(list) ? "state done" : "state wait"}>
-                                                {checked.includes(list) ? "완료" : "대기"}
+                                                {checked.includes(list) ? "확인" : "미확인"}
                                             </span>
 
                                         </label>
