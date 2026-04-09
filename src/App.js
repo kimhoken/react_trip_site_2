@@ -28,7 +28,6 @@ import Mainservices_list from './customerservice/Mainserviecs_list';
 
 import Board from './Board/Board';
 import Write from './Board/Write';
-import MyInfo from './pages/MyTrips/MyInfo';
 import BoardDetail from './Board/BoardDetail';
 import Inquirypage from './customerservice/Inquirypage';
 import TripTip from './Board/TripTip';
@@ -83,8 +82,7 @@ function App() {
         <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />
         <Route path="/CustomerService/notice" element={<Mainservices_list />} />
         <Route path="/CustomerService/inquirymail" element={<Inquirypage />} />
-        
-        <Route path="/MyInfo" element={<MyInfo />} />
+      
 
       </Routes>
     </BrowserRouter>
