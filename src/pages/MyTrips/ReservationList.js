@@ -3,7 +3,6 @@ import ReservationCard from "../../components/ReservationCard";
 import './ReservationList.css';
 import useWebStore from "../../Store/useWebStore";
 import { useNavigate } from "react-router-dom";
-import "./MyPage.css";
 
 export default function ReservationList(){
 

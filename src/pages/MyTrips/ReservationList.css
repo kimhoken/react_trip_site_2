@@ -79,3 +79,32 @@
     background-color: #142447;
     transform: scale(1.05);
 }
+
+.mypage-login-error{
+  width: 100%;
+  max-width: 700px;
+  margin: 120px auto;
+  padding: 50px 0 100px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mypage-login-error h2{
+  margin-bottom: 50px;
+  color: #1C2F57;
+  font-size: 35px;
+}
+
+.goto-login{
+  background-color: #1C2F57;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 17px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.goto-login:hover{
+  background-color: #2d4a87;
+}

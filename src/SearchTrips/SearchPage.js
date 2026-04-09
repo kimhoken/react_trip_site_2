@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { PackageList } from "../Packages/PackageList";
 import { DomesticPackageList } from "../Packages/DomesticPackageList";
 import { PackageDetail } from '../Packages/PackageDetail';
+import useWebStore from '../Store/useWebStore';
+
 
 
 const SearchPage = () => {
@@ -18,8 +20,11 @@ const SearchPage = () => {
         { name: '리뷰수 많은순', value: 'review' }
     ]
 
+    const {loginUser} = useWebStore();
+
     const addFavorite = (item) => {
-        const saved = JSON.parse(localStorage.getItem("favorites")) || []
+        const key = `favorites_${loginUser.id}`
+        const saved = JSON.parse(localStorage.getItem(key)) || []
 
         const exists = saved.find((f) => f.id === item.id)
         if (exists) {
@@ -29,7 +34,7 @@ const SearchPage = () => {
 
         const updated = [...saved, item]
 
-        localStorage.setItem("favorites", JSON.stringify(updated))
+        localStorage.setItem(key, JSON.stringify(updated))
 
         alert("즐겨찾기에 추가되었습니다.")
     }
