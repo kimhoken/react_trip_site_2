@@ -3,14 +3,11 @@ import FavoriteItem from "../../components/FavoriteItem";
 import './Favorites.css';
 import useWebStore from "../../Store/useWebStore";
 import { useNavigate } from "react-router-dom";
-import "./MyPage.css";
 
 export default function Favorites(){
 
     const [data,setData]=useState([])
-
     const navigate = useNavigate()
-
     const { loginUser } = useWebStore()
 
     useEffect(() => {
@@ -19,18 +16,21 @@ export default function Favorites(){
             return;
         }
 
+        const key = `favorites_${loginUser.id}`
+        const save = localStorage.getItem(key)
     
-        const save=localStorage.getItem("favorites")
-
         if (save) {
             setData(JSON.parse(save))
+        } else {
+            setData([])
         }
-    },[])
+        }, [loginUser])
 
     const delFavorit=(id)=>{
         const update=data.filter((item)=>item.id !== id)
         setData(update)
-        localStorage.setItem("favorites",JSON.stringify(update))
+        const key = `favorites_${loginUser.id}`
+        localStorage.setItem(key, JSON.stringify(update))
     }
 
     if (!loginUser) {
