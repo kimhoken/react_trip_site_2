@@ -1,67 +1,315 @@
-export const DomesticPackageList =[
-    {
+export const DomesticPackageList = [
+  {
     id: 101,
     image: "/images/domestic/jeju.jpg",
     title: "제주 힐링 여행 3박4일",
     price: "₩ 399,000~",
-    country: "Korea",
-    type: "domestic", // 국내
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Jeju", kr: "제주" },
+    type: "domestic",
     buttonText: "바로가기 〉",
     rating: 4.7,
     reviewCount: 210,
-    contient: "je",
-    link: "/Packages/overeas/Korea/Korea/101"
+    contient: "Korea",
+    link: "/Packages/domestic/Korea/Korea/101",
+    isPopular: true
   },
   {
     id: 102,
     image: "/images/domestic/busan.jpg",
     title: "부산 바다 감성 여행",
     price: "₩ 299,000~",
-    country: "Korea",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Busan", kr: "부산" },
     type: "domestic",
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 150,
-    contient: "gyeong",
-    link: "/Packages/overeas/Korea/Korea/102"
+    contient: "Korea",
+    link: "/Packages/domestic/Korea/Korea/102",
+    isPopular: false
   },
   {
     id: 103,
     image: "/images/domestic/kang.jpg",
     title: "강릉 커피 바다 여행",
     price: "₩ 249,000~",
-    country: "Korea",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Gangneung", kr: "강릉" },
     type: "domestic",
     buttonText: "바로가기 〉",
     rating: 4.4,
     reviewCount: 98,
-    contient: "kang",
-    link: "/Packages/overeas/Korea/Korea/103"
+    contient: "Korea",
+    link: "/Packages/domestic/Korea/Korea/103",
+    isPopular: false
   },
   {
     id: 104,
     image: "/images/domestic/sunk.jpg",
     title: "경주 역사 문화 여행",
     price: "₩ 279,000~",
-    country: "Korea",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Gyeongju", kr: "경주" },
     type: "domestic",
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 132,
-    contient: "gyeong",
-    link: "/Packages/overeas/Korea/Korea/104"
+    contient: "Korea",
+    link: "/Packages/domestic/Korea/Korea/104",
+    isPopular: false
   },
   {
     id: 105,
     image: "/images/domestic/seoul.jpg",
     title: "서울 도심 야경 여행",
     price: "₩ 199,000~",
-    country: "Korea",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Seoul", kr: "서울" },
     type: "domestic",
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 85,
-    contient: "suduck",
-    link: "/Packages/overeas/Korea/Korea/105"
+    contient: "Korea",
+    link: "/Packages/domestic/Korea/Korea/105",
+    isPopular: false
+  },
+  {
+    id: 106,
+    image: "/images/domestic/incheon.jpg",
+    title: "인천 바다 힐링 여행",
+    price: "₩ 189,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Incheon", kr: "인천" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.4, reviewCount: 110, contient: "수도권",
+    link: "/Packages/domestic/Korea/Korea/106",
+    isPopular: false
+  },
+
+  {
+    id: 107,
+    image: "/images/domestic/suwon.jpg",
+    title: "수원 역사 탐방 여행",
+    price: "₩ 179,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Suwon", kr: "수원" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.5,
+    reviewCount: 120,
+    contient: "수도권",
+    link: "/Packages/domestic/Korea/Korea/107",
+    isPopular: false
+  },
+
+  {
+    id: 108, image: "/images/domestic/chuncheon.jpg",
+    title: "춘천 호수 감성 여행",
+    price: "₩ 199,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Chuncheon", kr: "춘천" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.6,
+    reviewCount: 140,
+    contient: "강원",
+    link: "/Packages/domestic/Korea/Korea/108",
+    isPopular: false
+  },
+
+  {
+    id: 109,
+    image: "/images/domestic/yangyang.jpg",
+    title: "양양 서핑 힐링 여행",
+    price: "₩ 219,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Yangyang", kr: "양양" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.7,
+    reviewCount: 160,
+    contient: "강원",
+    link: "/Packages/domestic/Korea/Korea/109",
+    isPopular: true
+  },
+
+  {
+    id: 110, image: "/images/domestic/daejeon.jpg",
+    title: "대전 도심 감성 여행",
+    price: "₩ 169,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Daejeon", kr: "대전" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.3,
+    reviewCount: 90,
+    contient: "충청",
+    link: "/Packages/domestic/Korea/Korea/110",
+    isPopular: false
+  },
+
+  {
+    id: 111, image: "/images/domestic/cheongju.jpg",
+    title: "청주 힐링 자연 여행",
+    price: "₩ 159,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Cheongju", kr: "청주" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.4,
+    reviewCount: 100,
+    contient: "충청",
+    link: "/Packages/domestic/Korea/Korea/111",
+    isPopular: false
+  },
+
+  {
+    id: 112,
+    image: "/images/domestic/gwangju.jpg",
+    title: "광주 문화 감성 여행",
+    price: "₩ 189,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Gwangju", kr: "광주" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.5,
+    reviewCount: 130,
+    contient: "전라",
+    link: "/Packages/domestic/Korea/Korea/112",
+    isPopular: false
+  },
+
+  {
+    id: 113,
+    image: "/images/domestic/yeosu.jpg",
+    title: "여수 바다 야경 여행",
+    price: "₩ 229,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Yeosu", kr: "여수" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.7,
+    reviewCount: 170,
+    contient: "전라",
+    link: "/Packages/domestic/Korea/Korea/113",
+    isPopular: true
+  },
+
+  {
+    id: 114,
+    image: "/images/domestic/pohang.jpg",
+    title: "포항 바다 힐링 여행",
+    price: "₩ 199,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Pohang", kr: "포항" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.4,
+    reviewCount: 120,
+    contient: "경상",
+    link: "/Packages/domestic/Korea/Korea/114",
+    isPopular: false
+  },
+
+  {
+    id: 115,
+    image: "/images/domestic/ulsan.jpg",
+    title: "울산 자연 감성 여행",
+    price: "₩ 189,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Ulsan", kr: "울산" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.5,
+    reviewCount: 140,
+    contient: "경상",
+    link: "/Packages/domestic/Korea/Korea/115",
+    isPopular: false
+  },
+
+  {
+    id: 116,
+    image: "/images/domestic/jeonju.jpg",
+    title: "전주 한옥 감성 여행",
+    price: "₩ 179,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Jeonju", kr: "전주" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.6,
+    reviewCount: 150,
+    contient: "전라",
+    link: "/Packages/domestic/Korea/Korea/116",
+    isPopular: true
+  },
+
+  {
+    id: 117, image: "/images/domestic/ganghwa.jpg",
+    title: "강화도 역사 힐링 여행",
+    price: "₩ 149,000~",
+    country: {
+      en: "Korea",
+      kr: "한국"
+    },
+    city: { en: "Ganghwa", kr: "강화" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.3,
+    reviewCount: 80,
+    contient: "수도권",
+    link: "/Packages/domestic/Korea/Korea/117",
+    isPopular: false
+  },
+
+  {
+    id: 118,
+    image: "/images/domestic/taean.jpg",
+    title: "태안 해변 감성 여행",
+    price: "₩ 189,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Taean", kr: "태안" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.5,
+    reviewCount: 130,
+    contient: "충청",
+    link: "/Packages/domestic/Korea/Korea/118",
+    isPopular: false
+  },
+
+  {
+    id: 119,
+    image: "/images/domestic/sokcho.jpg",
+    title: "속초 바다 힐링 여행",
+    price: "₩ 219,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Sokcho", kr: "속초" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.7,
+    reviewCount: 160,
+    contient: "강원",
+    link: "/Packages/domestic/Korea/Korea/119",
+    isPopular: true
+  },
+
+  {
+    id: 120,
+    image: "/images/domestic/namhae.jpg",
+    title: "남해 바다 감성 여행",
+    price: "₩ 229,000~",
+    country: { en: "Korea", kr: "한국" },
+    city: { en: "Namhae", kr: "남해" },
+    type: "domestic",
+    buttonText: "바로가기 〉",
+    rating: 4.6,
+    reviewCount: 150,
+    contient: "경상",
+    link: "/Packages/domestic/Korea/Korea/120",
+    isPopular: true
   }
 ]
+
+

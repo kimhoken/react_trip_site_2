@@ -33,9 +33,7 @@ const Packageinfo = () => {
         }
     }
 
-    const item = showlist();
-    const priceNumber = Number(String(item.list.price).replaceAll(',', '').replaceAll('₩', '').replaceAll('~', ''));
-
+    const item = showlist();    
     const navigate = useNavigate();
 
     const loginEvent=(e)=>{
@@ -50,18 +48,23 @@ const Packageinfo = () => {
 
     return (
         <div className="packageinfo-main">
-            <div className="packageinfo-header">
-            <div className="detail-img"><img src={item.list.image} width={'200px'} height={'200px'} /></div>
-            <div className="text-line">
+            <div className="package-header">
+            <div className="package-img">
+                <img src={item.list.image} />
+                </div>
+            <div className="packageinfo">
+                {item.list.isPopular &&(
+                    <span className="package-badge">인기상품</span>
+                )}
                 <div><h2>{item.list.title}</h2></div>                
-                <div>가격: {item.list.price}</div>
-                <div>나라: {item.list.country}</div> 
                 <div>{item.detail.summary}</div>               
                 <div><span>★ </span>{item.list.rating} ({item.list.reviewCount})</div>
+                <div>가격: {item.list.price}</div>
+                <div>나라: {item.list.country.kr}</div> 
             </div>
             </div>
-            <div className="package-body">
-            <div className="text-detail">
+            <div className="package-content">
+            <div className="package-detail">
                 <div>여행 상세 정보</div>
                 {
                     item.detail.dates.map((i)=>(
@@ -70,7 +73,7 @@ const Packageinfo = () => {
                 }
                 <div>일수 : {item.detail.duration}</div>
             </div>
-            <div className="text-schedule">
+            <div className="package-schedule">
                 <table border={'1'}>
                     <tr>
                         <th>일차</th>
@@ -82,7 +85,7 @@ const Packageinfo = () => {
             </div>
             </div>
 
-            <div className="reservation-box">                
+            <div className="package-actions">                
                 <span
                         onClick={loginEvent}><p>예약하기</p></span>
                   {item.list.type ==='domestic'? 

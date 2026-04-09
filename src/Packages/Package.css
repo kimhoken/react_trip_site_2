@@ -4,6 +4,7 @@
     width: 100%;
     margin: 0 auto;
     font-size: 20px;
+    
 }
 .package-headerlink{
     font-weight: bold;
@@ -11,7 +12,7 @@
     padding: 0 10px;
     background-color: #243B6B;
     color: #ffff; 
-    margin: 5px 10px;
+    margin: 5px 21px 5px 0;
     border-radius: 5px;
 }
 .package-headerlink:hover{

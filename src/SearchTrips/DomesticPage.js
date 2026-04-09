@@ -32,8 +32,13 @@ const DomesticPage = () => {
         }
     }
     const region = [
-        { locate: '전체', contient: '' }, { locate: '수도권', contient: 'suduck' }, { locate: '강원', contient: 'kang' },
-        { locate: '충청', contient: 'chung' }, { locate: '전라', contient: 'jeon' }, { locate: '경상', contient: 'gyeong' }, { locate: '제주', contient: 'je' }
+        { label: '전체', value: '' },
+        { label: '수도권', value: '수도권' },
+        { label: '강원', value: '강원' },
+        { label: '충청', value: '충청' },
+        { label: '전라', value: '전라' },
+        { label: '경상', value: '경상' },
+        { label: '제주', value: '제주' }
     ];
 
     const showcategory = () => {
@@ -42,7 +47,7 @@ const DomesticPage = () => {
                 return (
                     <p onClick={() => { setCategory(i.contient); setActive(i.contient) }}
                         className={active == i.contient ? "active" : ""}
-                    >{i.locate}</p>
+                    >{i.label}</p>
                 )
             })
         }
@@ -52,16 +57,16 @@ const DomesticPage = () => {
     return (
         <div className="Domestic-main">
 
-        <div className="Domestic-result">
-            <h2>국내 여행 패키지</h2>
-            <div className="Domestic-show">
-            {showcategory()}
-            </div>
-            <ul>
-                {showlist()}
-            </ul>
+            <div className="Domestic-result">
+                <h2>국내 여행 패키지</h2>
+                <div className="Domestic-show">
+                    {showcategory()}
+                </div>
+                <ul>
+                    {showlist()}
+                </ul>
 
-        </div>
+            </div>
         </div>
     )
 }

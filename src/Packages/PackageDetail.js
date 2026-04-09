@@ -252,5 +252,110 @@ export const PackageDetail = [
       { departureDate: "2026-05-26", arrivalDate: "2026-05-28" }
     ],
     summary: "서울 도심과 야경 투어"
+  },
+    { id: 106, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-20", arrivalDate: "2026-05-22" },
+      { departureDate: "2026-05-27", arrivalDate: "2026-05-29" }
+    ],
+    summary: "인천 바다와 도심을 함께 즐기는 여행"
+  },
+  { id: 107, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-22", arrivalDate: "2026-05-24" },
+      { departureDate: "2026-05-29", arrivalDate: "2026-05-31" }
+    ],
+    summary: "수원의 역사와 감성을 느끼는 여행"
+  },
+  { id: 108, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-24", arrivalDate: "2026-05-26" },
+      { departureDate: "2026-06-01", arrivalDate: "2026-06-03" }
+    ],
+    summary: "춘천 호수와 자연을 즐기는 여행"
+  },
+  { id: 109, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-26", arrivalDate: "2026-05-28" },
+      { departureDate: "2026-06-03", arrivalDate: "2026-06-05" }
+    ],
+    summary: "양양 바다와 서핑 감성 여행"
+  },
+  { id: 110, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-28", arrivalDate: "2026-05-30" },
+      { departureDate: "2026-06-05", arrivalDate: "2026-06-07" }
+    ],
+    summary: "대전 도심과 여유를 즐기는 여행"
+  },
+  { id: 111, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-05-30", arrivalDate: "2026-06-01" },
+      { departureDate: "2026-06-07", arrivalDate: "2026-06-09" }
+    ],
+    summary: "청주의 자연과 휴식을 담은 여행"
+  },
+  { id: 112, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-01", arrivalDate: "2026-06-03" },
+      { departureDate: "2026-06-09", arrivalDate: "2026-06-11" }
+    ],
+    summary: "광주의 문화와 감성을 만나는 여행"
+  },
+  { id: 113, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-03", arrivalDate: "2026-06-05" },
+      { departureDate: "2026-06-11", arrivalDate: "2026-06-13" }
+    ],
+    summary: "여수 바다와 야경을 즐기는 여행"
+  },
+  { id: 114, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-05", arrivalDate: "2026-06-07" },
+      { departureDate: "2026-06-13", arrivalDate: "2026-06-15" }
+    ],
+    summary: "포항의 바다 풍경을 담은 여행"
+  },
+  { id: 115, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-07", arrivalDate: "2026-06-09" },
+      { departureDate: "2026-06-15", arrivalDate: "2026-06-17" }
+    ],
+    summary: "울산 자연과 도심을 함께 즐기는 여행"
+  },
+  { id: 116, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-09", arrivalDate: "2026-06-11" },
+      { departureDate: "2026-06-17", arrivalDate: "2026-06-19" }
+    ],
+    summary: "전주 한옥과 먹거리를 즐기는 여행"
+  },
+  { id: 117, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-11", arrivalDate: "2026-06-13" },
+      { departureDate: "2026-06-19", arrivalDate: "2026-06-21" }
+    ],
+    summary: "강화도의 역사와 여유를 느끼는 여행"
+  },
+  { id: 118, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-13", arrivalDate: "2026-06-15" },
+      { departureDate: "2026-06-21", arrivalDate: "2026-06-23" }
+    ],
+    summary: "태안 해변과 감성을 담은 여행"
+  },
+  { id: 119, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-15", arrivalDate: "2026-06-17" },
+      { departureDate: "2026-06-23", arrivalDate: "2026-06-25" }
+    ],
+    summary: "속초 바다와 먹거리를 즐기는 여행"
+  },
+  { id: 120, duration: "2박 3일",
+    dates: [
+      { departureDate: "2026-06-17", arrivalDate: "2026-06-19" },
+      { departureDate: "2026-06-25", arrivalDate: "2026-06-27" }
+    ],
+    summary: "남해 바다와 감성 풍경 여행"
   }
 ];

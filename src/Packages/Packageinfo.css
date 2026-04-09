@@ -15,15 +15,15 @@
     border: 1px solid #000;
 }
 
-.packageinfo-header{
+.package-header{
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
-.packageinfo-header img{
+.package-header img{
     width: 300px;
     height: 300px;
 }
-.packageinfo-header div{
+.package-header div{
     margin-left: 10px;
 }
