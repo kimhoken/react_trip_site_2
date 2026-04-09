@@ -50,7 +50,7 @@ const Packageinfo = () => {
     return (
         <div className="packageinfo-main">
 
-            <div><img src={item.list.image} width={'200px'} height={'200px'} /></div>
+            <div className="detail-img"><img src={item.list.image} width={'200px'} height={'200px'} /></div>
             <div className="text-line">
                 <div><h2>{item.list.title}</h2></div>
                 <div>가격: {item.list.price}</div>
