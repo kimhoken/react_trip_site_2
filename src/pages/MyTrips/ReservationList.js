@@ -1,7 +1,8 @@
-import React, { useContext,  useState } from "react";
+import React, { useState } from "react";
 import ReservationCard from "../../components/ReservationCard";
 import './ReservationList.css';
 import useWebStore from "../../Store/useWebStore";
+import { useNavigate } from "react-router-dom";
 
 export default function ReservationList(){
 
@@ -9,6 +10,24 @@ export default function ReservationList(){
 
     const [activeTab,setActiveTab]=useState('reservation')
 
+    const navigate = useNavigate()
+
+    if (!loginUser) {
+        return( 
+            <div className="mypage-login-error">
+                <h2>로그인 정보가 없습니다.</h2>
+                <button className="goto-login" 
+                        onClick={()=>navigate('/LoginPage')}>로그인 하러가기</button>
+            </div>
+            
+            
+    )
+    }
+
+    if (!reservations || !cancelReservations) {
+        return <p>로딩중...</p>;
+    }
+    
     const myReservation = reservations.filter(
         (item) => item.userId === loginUser?.id
     );

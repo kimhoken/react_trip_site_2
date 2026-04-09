@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from "react";
 import FavoriteItem from "../../components/FavoriteItem";
 import './Favorites.css';
+import useWebStore from "../../Store/useWebStore";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Favorites(){
 
     const [data,setData]=useState([])
 
-    useEffect(()=>{
+    const navigate = useNavigate()
+
+    const { loginUser } = useWebStore()
+
+    useEffect(() => {
+        if (!loginUser) {
+            setData([]);
+            return;
+        }
+
+    
         const save=localStorage.getItem("favorites")
 
         if (save) {
@@ -18,6 +30,20 @@ export default function Favorites(){
         const update=data.filter((item)=>item.id !== id)
         setData(update)
         localStorage.setItem("favorites",JSON.stringify(update))
+    }
+
+    if (!loginUser) {
+        return (
+            <div className="mypage-login-error">
+                <h2>로그인 정보가 없습니다.</h2>
+                <button
+                    className="goto-login"
+                    onClick={() => navigate("/LoginPage")}
+                >
+                    로그인 하러가기
+                </button>
+            </div>
+        );
     }
 
     return(
