@@ -3,6 +3,7 @@ import './TravelTips.css';
 import { useNavigate } from "react-router-dom";
 import useWebStore from "../../Store/useWebStore";
 
+
 export default function TravelTips(){
 
     const tips={필수품: ['여권','지갑','유심/와이파이','신분증','환전'],
@@ -26,8 +27,6 @@ export default function TravelTips(){
                 <button className="goto-login" 
                         onClick={()=>navigate('/LoginPage')}>로그인 하러가기</button>
             </div>
-            
-            
     )
     }
 

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import FavoriteItem from "../../components/FavoriteItem";
 import './Favorites.css';
 import useWebStore from "../../Store/useWebStore";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./MyPage.css";
 
 export default function Favorites(){
 
