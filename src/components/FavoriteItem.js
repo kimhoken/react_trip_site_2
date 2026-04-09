@@ -9,7 +9,7 @@ export default function FavoriteItem({item,onDelete}){
     return(
         <div className="faItem" onClick={() => navigate('/MyTrips/reserve',{state:{selTrip:item}})}>
 
-            <img src={item.image} alt={item.title} className="faImg"/>
+            <img src={item.image} alt={item.title} className="faImg"/> 
 
             <div className="faInfo">
                 <h3>{item.title}</h3>
