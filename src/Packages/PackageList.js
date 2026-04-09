@@ -4,8 +4,8 @@ export const PackageList=[
     image: "/images/country/1.country_asia/1.j1.jpg",
     title: "도쿄 봄맞이 특가 여행",
     price: "₩ 999,000~",
-    country: "Japan",
-    city: "Tokyo",
+    country: {en:"Japan",kr:"일본"},
+    city:{ en:"Tokyo", kr:"도쿄"},
     type: "overseas", // 해외
     buttonText: "바로가기 〉",
     rating: 4.3,
@@ -185,7 +185,7 @@ export const PackageList=[
   {
     id: 14,
     image: "/images/country/2.country_europe/4.it.jpg",
-    title: "이탈리아 예술 낭만 여행",
+    title: "이탈리아 나폴리 예술 여행",
     price: "₩ 2,099,000~",
     country: "Italy",
     type: "overseas",
