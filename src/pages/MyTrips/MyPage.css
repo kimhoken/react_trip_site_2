@@ -21,8 +21,134 @@
   font-size: 17px;
   padding: 5px 10px;
   cursor: pointer;
+  border: none;
 }
 
 .goto-login:hover{
   background-color: #2d4a87;
+}
+
+.mypage-info {
+  text-align: left;
+  margin: 70px 0 40px;
+  padding-left: 300px;
+}
+
+.mypage-title {
+  margin: 0;
+  font-size: 42px;
+  font-weight: bold;
+  color: #1c2f57;
+}
+
+.mypage-info-list {
+  width: 800px;
+  margin: 0 0 77px;
+  margin-left: 300px;
+  padding: 75px 45px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.mypage-user-name {
+  margin: 0 0 30px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #edf1f7;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1c2f57;
+}
+
+.mypage-user-info {
+  margin: 14px 0;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.mypage-section {
+  width: 420px;
+  margin-left: 1150px;
+  margin-top: -508px;
+  margin-bottom: 20px;
+  padding: 40px 28px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.mypage-menu-toggle {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1c2f57;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mypage-menu-toggle:hover {
+  color: #5c82d4;
+}
+
+.mypage-menu-arrow {
+  font-size: 16px;
+}
+
+.mypage-term-box {
+  margin-top: 20px;
+  padding-top: 18px;
+  padding-bottom: 37px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mypage-term-text {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.9;
+}
+
+.mypage-password-box {
+  margin-top: 5px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mypage-password-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1c2f57;
+}
+
+.mypage-password-link:hover {
+  color: #5c82d4;
+}
+.management-information-logout {
+  position: absolute;
+  right: 45px;
+  bottom: 35px;
+}
+
+.management-information-logout-btn {
+  background-color: #1C2F57;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+
+}
+
+.management-information-logout-btn:hover {
+  background-color: #5c82d4;
 }
