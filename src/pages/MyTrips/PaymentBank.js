@@ -36,15 +36,15 @@ export default function PaymentBank({ setBank, bmsg, busermsg, bnummsg }) {
 
     return (
         <div>
-            <p>은행/계좌 선택</p>
+            <div>은행/계좌 선택</div>
             {Banklistradio()}
-            <p>{bmsg}</p>
-            <p>예금주</p>
+            <div>{bmsg}</div>
+            <div>예금주</div>
             <input size={3} value={user} placeholder="예금주" onChange={(e) => { setUser(e.target.value) }} />
-            <p>{busermsg}</p>
-            <p>계좌 번호</p>
+            <div>{busermsg}</div>
+            <div>계좌 번호</div>
             <input size={7} value={banknum} onChange={(e) => { setBankNum(e.target.value) }} /> 
-            <p>{bnummsg}</p>           
+            <div>{bnummsg}</div>           
         </div>
     )
 }
