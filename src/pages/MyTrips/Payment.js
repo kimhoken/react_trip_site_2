@@ -29,7 +29,6 @@ const Payment = () => {
         { name: '신용 카드', value: 'card' },
         { name: '계좌 이체', value: 'bank' },
         { name: 'NPAY', value: 'npay' },
-        { name: 'KAKAO PAY', value: 'kakaopay' },
     ]
 
     const currentreservation = reservations.find(item => item.id == id);
@@ -38,7 +37,7 @@ const Payment = () => {
         {
             return paymentlist.map((item) => {
                 return (
-                    <div>
+                    <div >
                         <p onClick={(e) => { setPaymentMethod(item.value); setActive(item.value) }}
                             className={active == item.value ? 'active' : ''}>{item.name}</p>
                         <hr />
@@ -46,7 +45,6 @@ const Payment = () => {
                             active === item.value && (
                                 <div>
                                     {PaymentselectForm()}
-
                                 </div>
                             )
                         }
@@ -163,6 +161,10 @@ const Payment = () => {
             return (
                 <PaymentBank setBank={setBank} bmsg={bmsg} busermsg={busermsg} bnummsg={bnummsg} />
             )
+        } else if(paymentmethod == 'npay'){
+            return(               
+                <img src={'/images/npay.png'} className="npayimg"/>
+            )
         }
     }
 
@@ -186,6 +188,7 @@ const Payment = () => {
                             <p>패키지: {currentreservation.title} </p>
                             <p>출발일: {currentreservation.startDate} </p>
                             <p>도착일: {currentreservation.endDate} </p>
+                            <p>인원수: {currentreservation.people}</p>
                         </div>
                     </div>
                 </div>
@@ -196,12 +199,12 @@ const Payment = () => {
                             <div className="paymentmethod">
                                 {showmethod()}
                             </div>
+                        <button type="submit" className="payment-pay">
+                            {currentreservation.price}원 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 결제하기
+                        </button>
                         </div>
-                        <div className="payment-pay">
-                            <p>인원수: {currentreservation.people}</p>
-                            <p>총가격: {currentreservation.price}원 </p>
-                            <button type="submit">결제하기</button>
-                        </div>
+
+
                     </form>
                 </div>
             </div>
