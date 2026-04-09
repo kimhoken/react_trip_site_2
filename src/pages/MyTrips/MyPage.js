@@ -5,7 +5,7 @@ import useWebStore from "../../Store/useWebStore";
 
 export default function MyPage(){
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const { loginUser } = useWebStore()
 
