@@ -140,32 +140,4 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .inquiry_wrap {
-    padding: 50px 16px;
-  }
-
-  .inquiry_box {
-    padding: 24px;
-    border-radius: 18px;
-  }
-
-  .inquiry_title {
-    font-size: 34px;
-  }
-
-  .inquiry_text {
-    font-size: 15px;
-  }
-
-  .inquiry_input,
-  .inquiry_select {
-    height: 50px;
-  }
-
-  .inquiry_btn {
-    height: 52px;
-    font-size: 16px;
-  }
-}
 

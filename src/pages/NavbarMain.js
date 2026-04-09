@@ -54,13 +54,14 @@ const NavbarMain =()=>{
                 </li>
 
                 <li className='nav-item mytrips'>
-                  <Link className='nav-link' to="/">My Trips</Link>
+                  <Link className='nav-link' to="/MyTrips/mypage">My Trips</Link>
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
 
                             <li><Link className='dropdown-link' to="/MyTrips/mypage">마이페이지</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/reservations">내 예약</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/favorites">즐겨찾기</Link></li>
+                            <li><Link className='dropdown-link' to="/MyTrips/tips">체크리스트</Link></li>
 
                         </ul>
                     </div>
