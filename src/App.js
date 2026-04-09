@@ -20,16 +20,26 @@ import PopularDestinations from './SearchTrips/PopularDestinations';
 import DomesticPage from './SearchTrips/DomesticPage';
 import Package from './Packages/Package';
 
-import {ReservationProvider} from './context/ReservationProvider';
+
 import NavbarMain from './pages/NavbarMain';
-import Mainsevieces from './customerservice/Mainseviecs';
+import Mainservieces from './customerservice/Mainserviecs';
+import MainserviecesQnaList from './customerservice/MainserviecesQnaList';
+import Mainservices_list from './customerservice/Mainserviecs_list';
+
+import Board from './Board/Board';
+import Write from './Board/Write';
+import BoardDetail from './Board/BoardDetail';
+import Inquirypage from './customerservice/Inquirypage';
+import TripTip from './Board/TripTip';
+import TripTipDetail from './Board/TripTipDetail';
+import Payment from './pages/MyTrips/Payment';
+
 
 
 
 function App() { 
 
   return (
-    <ReservationProvider>
     <BrowserRouter>
 
       <div>
@@ -53,19 +63,30 @@ function App() {
           <Route path='OverseasPage' element={<PopularDestinations />} />
         </Route>
 
+        <Route path='/Board' element={<Board/>} />
+        <Route path='/Write' element={<Write/>}/>
+        <Route path='/Board/:id' element={<BoardDetail/>}/>
+
+        <Route path='/TripTip' element={<TripTip/>}/>
+        <Route path='/TripTip/:id' element={<TripTipDetail/>}/>
+
         <Route path="/MyTrips" element={<ReservationList />} /> 
         <Route path="/MyTrips/favorites" element={<Favorites />} />
-        <Route path="/tips" element={<TravelTips />} />
-        <Route path="MyTrips/reserve" element={<ReservationForm />} />
-        <Route path='MyTrips/reservations' element={<ReservationList/>}/>
+        <Route path="/MyTrips/tips" element={<TravelTips />} />
+        <Route path="/MyTrips/reserve" element={<ReservationForm />} />
+        <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
+        <Route path='/MyTrips/reserve/payment/:id' element={<Payment/>}/>
 
-        <Route path="/CustomerService" element={<Mainsevieces />} />
-        <Route path="/CustomerService/qna" element={<div>Q&A 페이지</div>} />
-        <Route path="/CustomerService/notice" element={<div>공지사항 페이지</div>} />
+        <Route path="/CustomerService" element={<Mainservieces />} />
+        <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />
+        <Route path="/CustomerService/notice" element={<Mainservices_list />} />
+        <Route path="/CustomerService/inquirymail" element={<Inquirypage />} />
+      
+
       </Routes>
     </BrowserRouter>
-    </ReservationProvider>
+    
 
   );
 }

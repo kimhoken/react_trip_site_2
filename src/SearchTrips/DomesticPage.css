@@ -1,0 +1,62 @@
+.Domestic-main * {
+    margin: 0;
+    padding: 0;
+}
+.Domestic-result{
+    width: 1160px;    
+    background-color: #ffff;
+    border-radius: 10px;   
+}
+.Domestic-show{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.Domestic-show .active{
+    font-weight: bold;    
+    border-bottom: none ;
+    color: #1C2F57;
+}
+.Domestic-result h2{
+    text-align: left;
+    font-size: 35px;   /* 여기*/
+    padding: 30px 20px;
+    color: #1C2F57;
+}
+.Domestic-main p{
+    padding: 10px 30px; 
+    font-size: 18px;    /* 여기*/
+    border-top: 1px solid #666666;
+    border-right: 1px solid #666666;
+    border-bottom: 1px solid #000;      
+    color: #2b2b2b; 
+}
+.Domestic-main p:first-child{
+    border-left: 1px solid #666666;
+}
+.Domestic-main ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.Domestic-main a{    
+    text-decoration: none;
+    color: inherit;
+}
+
+.Domestic-main li{
+    justify-content:flex-start;
+    align-items: center;
+    list-style: none ;
+    margin: 10px 10px 10px 20px;
+    
+}
+
+.Domestic-main img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;    
+}
+

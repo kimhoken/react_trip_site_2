@@ -1,4 +1,4 @@
-.main {
+.formMain {
     position: relative;
     margin: 50px 0;
     border:1px solid #1C2F57;
@@ -17,7 +17,7 @@
     width: 98%;
     border: 1px solid #D9CBB8;
     margin: 10px auto;
-    padding: 10px 0;
+    padding: 10px 0 7px;
     border-radius: 15px;
 }
 .first-box input{
@@ -31,10 +31,10 @@
 }
 .name{
     border-bottom: 1px solid #D9CBB8;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 .id{
-    padding-top: 5px;
+    padding-top: 9px;
 }
 .error{
     font-size: 12px;
@@ -45,7 +45,7 @@
     width: 98%;
     border: 1px solid #D9CBB8;
     margin: 10px auto;
-    padding: 10px 0;
+    padding: 10px 0 7px;
     border-radius: 15px;
 }
 .second-box input{
@@ -59,16 +59,16 @@
 }
 .pw{
     border-bottom: 1px solid #D9CBB8;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 .pwCheck{
-    padding-top: 5px;
+    padding-top: 9px;
 }
 .third-box{
     position: relative;
     width: 98%;
     border: 1px solid #D9CBB8;
-    margin: 10px auto;
+    margin: 10px auto 7px;
     padding: 10px 0;
     border-radius: 15px;
 }
@@ -83,14 +83,14 @@
 }
 .phone{
     border-bottom: 1px solid #D9CBB8;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 .birth{
     border-bottom: 1px solid #D9CBB8;
     padding: 10px 0;
 }
 .email{
-    padding-top: 5px;
+    padding-top: 9px;
 }
 .btn{
   width: 95%;
@@ -108,4 +108,7 @@
   justify-content: center;
   align-items: center;
   
+}
+.formMain button:hover {
+    background-color: #243B6B;
 }

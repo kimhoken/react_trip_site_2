@@ -1,18 +1,27 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../pages/MyTrips/Favorites.css"
+import useWebStore from "../Store/useWebStore";
 
 export default function FavoriteItem({item,onDelete}){
+
+    const {loginUser} = useWebStore();
 
     const navigate = useNavigate()
 
     return(
-        <div style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}
-             onClick={() => navigate('/MyTrips/reserve',{state:{selTrip:item}})}>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            {item.place}
-            <button onClick={(e)=>{e.stopPropagation();onDelete(item.id)}}>삭제</button>
-            <img src={item.image} alt={item.name}/>
+        <div className="faItem" onClick={() => navigate(`/Packages/${item.type}/${item.contient}/${item.country}/${item.id}`,{state:{selTrip:item}})}>
+
+            <img src={item.image} alt={item.title} className="faImg"/> 
+
+            <div className="faInfo">
+                <h3>{item.title}</h3>
+                <p>나라 : {item.country.kr}</p>
+                <p>가격: {item.price}</p>
+                <p>평점: {item.rating}</p>
+            </div>
+            
+            <button  className="faBtn" onClick={(e)=>{e.stopPropagation();onDelete(item.id)}}>삭제</button>
         </div>
     )
 }

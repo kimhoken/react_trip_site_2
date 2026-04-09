@@ -26,6 +26,7 @@ export default function FindPw(){
             alert('회원정보가 존재하지 않습니다.')
         }
     }
+    
 
     return(
         <div>

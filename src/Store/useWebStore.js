@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import ReviewList from "../Board/List/ReviewList";
 
 const defaultUsers = [  
     {
@@ -11,9 +12,15 @@ const defaultUsers = [
     }
   ];
 
+  const defaultPosts = [
+    ...ReviewList
+  ]
+
+
 const useWebStore = create((set,get)=>({    
     users: JSON.parse(localStorage.getItem('users'))||defaultUsers,
-    loginUser: JSON.parse(localStorage.getItem('loginUser'))||[],
+    loginUser: JSON.parse(localStorage.getItem('loginUser'))||null,
+    posts: JSON.parse(localStorage.getItem('posts'))||defaultPosts,
     //새로고침
     setUsers:(newUser)=>{
         set({users:newUser});
@@ -64,7 +71,71 @@ const useWebStore = create((set,get)=>({
     logout:()=>{
         set({loginUser: null});
         localStorage.removeItem('loginUser');
-    }
+    },
+
+    reservations: JSON.parse(localStorage.getItem("reservations")) || [],
+    cancelReservations: JSON.parse(localStorage.getItem("cancelReservations")) || [],
+
+    addReservation: (newReservation) => {
+        const updated = [...get().reservations, newReservation];
+        set({ reservations: updated });
+        localStorage.setItem("reservations", JSON.stringify(updated));
+    },
+
+    cancelReservation: (id) => {
+        const target = get().reservations.find((item) => item.id === id);
+
+        if (!target) return;
+
+        const updateReservations = get().reservations.filter(
+        (item) => item.id !== id
+        );
+
+        const updateCancel = [...get().cancelReservations, target];
+
+        set({
+        reservations: updateReservations,
+        cancelReservations: updateCancel
+        });
+
+        localStorage.setItem("reservations", JSON.stringify(updateReservations));
+        localStorage.setItem("cancelReservations", JSON.stringify(updateCancel));
+    },
+
+    delCanReservation: (id) => {
+        const updated = get().cancelReservations.filter(
+            (item) => item.id !== id
+        )
+
+        set({ cancelReservations: updated })
+        localStorage.setItem("cancelReservations", JSON.stringify(updated))
+    },
+        
+    //게시판 게시글 추가
+    addPost: (newPost) => {
+        const updated = [...get().posts,newPost];
+        set({posts: updated});
+        localStorage.setItem('posts',JSON.stringify(updated));
+    },
+
+    //게시글 삭제
+    deletePost: (id) => {
+    const updated = get().posts.filter((item) => item.id !== id);
+    set({ posts: updated });
+    localStorage.setItem('posts', JSON.stringify(updated));
+    },
+
+
+    payment: JSON.parse(localStorage.getItem('payment'))|| [],
+
+    addPayment: (newpayment)=>{
+        const updated =[...get().payment,newpayment];
+        set({ payment: updated});
+        localStorage.setItem("payment", JSON.stringify(updated));
+    },
+
+
+
 }))
 
 export default useWebStore;

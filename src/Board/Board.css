@@ -1,0 +1,70 @@
+.board-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.board-title{
+    text-align: center;
+    color: #2d4a87;
+    font-size:50px;
+    margin-bottom: 40px ;
+    cursor: default;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+
+.board-table thead {
+    background-color: #1C2F57;
+    color: white;
+}
+
+.board-table th {
+    padding: 14px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.board-table td {
+    padding: 22px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+
+.board-table tbody tr:hover {
+    background-color: #f5f7fb;
+    cursor: pointer;
+}
+
+
+.board-btn-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.write-btn {
+    padding: 10px 20px;
+    background-color: #1C2F57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.write-btn:hover {
+    background-color: #2d4a87;
+}

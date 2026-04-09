@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useWebStore from "../Store/useWebStore";
+import './ResetPw.css'
+import logo from '../Images/logo.png';
 
 export default function ResetPw() {
 
@@ -47,7 +49,8 @@ export default function ResetPw() {
     }
 
     return (
-        <div>
+        <div className="resetMain">
+            <img className="home" src={logo} style={{width:300, marginBottom:'25px'}} onClick={()=>navigate('/')}/>
             <div>
                 비밀번호
                 <input type="password"

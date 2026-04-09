@@ -1,0 +1,12 @@
+.review-title {
+  text-align: left;
+  color: #1C2F57;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.review-title:hover {
+  color: #2d4a87;
+  text-decoration: underline;
+}
+

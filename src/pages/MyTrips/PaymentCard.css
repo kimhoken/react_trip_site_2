@@ -1,0 +1,29 @@
+.card-main div{
+    margin: 5px 10px;
+
+}
+.card-main label{
+    font-size: 18px;
+    font-weight: bold;   
+    color: #243B6B; 
+}
+.card-main select{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    outline: none;
+}
+.card-main input{
+    height: 20px;
+    line-height: 20px;
+    padding-top: 3px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 15px;
+}
+.card-select label{
+    /* margin-bottom: 10px; */
+}
+.errormsg{
+    color: red;
+}

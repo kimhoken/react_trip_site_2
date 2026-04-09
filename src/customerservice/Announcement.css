@@ -1,0 +1,67 @@
+.announcement-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+.announcement-header {
+  margin-bottom: 36px;
+}
+
+.announcement-header h2 {
+  margin: 0 0 10px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #111;
+}
+
+.announcement-header p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcement-card {
+  padding: 28px 30px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.announcement-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111827;
+}
+
+.announcement-content {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.0;
+  color: #4b5563;
+  white-space: pre-line;
+}
+
+.announcement-bottom {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #ececec;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+.announcement-date {
+  font-weight: 500;
+  color: #6b7280;
+}

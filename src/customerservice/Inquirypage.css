@@ -1,0 +1,143 @@
+.inquiry_wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.inquiry_header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.inquiry_title {
+  margin: 0 0 14px;
+  font-size: 44px;
+  font-weight: 800;
+  color: #10233f;
+}
+
+.inquiry_text {
+  margin: 0;
+  font-size: 17px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.inquiry_box {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(16, 35, 63, 0.06);
+}
+
+.inquiry_label {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #243b6b;
+}
+
+.inquiry_input,
+.inquiry_select,
+.inquiry_area {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d7deea;
+  border-radius: 12px;
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #243b6b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquiry_input,
+.inquiry_select {
+  height: 54px;
+  padding: 0 16px;
+  margin-bottom: 18px;
+}
+
+.inquiry_input::placeholder,
+.inquiry_area::placeholder {
+  color: #9aa4b2;
+}
+
+.inquiry_input:focus,
+.inquiry_select:focus,
+.inquiry_area:focus {
+  border-color: #2f6edb;
+  box-shadow: 0 0 0 4px rgba(47, 110, 219, 0.12);
+}
+
+.inquiry_select {
+  cursor: pointer;
+  color: #243b6b;
+  padding: 0 16px;
+}
+
+.inquiry_select option {
+  color: #243b6b;
+  background-color: #ffffff;
+}
+
+.inquiry_area {
+  min-height: 150px;
+  padding: 16px;
+  margin-bottom: 18px;
+  resize: none;
+  line-height: 1.6;
+}
+
+.inquiry_check {
+  margin: 10px 0 28px;
+}
+
+.inquiry_check label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #5b6677;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.inquiry_check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.inquiry_btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 999px;
+  background: #10233f;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquiry_btn:hover {
+  background: #1d3f72;
+}
+
+.inquiry_btn:active {
+  transform: translateY(0);
+}
+
+.error_text {
+  margin: 1px 0 16px;
+  font-size: 13px;
+  color: #e53935;
+  font-weight: 500;
+}
+
+

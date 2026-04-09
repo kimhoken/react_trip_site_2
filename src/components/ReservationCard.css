@@ -1,0 +1,33 @@
+.rcard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.rimg {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.rinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.rinfo h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #1c2f5f;
+}
+
+.rinfo p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+}
