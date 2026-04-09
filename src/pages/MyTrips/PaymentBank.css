@@ -1,0 +1,127 @@
+.payment-bank-wrap {
+  width: 100%;
+  max-width: 450px;
+  margin: 12px 0  12px 16px; 
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-align: left;
+}
+
+.payment-bank-title {
+  margin-bottom: 28px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10233f;
+  text-align: left;
+}
+
+.payment-bank-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  gap: 10px 15px;
+  margin-bottom: 32px;
+}
+
+.payment-bank-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.payment-bank-radio {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.payment-bank-logo-circle {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.payment-bank-logo-text {
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.payment-bank-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #243b6b;
+}
+
+.payment-bank-label {
+  margin: 24px 0 15px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #243b6b;
+  text-align: left;
+}
+
+.payment-bank-user-input,
+.payment-bank-number-input {
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #111827;
+  background: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.payment-bank-user-input:focus,
+.payment-bank-number-input:focus {
+  border-color: #1c2f57;
+}
+
+.payment-bank-error {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #dc2626;
+  text-align: left;
+}
+
+.bank-kb {
+  background: #f7e600;
+}
+
+.bank-ibk {
+  background: #1f6feb;
+}
+
+.bank-bnk {
+  background: #e53935;
+}
+
+.bank-kakao {
+  background: #f7e600;
+}
+
+.bank-kb .payment-bank-logo-text {
+  color: #3b1e1e;
+  font-size: 10px;
+}
+
+.bank-kakao .payment-bank-logo-text {
+  color: #3b1e1e;
+}
