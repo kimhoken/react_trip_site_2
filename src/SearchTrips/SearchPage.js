@@ -88,8 +88,8 @@ const SearchPage = () => {
                                 <img src={item.image} width={'90px'} height={'90px'} /></div>
                             <div className='package-summary'>
                                 <div>{item.title}</div>
-                                <div>나라: {item.country}</div>
                                 <div>한줄평: {item.detail.summary}</div>
+                                 {/* <div>나라: {item.country}</div> */}
                                 <div>일수: {item.detail.duration}</div>
                                 <div><span>★</span>{item.rating}
                                     ({item.reviewCount})</div>
