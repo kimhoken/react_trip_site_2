@@ -5,11 +5,14 @@ import { PackageDetail } from "./PackageDetail";
 import { PackageSchedule } from "./PackageSchedule";
 import useWebStore from "../Store/useWebStore";
 import './Packageinfo.css';
+import { useState } from "react";
 
 const Packageinfo = () => {
 
     const { loginUser } = useWebStore();
     const { id } = useParams();
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
     const showlist = () => {
         let list = id < 100 ? PackageList : DomesticPackageList;
         list = list.find((item) => item.id == id);
@@ -35,6 +38,7 @@ const Packageinfo = () => {
 
     const item = showlist();
     const navigate = useNavigate();
+    const dates = item.detail.dates;
 
     const loginEvent = (e) => {
         if (!loginUser) {
@@ -52,56 +56,90 @@ const Packageinfo = () => {
                 <div className="package-img">
                     <img src={item.list.image} />
                 </div>
+
                 <div className="packageinfo">
                     {item.list.isPopular && (
                         <span className="package-badge">인기상품</span>
                     )}
-                    <div><h2>{item.list.title}</h2></div>
-                    <div>{item.detail.summary}</div>
-                    <hr/>
-                    <div className="package-pricemain">
-                    <div>가격</div>
-                    <div className="package-price">{item.list.price}</div>
-                    <div>/1인</div>
+                    <h2>{item.list.title}</h2>
+                    <p>{item.detail.summary}</p>
+                    <hr />
+                    <div className="packageinfo-box">
+                        <div className="package-pricemain">
+                        
+                            <div className="package-price">{item.list.price}<span>/1인</span></div>
+                            
+                        </div>
+
+                        <div className="package-rating">
+                            <div><span>★ </span>{item.list.rating} ({item.list.reviewCount})</div>
+                        </div>
+                        <div className="package-rating">
+                            <div>{item.list.country.kr},{item.list.city.kr}</div>
+                        </div>
+                        <div className="package-rating">
+                            {item.detail.duration}
+                        </div>
                     </div>
 
-                    <div><span>★ </span>{item.list.rating} ({item.list.reviewCount})</div>
-                    <div>나라: {item.list.country.kr}</div>
+                    <hr />
+                    <div className="package-detail">
+                        <h3>여행 상세 정보</h3>
+                        <div className="package-date-row">
+                            <label>
+                            출발일:
+                            </label>
+                            <select
+                                onChange={(e) => setSelectedIndex(e.target.value)}
+                                value={selectedIndex}
+                            >
+                                {dates.map((date, index) => (
+                                    <option key={index} value={index}>
+                                        {date.departureDate}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div className="package-date-row">
+                            <label>
+                                도착일:
+                            </label>
+                             {dates[selectedIndex].arrivalDate}
+                        </div>
+
+                        <div className="package-date-row">
+                            <label>
+                                여행 기간
+                            </label>
+                            <div> {item.detail.duration}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="package-content">
-                <div className="package-detail">
-                    <div>여행 상세 정보</div>
-                    {
-                        item.detail.dates.map((i) => (
-                            <div>출발일:{i.departureDate} 도착일:{i.arrivalDate}</div>
-                        ))
-                    }
-                    <div>일수 : {item.detail.duration}</div>
-                </div>
-                <div className="package-schedule">
-                    <table border={'1'}>
+            <div className="package-schedule">
+                <h3>상세일정</h3>
+                <table >
+                    <thead>
                         <tr>
                             <th>일차</th>
                             <th>일정</th>
                             <th>내용</th>
                         </tr>
-                        {show()}
-                    </table>
-                </div>
+                    </thead>
+                    <tbody>{show()}</tbody>
+                </table>
             </div>
-
             <div className="package-actions">
-                <span
-                    onClick={loginEvent}><p>예약하기</p></span>
-                {item.list.type === 'domestic' ?
-                    <Link to={'/Packages/DomesticPage'}><p>뒤로가기</p></Link> :
-                    <Link to={'/Packages/OverseasPage'}><p>뒤로가기</p></Link>}
+                <div className="package-action-text">
+                    <button className="reserve-btn" onClick={loginEvent}>
+                        예약하기
+                    </button>         
+   
+                </div>
 
 
             </div>
-
-
         </div>
     )
 }
