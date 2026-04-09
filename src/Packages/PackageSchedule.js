@@ -315,5 +315,125 @@ export const PackageSchedule = [
       { day: 2, title: "서울 자유 투어", detail: "쇼핑, 카페, 전시 또는 맛집 탐방" },
       { day: 3, title: "일정 종료", detail: "개별 귀가" }
     ]
+  },
+    {
+    id: 106,
+    schedule: [
+      { day: 1, title: "인천 도착", detail: "송도와 바다 풍경을 즐기며 체크인" },
+      { day: 2, title: "인천 감성 투어", detail: "차이나타운, 월미도, 카페 거리 방문" },
+      { day: 3, title: "귀가", detail: "자유 일정 후 귀가" }
+    ]
+  },
+  {
+    id: 107,
+    schedule: [
+      { day: 1, title: "수원 도착", detail: "숙소 체크인 후 화성 야경 산책" },
+      { day: 2, title: "역사 탐방", detail: "수원화성과 전통시장 방문" },
+      { day: 3, title: "귀가", detail: "카페 방문 후 귀가" }
+    ]
+  },
+  {
+    id: 108,
+    schedule: [
+      { day: 1, title: "춘천 도착", detail: "호수 풍경 감상과 숙소 체크인" },
+      { day: 2, title: "춘천 자연 여행", detail: "남이섬 또는 호수 주변 산책" },
+      { day: 3, title: "귀가", detail: "카페 거리 방문 후 귀가" }
+    ]
+  },
+  {
+    id: 109,
+    schedule: [
+      { day: 1, title: "양양 도착", detail: "해변 산책과 숙소 체크인" },
+      { day: 2, title: "서핑과 힐링", detail: "해변 액티비티와 자유시간" },
+      { day: 3, title: "귀가", detail: "브런치 후 귀가" }
+    ]
+  },
+  {
+    id: 110,
+    schedule: [
+      { day: 1, title: "대전 도착", detail: "도심 산책 및 숙소 체크인" },
+      { day: 2, title: "대전 여유 여행", detail: "공원, 카페, 전시 공간 방문" },
+      { day: 3, title: "귀가", detail: "개별 일정 후 귀가" }
+    ]
+  },
+  {
+    id: 111,
+    schedule: [
+      { day: 1, title: "청주 도착", detail: "숙소 체크인 후 주변 산책" },
+      { day: 2, title: "청주 힐링 투어", detail: "자연 명소와 카페 방문" },
+      { day: 3, title: "귀가", detail: "자유시간 후 귀가" }
+    ]
+  },
+  {
+    id: 112,
+    schedule: [
+      { day: 1, title: "광주 도착", detail: "숙소 체크인 및 도심 산책" },
+      { day: 2, title: "문화 감성 여행", detail: "예술 거리와 맛집 탐방" },
+      { day: 3, title: "귀가", detail: "기념품 쇼핑 후 귀가" }
+    ]
+  },
+  {
+    id: 113,
+    schedule: [
+      { day: 1, title: "여수 도착", detail: "숙소 체크인 후 바다 야경 감상" },
+      { day: 2, title: "여수 바다 여행", detail: "해상 케이블카, 오션뷰 카페 방문" },
+      { day: 3, title: "귀가", detail: "아침 산책 후 귀가" }
+    ]
+  },
+  {
+    id: 114,
+    schedule: [
+      { day: 1, title: "포항 도착", detail: "해변 산책과 체크인" },
+      { day: 2, title: "포항 감성 투어", detail: "바다 명소와 카페 거리 방문" },
+      { day: 3, title: "귀가", detail: "자유 일정 후 귀가" }
+    ]
+  },
+  {
+    id: 115,
+    schedule: [
+      { day: 1, title: "울산 도착", detail: "숙소 체크인 후 야경 산책" },
+      { day: 2, title: "울산 자연 여행", detail: "대왕암공원과 해안 드라이브" },
+      { day: 3, title: "귀가", detail: "브런치 후 귀가" }
+    ]
+  },
+  {
+    id: 116,
+    schedule: [
+      { day: 1, title: "전주 도착", detail: "한옥마을 주변 산책" },
+      { day: 2, title: "전주 감성 여행", detail: "한옥마을, 전통 음식, 카페 투어" },
+      { day: 3, title: "귀가", detail: "기념품 쇼핑 후 귀가" }
+    ]
+  },
+  {
+    id: 117,
+    schedule: [
+      { day: 1, title: "강화 도착", detail: "숙소 체크인 후 석양 감상" },
+      { day: 2, title: "강화 역사 여행", detail: "역사 유적지와 자연 명소 방문" },
+      { day: 3, title: "귀가", detail: "자유 일정 후 귀가" }
+    ]
+  },
+  {
+    id: 118,
+    schedule: [
+      { day: 1, title: "태안 도착", detail: "해변 산책과 숙소 체크인" },
+      { day: 2, title: "태안 해변 여행", detail: "꽃지해변과 감성 카페 방문" },
+      { day: 3, title: "귀가", detail: "아침 바다 감상 후 귀가" }
+    ]
+  },
+  {
+    id: 119,
+    schedule: [
+      { day: 1, title: "속초 도착", detail: "숙소 체크인 후 바다 산책" },
+      { day: 2, title: "속초 힐링 투어", detail: "해변, 시장, 카페 거리 방문" },
+      { day: 3, title: "귀가", detail: "자유시간 후 귀가" }
+    ]
+  },
+  {
+    id: 120,
+    schedule: [
+      { day: 1, title: "남해 도착", detail: "숙소 체크인 및 바다 풍경 감상" },
+      { day: 2, title: "남해 감성 여행", detail: "독일마을, 해안 도로, 카페 방문" },
+      { day: 3, title: "귀가", detail: "브런치 후 귀가" }
+    ]
   }
 ]

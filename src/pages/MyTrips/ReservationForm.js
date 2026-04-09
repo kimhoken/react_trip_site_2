@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { KoreaList } from "../../Packages/KoreaList";
 import { PackageDetail } from "../../Packages/PackageDetail";
 import useWebStore from "../../Store/useWebStore";
 import './ReservationForm.css'
@@ -17,7 +16,7 @@ export default function ReservationForm() {
 
     const { loginUser, addReservation } = useWebStore()
 
-    const cityData = KoreaList.find((item) => item.id === selTrip?.id)
+    
     const detailData = PackageDetail.find((item) => item.id == selTrip?.id)
 
     const [city, setCity] = useState("");
@@ -25,14 +24,14 @@ export default function ReservationForm() {
     const [endDate, setEndDate] = useState("");
 
     useEffect(() => {
-        if (cityData) {
-            setCity(cityData.city || "");
+        if (selTrip) {
+            setCity(selTrip.city.kr || "");
         }
         if (detailData) {
             setStartDate(detailData.dates[0].departureDate || "");
             setEndDate(detailData.dates[0].arrivalDate || "");
         }
-    }, [cityData, detailData])
+    }, [selTrip, detailData])
 
     const getDays = () => {
         if (!startDate || !endDate) {

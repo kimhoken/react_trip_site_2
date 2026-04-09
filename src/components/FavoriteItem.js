@@ -16,7 +16,7 @@ export default function FavoriteItem({item,onDelete}){
 
             <div className="faInfo">
                 <h3>{item.title}</h3>
-                <p>나라 : {item.country}</p>
+                <p>나라 : {item.country.kr}</p>
                 <p>가격: {item.price}</p>
                 <p>평점: {item.rating}</p>
             </div>

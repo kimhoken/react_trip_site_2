@@ -21,13 +21,13 @@
 }
 .Domestic-result h2{
     text-align: left;
-    font-size: 30px;
+    font-size: 35px;   /* 여기*/
     padding: 30px 20px;
     color: #1C2F57;
 }
 .Domestic-main p{
     padding: 10px 30px; 
-    font-size: 20px;    
+    font-size: 18px;    /* 여기*/
     border-top: 1px solid #666666;
     border-right: 1px solid #666666;
     border-bottom: 1px solid #000;      

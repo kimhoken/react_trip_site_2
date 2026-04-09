@@ -12,6 +12,7 @@
     text-align: left;    
     color: #1C2F57;
     padding: 30px 20px;
+    font-size: 35px;   /* 여기*/
 }
 .conutry-list{
     display: flex;
@@ -21,7 +22,7 @@
 }
 .conutry-list p{
     padding: 10px 30px; 
-    font-size: 20px;    
+    font-size: 18px;      /* 여기*/
     border-top: 1px solid #666666;
     border-right: 1px solid #666666;
     border-bottom: 1px solid #000;      
