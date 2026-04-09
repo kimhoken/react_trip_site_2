@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 
@@ -9,18 +9,18 @@ import useWebStore from "../../Store/useWebStore";
 import './ReservationForm.css'
 
 
-export default function ReservationForm(){
-    
-    const navigate=useNavigate();    
+export default function ReservationForm() {
+
+    const navigate = useNavigate();
     const [cnt, setCnt] = useState(1)
 
-    const location=useLocation()
-    const selTrip=location.state?.selTrip
+    const location = useLocation()
+    const selTrip = location.state?.selTrip
 
     const { loginUser, addReservation } = useWebStore()
 
-    const cityData = KoreaList.find((item)=>item.id===selTrip?.id)
-    const detailData=PackageDetail.find((item)=>item.id==selTrip?.id)
+    const cityData = KoreaList.find((item) => item.id === selTrip?.id)
+    const detailData = PackageDetail.find((item) => item.id == selTrip?.id)
 
     const [city, setCity] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -36,35 +36,35 @@ export default function ReservationForm(){
         }
     }, [cityData, detailData])
 
-    const getDays=()=>{
-        if(!startDate || !endDate){
+    const getDays = () => {
+        if (!startDate || !endDate) {
             return ''
         }
 
-        const start=new Date(startDate)
-        const end=new Date(endDate)
+        const start = new Date(startDate)
+        const end = new Date(endDate)
 
-        const diff=(end-start)/ (1000*60*60*24)
+        const diff = (end - start) / (1000 * 60 * 60 * 24)
 
-        if(diff<0){
+        if (diff < 0) {
             return '날짜를 다시 선택하세요'
         }
 
-        if(diff==0){
+        if (diff == 0) {
             return '당일여행'
-        }else{
-            return diff+'박 '+(diff+1)+'일'
+        } else {
+            return diff + '박 ' + (diff + 1) + '일'
         }
     }
 
-    const prePrice=selTrip?Number(selTrip.price.replace(/~/,"").replace(/,/g,"").replace(/₩/,""))*cnt:0
+    const prePrice = selTrip ? Number(selTrip.price.replace(/~/, "").replace(/,/g, "").replace(/₩/, "")) * cnt : 0
 
     const formattedPrePrice = prePrice.toLocaleString();
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
 
-        if(!loginUser){
+        if (!loginUser) {
             alert('로그인이 필요합니다.')
             navigate('/LoginPage')
             return;
@@ -74,17 +74,17 @@ export default function ReservationForm(){
             alert("잘못된 접근입니다");
             return;
         }
-        
+
         const totalprice = Number(selTrip.price.replace(/~/, "").replace(/,/g, "").replace(/₩/, "")) * cnt;
 
         const formattedPrice = totalprice.toLocaleString()
 
-        const newReservation={
+        const newReservation = {
             id: Date.now(),
             packid: selTrip.id,
             userId: loginUser.id,
             userName: loginUser.name,
-            title: selTrip?.title || city+'여행',
+            title: selTrip?.title || city + '여행',
             image: selTrip.image,
             destination: city,
             startDate: startDate,
@@ -94,7 +94,7 @@ export default function ReservationForm(){
             price: formattedPrice
         }
 
-        
+
         addReservation(newReservation)
         navigate(`/MyTrips/reserve/payment/${newReservation.id}`);
         // alert(
@@ -114,33 +114,36 @@ export default function ReservationForm(){
 
     }
 
-    return(
+    return (
         <div className="trip-reservation-main">
-            <h2>여행 예약</h2>
+            <div>
+                <h2>Trip Reservation</h2>
+            </div>
+
 
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>도시 : </label>
-                    <input type="text" value={city} onChange={(e)=>setCity(e.target.value)} readOnly/>
+                <div className="trip-reservation-group">
+                    <label>도시</label>
+                    <input type="text" value={city} onChange={(e) => setCity(e.target.value)} readOnly />
                 </div>
 
-                <div>
-                    <label>이름 : </label>
-                    {loginUser.name}
+                <div className="trip-reservation-group">
+                    <label>이름</label>
+                    <input value={loginUser.name || ''} readOnly />
                 </div>
 
-                <div>
-                    <label>출발 날짜 : </label>
-                    <input type="date" value={startDate} onChange={(e)=>setStartDate(e.target.value)} readOnly/>
+                <div className="trip-reservation-group">
+                    <label>출발 날짜</label>
+                    <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} readOnly />
                 </div>
 
-                <div>
-                    <label>도착 날짜: </label>
-                    <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)} readOnly/>
+                <div className="trip-reservation-group">
+                    <label>도착 날짜</label>
+                    <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} readOnly />
                 </div>
 
-                <div>
-                    <label>인원수 : </label>
+                <div className="trip-reservation-group">
+                    <label>인원수</label>
                     <div className="count-box">
                         <button type="button" onClick={() => setCnt((prev) => Math.max(1, prev - 1))}>-</button>
 
@@ -150,24 +153,27 @@ export default function ReservationForm(){
                     </div>
                 </div>
 
-                <div>
-                    <label>총 가격 : </label>
+                <div className="trip-reservation-group">
+                    <label>총 가격</label>
                     <span>₩ {formattedPrePrice}</span>
                 </div>
 
-                <div>
-                    {
-                        startDate && endDate &&(
-                            <>
-                            {startDate} ~ {endDate}<br/>
-                            일정: {getDays()}
-                            </>
-                        )
-                    }
+                <div className="trip-reservation-group-full">
+                    <label>여행 일정</label>
+                    <div>
+                        {
+                            startDate && endDate && (
+                                <>
+                                    {startDate} ~ {endDate}({getDays()})
+                                     
+                                </>
+                            )
+                        }
+                    </div>
                 </div>
-                <button type="submit">예약하기</button>
+                <button type="submit" className="trip-reservation-submit-btn">예약하기</button>
             </form>
-           
+
         </div>
     )
 }
