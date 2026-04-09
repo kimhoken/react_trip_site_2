@@ -10,7 +10,7 @@ export const DomesticPackageList = [
     buttonText: "바로가기 〉",
     rating: 4.7,
     reviewCount: 210,
-    contient: "Korea",
+    contient: "제주",
     link: "/Packages/domestic/Korea/Korea/101",
     isPopular: true
   },
@@ -25,7 +25,7 @@ export const DomesticPackageList = [
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 150,
-    contient: "Korea",
+    contient: "경상",
     link: "/Packages/domestic/Korea/Korea/102",
     isPopular: false
   },
@@ -40,7 +40,7 @@ export const DomesticPackageList = [
     buttonText: "바로가기 〉",
     rating: 4.4,
     reviewCount: 98,
-    contient: "Korea",
+    contient: "강원",
     link: "/Packages/domestic/Korea/Korea/103",
     isPopular: false
   },
@@ -55,7 +55,7 @@ export const DomesticPackageList = [
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 132,
-    contient: "Korea",
+    contient: "경상",
     link: "/Packages/domestic/Korea/Korea/104",
     isPopular: false
   },
@@ -70,7 +70,7 @@ export const DomesticPackageList = [
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 85,
-    contient: "Korea",
+    contient: "수도권",
     link: "/Packages/domestic/Korea/Korea/105",
     isPopular: false
   },
