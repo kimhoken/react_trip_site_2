@@ -1,7 +1,7 @@
 export const PackageList = [
   {
     id: 1,
-    image: "/images/country/1.country_asia/1.j1.jpg",
+    image: "/images/country/1.country_asia/1.j1.png",
     title: "도쿄 봄맞이 특가 여행",
     price: "₩ 999,000~",
     type: "overseas", // 해외
@@ -17,7 +17,7 @@ export const PackageList = [
   },
   {
     id: 2,
-    image: "/images/country/1.country_asia/2.j2.jpg",
+    image: "/images/country/1.country_asia/2.j2.png",
     title: "오사카 먹거리 여행",
     price: "₩ 759,000~",
     type: "overseas",
@@ -79,7 +79,7 @@ export const PackageList = [
   },
   {
     id: 6,
-    image: "/images/country/1.country_asia/6.c1.jpg",
+    image: "/images/country/1.country_asia/6.c1.png",
     title: "베이징 역사 탐방 여행",
     price: "₩ 2,299,000~",
     country: "China",
@@ -96,7 +96,7 @@ export const PackageList = [
   },
   {
     id: 7,
-    image: "/images/country/1.country_asia/7.c2.jpg",
+    image: "/images/country/1.country_asia/7.c2.png",
     title: "상하이 야경 감성 여행",
     price: "₩ 1,899,000~",
     country: "China",
@@ -111,7 +111,7 @@ export const PackageList = [
   },
   {
     id: 8,
-    image: "/images/country/1.country_asia/8.b1.jpg",
+    image: "/images/country/1.country_asia/8.b1.png",
     title: "다낭 휴양 바다 여행",
     price: "₩ 859,000~",
     type: "overseas",
@@ -126,7 +126,7 @@ export const PackageList = [
   },
   {
     id: 9,
-    image: "/images/country/1.country_asia/9.b2.jpg",
+    image: "/images/country/1.country_asia/9.b2.png",
     title: "호치민 활기찬 여행",
     price: "₩ 829,000~",
 
@@ -142,7 +142,7 @@ export const PackageList = [
   },
   {
     id: 10,
-    image: "/images/country/1.country_asia/10.b3.jpg",
+    image: "/images/country/1.country_asia/10.b3.png",
     title: "나트랑 에메랄드 여행",
     price: "₩ 899,000~",
 
@@ -158,7 +158,7 @@ export const PackageList = [
   },
   {
     id: 11,
-    image: "/images/country/2.country_europe/1.f1.jpg",
+    image: "/images/country/2.country_europe/1.f1.png",
     title: "파리 낭만 도시 여행",
     price: "₩ 1,799,000~",
 
@@ -174,7 +174,7 @@ export const PackageList = [
   },
   {
     id: 12,
-    image: "/images/country/2.country_europe/2.f2.jpg",
+    image: "/images/country/2.country_europe/2.f2.png",
     title: "니스 지중해 감성 여행",
     price: "₩ 1,659,000~",
 
@@ -190,7 +190,7 @@ export const PackageList = [
   },
   {
     id: 13,
-    image: "/images/country/2.country_europe/3.sw.jpg",
+    image: "/images/country/2.country_europe/3.sw.png",
     title: "스위스 알프스 감성 여행",
     price: "₩ 1,659,000~",
     type: "overseas",
@@ -203,7 +203,7 @@ export const PackageList = [
   },
   {
     id: 14,
-    image: "/images/country/2.country_europe/4.it.jpg",
+    image: "/images/country/2.country_europe/4.it.png",
     title: "이탈리아 나폴리 예술 여행",
     price: "₩ 2,099,000~",
     buttonText: "바로가기 〉",
@@ -215,7 +215,7 @@ export const PackageList = [
   },
   {
     id: 15,
-    image: "/images/country/2.country_europe/5.spa.jpg",
+    image: "/images/country/2.country_europe/5.spa.png",
     title: "열정이 넘치는 스페인 여행",
     price: "₩ 1,989,000~",
     type: "overseas",
@@ -228,7 +228,7 @@ export const PackageList = [
   },
   {
     id: 16,
-    image: "/images/country/2.country_europe/6.G.jpg",
+    image: "/images/country/2.country_europe/6.G.png",
     title: "독일 전통 감성 여행",
     price: "₩ 2,159,000~",
 
@@ -242,7 +242,7 @@ export const PackageList = [
   },
   {
     id: 17,
-    image: "/images/country/2.country_europe/7.a.jpg",
+    image: "/images/country/2.country_europe/7.a.png",
     title: "오스트리아 음악 풍경 여행",
     price: "₩ 2,189,000~",
 
@@ -256,7 +256,7 @@ export const PackageList = [
   },
   {
     id: 18,
-    image: "/images/country/2.country_europe/8.nl.jpg",
+    image: "/images/country/2.country_europe/8.nl.png",
     title: "운하의 도시 네덜란드 여행",
     price: "₩ 2,049,000~",
 
@@ -270,7 +270,7 @@ export const PackageList = [
   },
   {
     id: 19,
-    image: "/images/country/2.country_europe/9.cz.jpg",
+    image: "/images/country/2.country_europe/9.cz.png",
     title: "동화 같은 풍경의 체코 여행",
     price: "₩ 1,939,000~",
 
@@ -284,7 +284,7 @@ export const PackageList = [
   },
   {
     id: 20,
-    image: "/images/country/2.country_europe/10.gr.jpg",
+    image: "/images/country/2.country_europe/10.gr.png",
     title: "눈부신 지중해의 그리스 여행",
     price: "₩ 2,129,000~",
 
@@ -298,7 +298,7 @@ export const PackageList = [
   },
   {
     id: 21,
-    image: "/images/country/3.country_americas/1.usa1.jpg",
+    image: "/images/country/3.country_americas/1.usa1.png",
     title: "화려한 도시의 매력 뉴욕 여행",
     price: "₩ 2,399,000~",
     type: "overseas",
@@ -311,7 +311,7 @@ export const PackageList = [
   },
   {
     id: 22,
-    image: "/images/country/3.country_americas/2.usa2.jpg",
+    image: "/images/country/3.country_americas/2.usa2.png",
     title: "LA 자유 감성 여행",
     price: "₩ 2,289,000~",
     type: "overseas",
@@ -324,7 +324,7 @@ export const PackageList = [
   },
   {
     id: 23,
-    image: "/images/country/3.country_americas/3.ca1.jpg",
+    image: "/images/country/3.country_americas/3.ca1.png",
     title: "밴쿠버 자연 도시 여행",
     price: "₩ 2,159,000~",
 
@@ -338,7 +338,7 @@ export const PackageList = [
   },
   {
     id: 24,
-    image: "/images/country/3.country_americas/4.ca2.jpg",
+    image: "/images/country/3.country_americas/4.ca2.png",
     title: "토론토 도심 감성 여행",
     price: "₩ 2,199,000~",
 
@@ -352,7 +352,7 @@ export const PackageList = [
   },
   {
     id: 25,
-    image: "/images/country/3.country_americas/5.mex.jpg",
+    image: "/images/country/3.country_americas/5.mex.png",
     title: "멕시코 전통 열정 여행",
     price: "₩ 1,989,000~",
 
@@ -366,7 +366,7 @@ export const PackageList = [
   },
   {
     id: 26,
-    image: "/images/country/3.country_americas/6.br.jpg",
+    image: "/images/country/3.country_americas/6.br.png",
     title: "열정의 해변 도시 리우 여행",
     price: "₩ 2,499,000~",
 
@@ -380,7 +380,7 @@ export const PackageList = [
   },
   {
     id: 27,
-    image: "/images/country/3.country_americas/7.br.jpg",
+    image: "/images/country/3.country_americas/7.br.png",
     title: "상파울루 활기 여행",
     price: "₩ 2,359,000~",
 
@@ -394,7 +394,7 @@ export const PackageList = [
   },
   {
     id: 28,
-    image: "/images/country/3.country_americas/8.p.jpg",
+    image: "/images/country/3.country_americas/8.p.png",
     title: "리마 역사 미식 여행",
     price: "₩ 2,189,000~",
 
@@ -408,7 +408,7 @@ export const PackageList = [
   },
   {
     id: 29,
-    image: "/images/country/3.country_americas/9.chi.jpg",
+    image: "/images/country/3.country_americas/9.chi.png",
     title: "산티아고 안데스 여행",
     price: "₩ 2,279,000~",
     type: "overseas",
@@ -421,7 +421,7 @@ export const PackageList = [
   },
   {
     id: 30,
-    image: "/images/country/3.country_americas/10.arg.jpg",
+    image: "/images/country/3.country_americas/10.arg.png",
     title: "부에노스 낭만 여행",
     price: "₩ 2,469,000~",
     type: "overseas",
