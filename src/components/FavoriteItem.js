@@ -10,7 +10,7 @@ export default function FavoriteItem({item,onDelete}){
     const navigate = useNavigate()
 
     return(
-        <div className="faItem" onClick={() => navigate('/MyTrips/reserve',{state:{selTrip:item}})}>
+        <div className="faItem" onClick={() => navigate(`/Packages/${item.type}/${item.contient}/${item.country}/${item.id}`,{state:{selTrip:item}})}>
 
             <img src={item.image} alt={item.title} className="faImg"/> 
 
