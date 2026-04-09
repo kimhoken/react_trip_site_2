@@ -1,14 +1,24 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import "./MyPage.css";
 import useWebStore from "../../Store/useWebStore";
 
 export default function MyPage(){
 
+    const navigate = useNavigate();
+
     const { loginUser } = useWebStore()
 
     if (!loginUser) {
-        return <div>로그인 정보가 없습니다.</div>
+        return( 
+            <div className="mypage-login-error">
+                <h2>로그인 정보가 없습니다.</h2>
+                <button className="goto-login" 
+                        onClick={()=>navigate('/LoginPage')}>로그인 하러가기</button>
+            </div>
+            
+            
+    )
     }
 
     return(

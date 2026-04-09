@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
 import { PackageDetail } from "../../Packages/PackageDetail";
 import useWebStore from "../../Store/useWebStore";
+import './ReservationForm.css'
 
 
 export default function ReservationForm(){
@@ -114,23 +115,28 @@ export default function ReservationForm(){
     }
 
     return(
-        <div>
+        <div className="trip-reservation-main">
             <h2>여행 예약</h2>
 
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>도시 : </label>
-                    <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
+                    <input type="text" value={city} onChange={(e)=>setCity(e.target.value)} readOnly/>
+                </div>
+
+                <div>
+                    <label>이름 : </label>
+                    {loginUser.name}
                 </div>
 
                 <div>
                     <label>출발 날짜 : </label>
-                    <input type="date" value={startDate} onChange={(e)=>setStartDate(e.target.value)}/>
+                    <input type="date" value={startDate} onChange={(e)=>setStartDate(e.target.value)} readOnly/>
                 </div>
 
                 <div>
                     <label>도착 날짜: </label>
-                    <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)}/>
+                    <input type="date" value={endDate} onChange={(e)=>setEndDate(e.target.value)} readOnly/>
                 </div>
 
                 <div>
