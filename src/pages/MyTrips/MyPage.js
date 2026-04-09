@@ -12,6 +12,7 @@ const Mypage = () => {
     logout();
     navigate("/");
   };
+   
 
   if (!loginUser) {
     return (

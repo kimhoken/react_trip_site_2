@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import './TravelTips.css';
+import { useNavigate } from "react-router-dom";
+import useWebStore from "../../Store/useWebStore";
+
 
 export default function TravelTips(){
 
@@ -12,6 +15,20 @@ export default function TravelTips(){
                 기타: ['우산','물티슈','지퍼백','샤워필터']}
 
     const [checked,setChecked]=useState([])
+
+    const navigate = useNavigate()
+
+    const { loginUser } = useWebStore()
+
+    if (!loginUser) {
+        return( 
+            <div className="mypage-login-error">
+                <h2>로그인 정보가 없습니다.</h2>
+                <button className="goto-login" 
+                        onClick={()=>navigate('/LoginPage')}>로그인 하러가기</button>
+            </div>
+    )
+    }
 
     const toggle=(key)=>{
         setChecked((prev)=>prev.includes(key) ? prev.filter((i)=>i !== key):[...prev,key])
