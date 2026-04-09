@@ -9,9 +9,9 @@
 }
 
 .overseas-main h2{
-    text-align: left;
-    padding-left: 20px;
+    text-align: left;    
     color: #1C2F57;
+    padding: 30px 20px;
 }
 .conutry-list{
     display: flex;

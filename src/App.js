@@ -33,6 +33,7 @@ import BoardDetail from './Board/BoardDetail';
 import Inquirypage from './customerservice/Inquirypage';
 import TripTip from './Board/TripTip';
 import TripTipDetail from './Board/TripTipDetail';
+import Payment from './pages/MyTrips/Payment';
 
 
 
@@ -76,7 +77,7 @@ function App() {
         <Route path="/MyTrips/reserve" element={<ReservationForm />} />
         <Route path='/MyTrips/reservations' element={<ReservationList/>}/>
         <Route path='/MyTrips/mypage' element={<MyPage/>} />
-        
+        <Route path='/MyTrips/reserve/payment/:id' element={<Payment/>}/>
 
         <Route path="/CustomerService" element={<Mainservieces />} />
         <Route path="/CustomerService/qna" element={<MainserviecesQnaList />} />

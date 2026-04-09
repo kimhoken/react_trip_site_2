@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './PaymentCard.css';
 
 
 export default function PaymentCard({ setCard, cardexdmsg, cardmsg, cardnummsg }) {
@@ -11,16 +11,16 @@ export default function PaymentCard({ setCard, cardexdmsg, cardmsg, cardnummsg }
     const [cardnum4, setCardnum4] = useState('');
     const [month, setMonth] = useState('');
 
-    
+
     useEffect(() => {
-        let ischeck=
-        year|| month|| cardcompany|| cardnum1|| cardnum2|| cardnum3|| cardnum4;
-        if(ischeck){
+        let ischeck =
+            year || month || cardcompany || cardnum1 || cardnum2 || cardnum3 || cardnum4;
+        if (ischeck) {
             setCard(cardinfo)
         }
-        
+
     }
-        , [year, month, cardcompany, cardnum1, cardnum2, cardnum3, cardnum4 ]
+        , [year, month, cardcompany, cardnum1, cardnum2, cardnum3, cardnum4]
     )
     const cardcompanylist = [
         { value: '', name: '::카드사 선택::' },
@@ -51,27 +51,28 @@ export default function PaymentCard({ setCard, cardexdmsg, cardmsg, cardnummsg }
     }
 
     return (
-        <div>
-            카드 정보 입력
+        <div className="card-main">
+            
             <form className="card-select">
                 <label>
                     <select value={cardcompany} onChange={(e) => { setCardCompany(e.target.value) }}>
                         {showcompany()}
                     </select>
-                    <p>{cardmsg}</p>
+                    <div className="errormsg">{cardmsg}</div>
+                </label><br/>
+                <label><div>카드번호</div>
+                    <input placeholder="1111" maxLength={4} size={4} onChange={(e) => { setCardnum1(e.target.value) }} />
+                    -<input type="password" placeholder="●●●●" size={4} maxLength={4} onChange={(e) => { setCardnum2(e.target.value) }} />
+                    -<input placeholder="3333" size={4} maxLength={4} onChange={(e) => { setCardnum3(e.target.value) }} />
+                    -<input type="password" size={4} placeholder="●●●●" maxLength={4} onChange={(e) => { setCardnum4(e.target.value) }} />
+                    <div className="errormsg">{cardnummsg}</div>
                 </label>
-                <label><h4>카드번호</h4>
-                    <input placeholder="1111" size={'4'} onChange={(e)=>{setCardnum1(e.target.value)}}/>
-                    -<input type="password" placeholder="****" size={'4'} onChange={(e)=>{setCardnum2(e.target.value)}} />
-                    -<input placeholder="3333" size={'4'} onChange={(e)=>{setCardnum3(e.target.value)}}/>
-                    -<input type="password" placeholder="****" size={'4'} onChange={(e)=>{setCardnum4(e.target.value)}}/>
-                </label><br />
-                <p>{cardnummsg}</p>
+                <br/>
                 <label>
-                    <h5>유효 기간</h5>
-                    <input size={1} onChange={(e) => { setMonth(e.target.value) }} placeholder="월" />
-                    <input size={1} onChange={(e) => { setYear(e.target.value) }} placeholder="년"/>
-                    <p>{cardexdmsg}</p>
+                    <div>유효 기간</div>
+                    <input size={1} maxLength={2} onChange={(e) => { setMonth(e.target.value) }} placeholder="월" />/
+                    <input size={1} maxLength={2} onChange={(e) => { setYear(e.target.value) }} placeholder="년" />
+                    <div className="errormsg">{cardexdmsg}</div>
                 </label>
             </form>
         </div>

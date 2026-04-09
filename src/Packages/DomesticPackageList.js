@@ -9,7 +9,7 @@ export const DomesticPackageList =[
     buttonText: "바로가기 〉",
     rating: 4.7,
     reviewCount: 210,
-    contient: "Korea",
+    contient: "je",
     link: "/Packages/overeas/Korea/Korea/101"
   },
   {
@@ -22,7 +22,7 @@ export const DomesticPackageList =[
     buttonText: "바로가기 〉",
     rating: 4.5,
     reviewCount: 150,
-    contient: "Korea",
+    contient: "gyeong",
     link: "/Packages/overeas/Korea/Korea/102"
   },
   {
@@ -35,7 +35,7 @@ export const DomesticPackageList =[
     buttonText: "바로가기 〉",
     rating: 4.4,
     reviewCount: 98,
-    contient: "Korea",
+    contient: "kang",
     link: "/Packages/overeas/Korea/Korea/103"
   },
   {
@@ -48,7 +48,7 @@ export const DomesticPackageList =[
     buttonText: "바로가기 〉",
     rating: 4.6,
     reviewCount: 132,
-    contient: "Korea",
+    contient: "gyeong",
     link: "/Packages/overeas/Korea/Korea/104"
   },
   {
@@ -61,7 +61,7 @@ export const DomesticPackageList =[
     buttonText: "바로가기 〉",
     rating: 4.3,
     reviewCount: 85,
-    contient: "Korea",
+    contient: "suduck",
     link: "/Packages/overeas/Korea/Korea/105"
   }
 ]

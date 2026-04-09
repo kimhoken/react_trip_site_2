@@ -1,16 +1,16 @@
 import React, {useEffect, useState } from "react";
 
-import Payment from "./Payment";
 
-import { useLocation } from "react-router-dom";
+
+import { useNavigate, useLocation } from "react-router-dom";
 import { KoreaList } from "../../Packages/KoreaList";
 import { PackageDetail } from "../../Packages/PackageDetail";
 import useWebStore from "../../Store/useWebStore";
 
 
 export default function ReservationForm(){
-    const [open,setOpen]=useState(false);
-    const [selectreservation,setSelectRervation] =useState(null);
+    
+    const navigate=useNavigate();    
     const [cnt, setCnt] = useState(1)
 
     const location=useLocation()
@@ -87,21 +87,19 @@ export default function ReservationForm(){
             price: formattedPrice
         }
 
-        setSelectRervation(newReservation)
+        
         addReservation(newReservation)
-
-        setOpen(true)
-
-        alert(
-            "예약완료\n"+
-            "상품명 : "+(selTrip?.title || "")+"\n" +
-            "도시 : "+city+"\n" +
-            "출발날짜 : "+startDate+"\n" +
-            "도착날짜 : "+endDate+"\n" +
-            "일정 : "+getDays()+"\n"+
-            "인원수 : " + cnt + "명\n" +
-            "가격 : ₩" + formattedPrice
-        )
+        navigate(`/MyTrips/reserve/payment/${newReservation.id}`);
+        // alert(
+        //     "예약완료\n"+
+        //     "상품명 : "+(selTrip?.title || "")+"\n" +
+        //     "도시 : "+city+"\n" +
+        //     "출발날짜 : "+startDate+"\n" +
+        //     "도착날짜 : "+endDate+"\n" +
+        //     "일정 : "+getDays()+"\n"+
+        //     "인원수 : " + cnt + "명\n" +
+        //     "가격 : ₩" + formattedPrice
+        // )
 
         setCity("")
         setStartDate("")
@@ -157,9 +155,7 @@ export default function ReservationForm(){
                 </div>
                 <button type="submit">예약하기</button>
             </form>
-            {
-                open &&<Payment reservation={selectreservation} setOpen={setOpen}/>
-            }
+           
         </div>
     )
 }

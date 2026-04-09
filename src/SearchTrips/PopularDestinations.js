@@ -6,13 +6,13 @@ import './OverseasPage.css';
 const PopularDestinations = () => {
     const [category, setCategory] = useState('');
     const [active, setActive] = useState('');
-    const regin = [
+    const region = [
         { locate: '전체', contient: '' }, { locate: '유럽', contient: 'Europe' }, { locate: '북중미', contient: 'America' },
         { locate: '아시아', contient: 'Asia' }
     ];
     const showcategory = () => {
         {
-            return regin.map((i) => {
+            return region.map((i) => {
                 return (
                     <p onClick={() => { setCategory(i.contient); setActive(i.contient) }}
                         className={active == i.contient ? "active" : ""}
