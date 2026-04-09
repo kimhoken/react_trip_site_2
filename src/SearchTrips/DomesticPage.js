@@ -51,6 +51,8 @@ const DomesticPage = () => {
 
     return (
         <div className="Domestic-main">
+
+        <div className="Domestic-result">
             <h2>국내 여행 패키지</h2>
             <div className="Domestic-show">
             {showcategory()}
@@ -59,6 +61,7 @@ const DomesticPage = () => {
                 {showlist()}
             </ul>
 
+        </div>
         </div>
     )
 }

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.Domestic-main{
+.Domestic-result{
     width: 1160px;    
     background-color: #ffff;
     border-radius: 10px;   
@@ -15,16 +15,14 @@
     margin-bottom: 20px;
 }
 .Domestic-show .active{
-    font-weight: bold;
-    /* border: 1px solid #000; */
+    font-weight: bold;    
     border-bottom: none ;
     color: #1C2F57;
 }
-.Domestic-main h2{
+.Domestic-result h2{
     text-align: left;
     font-size: 30px;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 30px 20px;
     color: #1C2F57;
 }
 .Domestic-main p{

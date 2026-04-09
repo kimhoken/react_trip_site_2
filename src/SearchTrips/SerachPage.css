@@ -1,10 +1,10 @@
 .serachpage * {
-    margin: 0 auto;
+    
     padding: 0;
 }
 .serachpage  {    
     width: 1300px;
-    background-color: #F5EBDD;
+    background-color: #FAF6F0;
     border-radius: 10px;
     margin: auto;
 }
@@ -13,11 +13,11 @@
     color: #243B6B;
     text-align: center;
     margin: 0 auto;
+    font-size: 24px;
 }
 
-.serach-header{
-    margin: 0 auto;
-    background-color: #E8D8C3;
+.result-title{
+    margin: 0 auto;    
     color: #243B6B;
     font-size: 24px;
     border-radius: 10px;
@@ -27,27 +27,46 @@
     font-weight: bold;
     
 }
-.serach-header input{
-    width: 400px;
-    height: 30px;
+.result-title input{
+    width: 200px;
+    height: 20px;
     background-color: inherit;
     color: #243B6B;
     font-size: 20px;
     outline: none;
     font-weight: bold;
+    border: 2px solid #243B6B;
+    box-shadow: none;
+    appearance: none;
+}
+
+.result-title input:focus{
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #243B6B;
 }
 
 .result-box{
     background-color: #FAF6F0;
     color: #2B2B2B;    
+    width: 100%;
 }
 .result-title{
-    margin-left: 30px;
+    width: 100%;
+    padding: 0 30px;
     color: #2B2B2B;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.result-rightgroup{
+    display: flex;
+    gap: 15px   ;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 30px;
+}
+.result-rightgroup p,
 .result-title p{
     margin: 0;
     font-size: 20px;
@@ -92,7 +111,8 @@
 .package-summary{
     flex:1;   
 }
-.package-summary:first-child{
+.package-summary> div:first-child{
+    font-size: 23px;
     font-weight: bold;
 }
 .price-layer{
@@ -106,8 +126,12 @@
 .button-layer{
     margin-top: 150px;
 }
+.price-layer div{
+    font-weight: bold;
+    font-size: 20px;
+}
 .price-layer button{
-    font-size: 20px;    
+    font-size: 22px;    
     width: 150px;
     margin: 5px 0;
     align-items: center;

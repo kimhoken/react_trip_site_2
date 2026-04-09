@@ -96,9 +96,9 @@ const SearchPage = () => {
                             </div>
                         </Link>
                         <div className='price-layer'>
-                            <div>{item.price}</div>
+                            <div className='price-title'>{item.price}</div>
                             <div className='button-layer'>
-                                <button type='button' onClick={()=>{navigate(`/Packages/${item.type}/${item.contient}/${item.country}/${item.id}`)}}>상세보기</button>
+                                <button type='button' onClick={() => { navigate(`/Packages/${item.type}/${item.contient}/${item.country}/${item.id}`) }}>상세보기</button>
                                 <button type='button' onClick={() => { addFavorite(item) }}>즐겨찾기<span>♥</span></button>
                             </div>
                         </div>
@@ -112,18 +112,19 @@ const SearchPage = () => {
     return (
         <div className='serachpage'>
             <header>
-                <h2>여행 검색</h2>
+                <h2>TRIP SERACH</h2>
             </header>
-            <nav className='serach-header'>
-                <p>검색: <input value={search} onChange={(e) => { setSearch(e.target.value) }} size={'30'} /></p>
-            </nav>
+            
             <div className="result-box">
                 <div className="result-title">
                     <p>검색결과</p>
+                    <div className='result-rightgroup'>
+                    <p>검색: <input value={search} onChange={(e) => { setSearch(e.target.value) }} size={'30'} /></p>
                     <p>[조건]<select value={sort} onChange={(e) => { setSort(e.target.value) }} >
                         {sortview()}
                     </select>
                     </p>
+                    </div>
 
                 </div>
                 <div className="prodlist">
