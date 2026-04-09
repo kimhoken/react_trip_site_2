@@ -1,11 +1,13 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PackageList } from "./PackageList";
 import { DomesticPackageList } from "./DomesticPackageList";
 import { PackageDetail } from "./PackageDetail";
 import { PackageSchedule } from "./PackageSchedule";
+import useWebStore from "../Store/useWebStore";
 
 const Packageinfo = () => {
     
+    const {loginUser} = useWebStore();
     const { id } = useParams();
     const showlist = () => {
         let list = id < 100 ? PackageList : DomesticPackageList;
@@ -33,6 +35,17 @@ const Packageinfo = () => {
     const item = showlist();
     const priceNumber = Number(String(item.list.price).replaceAll(',', '').replaceAll('₩', '').replaceAll('~', ''));
 
+    const navigate = useNavigate();
+
+    const loginEvent=(e)=>{
+        if (!loginUser) {
+            e.preventDefault();
+            alert("로그인이 필요합니다.");
+            navigate("/LoginPage");
+            return;
+        }
+        navigate("/MyTrips/reserve" ,{state: {selTrip:item.list}})
+    }
 
     return (
         <div className="packageinfo-main">
@@ -67,7 +80,8 @@ const Packageinfo = () => {
             </div>
 
             <div className="reservation-box">                
-                <Link to="/MyTrips/reserve" state={{selTrip:item.list}}><p>예약하기</p></Link>
+                <span
+                        onClick={loginEvent}><p>예약하기</p></span>
                   {item.list.type ==='domestic'? 
                 <Link to={'/Packages/DomesticPage'}><p>뒤로가기</p></Link>:
                 <Link to={'/Packages/OverseasPage'}><p>뒤로가기</p></Link>}
