@@ -1,8 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/MyTrips/Favorites.css"
+import useWebStore from "../Store/useWebStore";
 
 export default function FavoriteItem({item,onDelete}){
+
+    const {loginUser} = useWebStore();
 
     const navigate = useNavigate()
 
