@@ -4,6 +4,7 @@ import { DomesticPackageList } from "./DomesticPackageList";
 import { PackageDetail } from "./PackageDetail";
 import { PackageSchedule } from "./PackageSchedule";
 import useWebStore from "../Store/useWebStore";
+import './Packageinfo.css';
 
 const Packageinfo = () => {
     
@@ -49,16 +50,17 @@ const Packageinfo = () => {
 
     return (
         <div className="packageinfo-main">
-
+            <div className="packageinfo-header">
             <div className="detail-img"><img src={item.list.image} width={'200px'} height={'200px'} /></div>
             <div className="text-line">
-                <div><h2>{item.list.title}</h2></div>
+                <div><h2>{item.list.title}</h2></div>                
                 <div>가격: {item.list.price}</div>
-                <div>나라: {item.list.country}</div>                
-                <div>평점: {item.list.rating}</div>
-                <div>리뷰수: {item.list.reviewCount}</div>
-
+                <div>나라: {item.list.country}</div> 
+                <div>{item.detail.summary}</div>               
+                <div><span>★ </span>{item.list.rating} ({item.list.reviewCount})</div>
             </div>
+            </div>
+            <div className="package-body">
             <div className="text-detail">
                 <div>여행 상세 정보</div>
                 {
@@ -77,6 +79,7 @@ const Packageinfo = () => {
                     </tr>
                     {show()}
                 </table>
+            </div>
             </div>
 
             <div className="reservation-box">                

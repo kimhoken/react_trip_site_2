@@ -5,7 +5,7 @@
 
 .payment-main{
     width: 1150px;
-    background-color: #fff;    
+    background-color: #f4f4f6;    
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@
 .payment-user{
     border: 1px solid #000;
     width: 500px;
-    
+    background-color: #fff;
     border-radius: 10px;
     margin: 20px;
     padding: 10px;
