@@ -13,11 +13,12 @@ export default function ReservationForm() {
 
     const location = useLocation()
     const selTrip = location.state?.selTrip
+    const selectedDate = location.state?.selectedDate;
 
     const { loginUser, addReservation } = useWebStore()
 
     
-    const detailData = PackageDetail.find((item) => item.id == selTrip?.id)
+    
 
     const [city, setCity] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -27,11 +28,11 @@ export default function ReservationForm() {
         if (selTrip) {
             setCity(selTrip.city.kr || "");
         }
-        if (detailData) {
-            setStartDate(detailData.dates[0].departureDate || "");
-            setEndDate(detailData.dates[0].arrivalDate || "");
+        if (selectedDate) {
+            setStartDate(selectedDate.departureDate || "");
+            setEndDate(selectedDate.arrivalDate || "");
         }
-    }, [selTrip, detailData])
+    }, [selTrip, selectedDate])
 
     const getDays = () => {
         if (!startDate || !endDate) {
@@ -58,6 +59,9 @@ export default function ReservationForm() {
 
     const formattedPrePrice = prePrice.toLocaleString();
 
+    console.log(location.state);
+    console.log(selectedDate);
+    
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -93,17 +97,7 @@ export default function ReservationForm() {
 
 
         addReservation(newReservation)
-        navigate(`/MyTrips/reserve/payment/${newReservation.id}`);
-        // alert(
-        //     "예약완료\n"+
-        //     "상품명 : "+(selTrip?.title || "")+"\n" +
-        //     "도시 : "+city+"\n" +
-        //     "출발날짜 : "+startDate+"\n" +
-        //     "도착날짜 : "+endDate+"\n" +
-        //     "일정 : "+getDays()+"\n"+
-        //     "인원수 : " + cnt + "명\n" +
-        //     "가격 : ₩" + formattedPrice
-        // )
+        navigate(`/MyTrips/reserve/payment/${newReservation.id}`);        
 
         setCity("")
         setStartDate("")
