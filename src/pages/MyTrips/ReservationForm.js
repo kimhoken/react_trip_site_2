@@ -63,6 +63,12 @@ export default function ReservationForm(){
     const handleSubmit=(e)=>{
         e.preventDefault()
 
+        if(!loginUser){
+            alert('로그인이 필요합니다.')
+            navigate('/LoginPage')
+            return;
+        }
+
         if (!selTrip) {
             alert("잘못된 접근입니다");
             return;
