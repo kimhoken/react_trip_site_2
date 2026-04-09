@@ -58,7 +58,6 @@ const NavbarMain =()=>{
                     <div className='dropdown-full'>
                         <ul className='dropdown-menu'>
 
-                            <li><Link className='dropdown-link' to="/MyTrips/mypage">마이페이지</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/reservations">내 예약</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/favorites">즐겨찾기</Link></li>
                             <li><Link className='dropdown-link' to="/MyTrips/tips">체크리스트</Link></li>
