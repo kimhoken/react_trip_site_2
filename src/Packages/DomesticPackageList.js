@@ -1,7 +1,7 @@
 export const DomesticPackageList = [
   {
     id: 101,
-    image: "/images/domestic/jeju.jpg",
+    image: "/images/domestic/jeju.png",
     title: "제주 힐링 여행 3박4일",
     price: "₩ 399,000~",
     country: { en: "Korea", kr: "한국" },
@@ -16,7 +16,7 @@ export const DomesticPackageList = [
   },
   {
     id: 102,
-    image: "/images/domestic/busan.jpg",
+    image: "/images/domestic/busan.png",
     title: "부산 바다 감성 여행",
     price: "₩ 299,000~",
     country: { en: "Korea", kr: "한국" },
@@ -31,7 +31,7 @@ export const DomesticPackageList = [
   },
   {
     id: 103,
-    image: "/images/domestic/kang.jpg",
+    image: "/images/domestic/kang.png",
     title: "강릉 커피 바다 여행",
     price: "₩ 249,000~",
     country: { en: "Korea", kr: "한국" },
@@ -46,7 +46,7 @@ export const DomesticPackageList = [
   },
   {
     id: 104,
-    image: "/images/domestic/sunk.jpg",
+    image: "/images/domestic/bull.png",
     title: "경주 역사 문화 여행",
     price: "₩ 279,000~",
     country: { en: "Korea", kr: "한국" },
@@ -61,7 +61,7 @@ export const DomesticPackageList = [
   },
   {
     id: 105,
-    image: "/images/domestic/seoul.jpg",
+    image: "/images/domestic/seoul.png",
     title: "서울 도심 야경 여행",
     price: "₩ 199,000~",
     country: { en: "Korea", kr: "한국" },
@@ -76,7 +76,7 @@ export const DomesticPackageList = [
   },
   {
     id: 106,
-    image: "/images/domestic/incheon.jpg",
+    image: "/images/domestic/inchen.png",
     title: "인천 바다 힐링 여행",
     price: "₩ 189,000~",
     country: { en: "Korea", kr: "한국" },
@@ -90,7 +90,7 @@ export const DomesticPackageList = [
 
   {
     id: 107,
-    image: "/images/domestic/suwon.jpg",
+    image: "/images/domestic/suwon.png",
     title: "수원 역사 탐방 여행",
     price: "₩ 179,000~",
     country: { en: "Korea", kr: "한국" },
@@ -105,7 +105,7 @@ export const DomesticPackageList = [
   },
 
   {
-    id: 108, image: "/images/domestic/chuncheon.jpg",
+    id: 108, image: "/images/domestic/chuncheon.png",
     title: "춘천 호수 감성 여행",
     price: "₩ 199,000~",
     country: { en: "Korea", kr: "한국" },
@@ -121,7 +121,7 @@ export const DomesticPackageList = [
 
   {
     id: 109,
-    image: "/images/domestic/yangyang.jpg",
+    image: "/images/domestic/yangyang.png",
     title: "양양 서핑 힐링 여행",
     price: "₩ 219,000~",
     country: { en: "Korea", kr: "한국" },
@@ -136,7 +136,7 @@ export const DomesticPackageList = [
   },
 
   {
-    id: 110, image: "/images/domestic/daejeon.jpg",
+    id: 110, image: "/images/domestic/daejeon.png",
     title: "대전 도심 감성 여행",
     price: "₩ 169,000~",
     country: { en: "Korea", kr: "한국" },
@@ -151,7 +151,7 @@ export const DomesticPackageList = [
   },
 
   {
-    id: 111, image: "/images/domestic/cheongju.jpg",
+    id: 111, image: "/images/domestic/cheongju.png",
     title: "청주 힐링 자연 여행",
     price: "₩ 159,000~",
     country: { en: "Korea", kr: "한국" },
@@ -167,7 +167,7 @@ export const DomesticPackageList = [
 
   {
     id: 112,
-    image: "/images/domestic/gwangju.jpg",
+    image: "/images/domestic/gwangju.png",
     title: "광주 문화 감성 여행",
     price: "₩ 189,000~",
     country: { en: "Korea", kr: "한국" },
@@ -183,7 +183,7 @@ export const DomesticPackageList = [
 
   {
     id: 113,
-    image: "/images/domestic/yeosu.jpg",
+    image: "/images/domestic/yeosu.png",
     title: "여수 바다 야경 여행",
     price: "₩ 229,000~",
     country: { en: "Korea", kr: "한국" },
@@ -199,7 +199,7 @@ export const DomesticPackageList = [
 
   {
     id: 114,
-    image: "/images/domestic/pohang.jpg",
+    image: "/images/domestic/pohang.png",
     title: "포항 바다 힐링 여행",
     price: "₩ 199,000~",
     country: { en: "Korea", kr: "한국" },
@@ -215,7 +215,7 @@ export const DomesticPackageList = [
 
   {
     id: 115,
-    image: "/images/domestic/ulsan.jpg",
+    image: "/images/domestic/ulsan.png",
     title: "울산 자연 감성 여행",
     price: "₩ 189,000~",
     country: { en: "Korea", kr: "한국" },
@@ -231,7 +231,7 @@ export const DomesticPackageList = [
 
   {
     id: 116,
-    image: "/images/domestic/jeonju.jpg",
+    image: "/images/domestic/jeonju.png",
     title: "전주 한옥 감성 여행",
     price: "₩ 179,000~",
     country: { en: "Korea", kr: "한국" },
@@ -246,7 +246,7 @@ export const DomesticPackageList = [
   },
 
   {
-    id: 117, image: "/images/domestic/ganghwa.jpg",
+    id: 117, image: "/images/domestic/ganghwa.png",
     title: "강화도 역사 힐링 여행",
     price: "₩ 149,000~",
     country: {
@@ -265,7 +265,7 @@ export const DomesticPackageList = [
 
   {
     id: 118,
-    image: "/images/domestic/taean.jpg",
+    image: "/images/domestic/taean.png",
     title: "태안 해변 감성 여행",
     price: "₩ 189,000~",
     country: { en: "Korea", kr: "한국" },
@@ -281,7 +281,7 @@ export const DomesticPackageList = [
 
   {
     id: 119,
-    image: "/images/domestic/sokcho.jpg",
+    image: "/images/domestic/sokcho.png",
     title: "속초 바다 힐링 여행",
     price: "₩ 219,000~",
     country: { en: "Korea", kr: "한국" },
@@ -297,7 +297,7 @@ export const DomesticPackageList = [
 
   {
     id: 120,
-    image: "/images/domestic/namhae.jpg",
+    image: "/images/domestic/namhae.png",
     title: "남해 바다 감성 여행",
     price: "₩ 229,000~",
     country: { en: "Korea", kr: "한국" },
