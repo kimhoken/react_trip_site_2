@@ -108,10 +108,10 @@
     color: #243B6B;
        
 }
-.package-summary{
+.package-summary-layer{
     flex:1;   
 }
-.package-summary> div:first-child{
+.summary-firstchild{
     font-size: 23px;
     font-weight: bold;
 }
