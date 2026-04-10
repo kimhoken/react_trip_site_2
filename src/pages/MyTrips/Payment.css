@@ -1,5 +1,4 @@
-.payment-main *{
-    margin: 0;
+.payment-main *{    
     padding: 0;
 }
 
@@ -33,7 +32,7 @@
 }
 .payment-section,
 .payment-package,
-.payment-pay,
+.payment-pay button,
 .payment-user{
     border: 1px solid #000;
     width: 500px;
@@ -44,7 +43,8 @@
     border-color: #D0DCEF;
 }
 .payment-section{
-    height: 500px;
+    height: 600px;
+    position: relative;
 }
 .payment-user :first-child{
     font-weight: bold;
@@ -52,9 +52,12 @@
     color: #243B6B;
 }
 .payment-user p,
-.payment-package p,
-.payment-section p{
+.payment-package p
+{
     padding: 10px;
+}
+.payment-section p{
+    padding: 10px 10px 0 10px;
 }
 .payment-package{
     display: flex;
@@ -82,11 +85,23 @@
     font-weight: bold;
 }
 
-.payment-pay button{
-    width: 150px;
-    height: 30px;
+.payment-pay {
+    position: absolute;
+    bottom: 10px;
+    width: 460px;
+    height: 45px;
     background-color: #243B6B;
     color: #ffff;
+    /* font-weight: bold; */
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #243B6B;
+    letter-spacing: 2px;
 }
-
+.npayimg{
+    width: 400px;
+    margin-left: 50px;
+}
 

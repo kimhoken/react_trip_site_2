@@ -12,16 +12,17 @@ const Packageinfo = () => {
     const { loginUser } = useWebStore();
     const { id } = useParams();
     const [selectedIndex, setSelectedIndex] = useState(0);
-
+    
     const showlist = () => {
         let list = id < 100 ? PackageList : DomesticPackageList;
+        
         list = list.find((item) => item.id == id);
         const detail = PackageDetail.find((item) => item.id == id)
         const schedule = PackageSchedule.find((item) => item.id == id)
-
+        
         return { list, detail, schedule };
     }
-
+    
     const show = () => {
         {
             return item.schedule.schedule.map((i) => {
@@ -35,10 +36,12 @@ const Packageinfo = () => {
             })
         }
     }
-
+    
     const item = showlist();
     const navigate = useNavigate();
     const dates = item.detail.dates;
+    const selectedDate =dates[selectedIndex];
+   
 
     const loginEvent = (e) => {
         if (!loginUser) {
@@ -47,9 +50,10 @@ const Packageinfo = () => {
             navigate("/LoginPage");
             return;
         }
-        navigate("/MyTrips/reserve", { state: { selTrip: item.list } })
+        navigate("/MyTrips/reserve", { state: { selTrip: item.list, selectedDate:selectedDate
+        } })
     }
-
+    
     return (
         <div className="packageinfo-main">
             <div className="package-header">

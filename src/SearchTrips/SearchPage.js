@@ -71,9 +71,9 @@ const SearchPage = () => {
         else if (sort.trim() === 'overseas')
             showlist = [...showlist].filter((res) => res.type === sort);
         else if (sort.trim() === 'asc')
-            showlist = [...showlist].sort((a, b) => a.country.localeCompare(b.country));
+            showlist = [...showlist].sort((a, b) => a.country.kr.localeCompare(b.country.kr));
         else if (sort.trim() === 'desc')
-            showlist = [...showlist].sort((a, b) => b.country.localeCompare(a.country));
+            showlist = [...showlist].sort((a, b) => b.country.kr.localeCompare(a.country.kr));
         else if (sort.trim() === 'rating')
             showlist = [...showlist].sort((a, b) => b.rating - a.rating);
         else if (sort.trim() === 'review')
@@ -91,8 +91,8 @@ const SearchPage = () => {
                         <Link to={'/Packages/' + item.type + '/' + item.contient + '/' + item.country + '/' + item.id}>
                             <div>
                                 <img src={item.image} width={'90px'} height={'90px'} /></div>
-                            <div className='package-summary'>
-                                <div>{item.title}</div>
+                            <div className='package-summary-layer'>
+                                <div className='summary-firstchild'>{item.title}</div>
                                 <div>한줄평: {item.detail.summary}</div>
                                  {/* <div>나라: {item.country}</div> */}
                                 <div>일수: {item.detail.duration}</div>

@@ -10,7 +10,7 @@
 }
 
 .payment-bank-title {
-  margin-bottom: 28px;
+  margin-bottom: 8px;
   font-size: 15px;
   font-weight: 700;
   color: #10233f;
@@ -21,8 +21,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: flex-start;
-  gap: 10px 15px;
-  margin-bottom: 32px;
+  gap: 5px 8px;
+  margin-bottom: 5px;
 }
 
 .payment-bank-item {
@@ -39,7 +39,7 @@
   width: 13px;
   height: 13px;
   cursor: pointer;
-  margin: 0;
+  margin: 0px;
 }
 
 .payment-bank-logo-circle {
@@ -67,7 +67,7 @@
 }
 
 .payment-bank-label {
-  margin: 24px 0 15px;
+  margin: 10px 0 15px;
   font-size: 15px;
   font-weight: 700;
   color: #243b6b;

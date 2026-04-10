@@ -58,22 +58,22 @@ export default function PaymentCard({ setCard, cardexdmsg, cardmsg, cardnummsg }
                     <select value={cardcompany} onChange={(e) => { setCardCompany(e.target.value) }}>
                         {showcompany()}
                     </select>
-                    <div className="errormsg">{cardmsg}</div>
                 </label><br/>
+                    <div className="errormsg">{cardmsg}</div>
                 <label><div>카드번호</div>
                     <input placeholder="1111" maxLength={4} size={4} onChange={(e) => { setCardnum1(e.target.value) }} />
                     -<input type="password" placeholder="●●●●" size={4} maxLength={4} onChange={(e) => { setCardnum2(e.target.value) }} />
                     -<input placeholder="3333" size={4} maxLength={4} onChange={(e) => { setCardnum3(e.target.value) }} />
                     -<input type="password" size={4} placeholder="●●●●" maxLength={4} onChange={(e) => { setCardnum4(e.target.value) }} />
-                    <div className="errormsg">{cardnummsg}</div>
                 </label>
+                    <div className="errormsg">{cardnummsg}</div>
                 <br/>
                 <label>
                     <div>유효 기간</div>
                     <input size={1} maxLength={2} onChange={(e) => { setMonth(e.target.value) }} placeholder="월" />/
                     <input size={1} maxLength={2} onChange={(e) => { setYear(e.target.value) }} placeholder="년" />
-                    <div className="errormsg">{cardexdmsg}</div>
                 </label>
+                    <div className="errormsg">{cardexdmsg}</div>
             </form>
         </div>
     )

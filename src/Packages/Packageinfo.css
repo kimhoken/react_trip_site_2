@@ -15,12 +15,17 @@
 }
 
 .package-img {
-    width: 58%;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
 }
 
 .package-img img {
-    width: 100%;
-    height: 700px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     border-radius: 16px;
     display: block;
