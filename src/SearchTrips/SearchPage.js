@@ -60,8 +60,6 @@ const SearchPage = () => {
             }
         })
 
-
-
         if (search.trim()) {
             showlist = showlist.filter((item) => item.title.includes(search.trim()))
         }
@@ -78,8 +76,6 @@ const SearchPage = () => {
             showlist = [...showlist].sort((a, b) => b.rating - a.rating);
         else if (sort.trim() === 'review')
             showlist = [...showlist].sort((a, b) => b.reviewCount - a.reviewCount);
-
-
 
         return showlist;
     }
